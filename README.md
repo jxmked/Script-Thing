@@ -1,3 +1,3 @@
 # C-language
 
-Multiple amd Random Project that just Created
+Multiple and Random Project that just Created
