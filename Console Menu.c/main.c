@@ -513,15 +513,15 @@ int Recursion()
     int num;
     clrscr();
     printf("Welcome to Recursion World\n");
-    char menu[512][128] = {"Find Factorial of a Number", "Fibonacci", "Back"};
+    char menu[512][128] = {"Find Factors of a Number", "Find the nth term of Fibonacci", "Back"};
     switch (displayMenu(menu, 3))
     {
     case 1:
         clrscr();
-        printf("Find factorial of a number\n");
+        printf("Find factors of a number\n");
         do
         {
-            printf("Enter a number to find its factorial.\nEnter 0 to back: ");
+            printf("Enter a number to find its factors.\nEnter 0 to back: ");
             num = inInt();
             
             if (num <= 1)
@@ -532,7 +532,7 @@ int Recursion()
         break;
     case 2:
         clrscr();
-        printf("Find Fibonacci sequence of a number.\n");
+        printf("Find the nth term of Fibonacci\n");
         
         do
         {
