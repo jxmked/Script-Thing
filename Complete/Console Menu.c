@@ -23,7 +23,7 @@ int inInt();
 int inStr(char *str[128]);
 void array_print(int arr[512], int len);
 
-/** If '#include <conio.h>' and/or 'clrscr()' is undefined please remove **/
+/** If '#include <conio.h>' and/or 'clrscr()' is undefined please remove the header **/
  
 /** Subtitute Function **/
 
@@ -493,7 +493,6 @@ int Arrays()
 
 /*End Array Part*/
 /*Recursion Part*/
-
 long int Recursion_Factor(int num)
 {
     if (num <= 1)
@@ -534,15 +533,15 @@ int Recursion()
     case 2:
         clrscr();
         printf("Find Fibonacci sequence of a number.\n");
-
+        
         do
         {
             printf("Enter a number to find its sequence in Fibonacci.\nEnter 0 to back: ");
             num = inInt();
-
+            
             if (num <= 1)
                 break;
-
+                
             printf("Fibonacci Sequence: %ld\n", Recursion_Fibonacci(num));
         } while (1);
         break;
@@ -572,11 +571,7 @@ int Strings()
         sprintf(strA, "%s", tmp) ;
         
         if(!strcmp(strA, "0")){
-            if(Confirm("Do you want to cancel this transaction?")){
-                return 0;
-            } else {
-                continue;
-            } 
+            return 0;
         }
         
         itmp = strlen(strA);
@@ -612,10 +607,10 @@ int Strings()
                 } else {
                     sprintf(boolStr, "%s", "True");
                 } 
-
+                
                 printf("Is same with another string? : %s\n\n", boolStr);
             }
-
+            
             if (action == 3){
                 if(Confirm("Do you want to cancel this transaction?")){
                     return 0;
@@ -636,12 +631,8 @@ int Strings()
 }
 
 /*Helper Functions*/
-//char MESS[2048];
-//int num = 0;
-
 int Message(char str[512])
 {
-    //i forgot that C language has static method
     static char MESS[2048];
     static int num = 0;
     
