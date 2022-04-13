@@ -1,7 +1,9 @@
 # Console Menu
+***Written in C Language.***
 
 A reference program that I built with inspiration.
 
+> I will try to explain some part of the program.
 
 
 ## Programs

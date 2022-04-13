@@ -1,9 +1,6 @@
 # C - languages
-Some code snippet that may help you in some in an unordinary situation. Hahaha
 
-> ---
-> ****Created with Love and Frustration**** - __Jovan__
->	> ***Model:__N/S__***
->	> - ***Version:__N/A__***
->	------
----
+A script project that can be use as a demo, reference or something under MIT License.
+
+### Note:
+> This repository may move to a new repository where it belongs.
