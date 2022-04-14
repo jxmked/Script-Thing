@@ -13,6 +13,7 @@ A reference program that I built with inspiration.
     - Multiply of Two Numbers
     - Divide of Two Numbers
     - Get the Area of a Rectangle
+    ----
 - ### Arrays
     - Add
     - Edit
@@ -22,14 +23,17 @@ A reference program that I built with inspiration.
         - Sort and Print
         - Save Changes to Database
         - Back without Saving
+    ----
 - ### Recursion
     - Find Factorial of a Number
     - Find Fibonacci Sequence
+    ----
 - ### String
+    - Compare two strings
 
 
+----
 # Arithmetic
-
 Compute 2 given numbers using a selected arithmetic.
 
 > Arithmetics: 
@@ -42,6 +46,7 @@ Get the area of a rectangle by multiplying the height and width of the rectangle
 > Formula: Area = h * w
 
 
+----
 # Array
 Modify the value of an Array
 
@@ -58,6 +63,7 @@ Modify the value of an Array
 > Print and/or modify the array by sort-print and/or reverse-print then saving it
 
 
+----
 # Recursion
 A function that use itself repeatedly like a loop to compute.
 
@@ -74,6 +80,7 @@ A function that use itself repeatedly like a loop to compute.
 > Adding the last two integer from the sequence and continuing it we can create a Fibonacci Sequence.
 
 
+----
 # String
 A program that can check if the two string has same length and/or same value
 
@@ -83,6 +90,7 @@ A program that can check if the two string has same length and/or same value
 
 # "Thanks for using our program"
 
+----
 #### Inspired by Miss C Language.
 
 #### Develop by Jovan De Guia
@@ -91,6 +99,5 @@ A program that can check if the two string has same length and/or same value
 
 - [Github](https://github.com/jxmked)
 - [Facebook](https://www.facebook.com/deguia25)
-- Email - Later 
 
-#### License under MIT License
+### License under MIT License
