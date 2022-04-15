@@ -1,6 +1,5 @@
-# C - languages
+# Script Thing
 
-A script project that can be use as a demo, reference or something under MIT License.
+A random script project, etc. that can be use as a demo, reference or something under MIT License.
 
-### Note: 
-This is the old 'C-Language' repository.
+License under MIT License
