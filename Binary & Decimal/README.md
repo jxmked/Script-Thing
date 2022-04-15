@@ -1,0 +1,85 @@
+# Binary & Decimal
+***Written in Python Programming Language***
+
+#### Consist of 2 programs
+
+- Binary to Decimal
+- Decimal to Binary
+
+> I will try to explain some part of the program.
+
+
+# Binary to Decimal
+
+ Convert Binary digits into Decimal value
+
+> Note: Binary with decimal places like "01100001.11" is not supported.
+
+> Formula: dn-1 ... d3 d2 d1
+
+
+### Explain
+
+Our binary is `0101`.
+
+Computation will start at first digit of binary '0'
+
+__1st step:__
+
+Get the length of binary and subtract it into 1 and that is our raised number.
+
+> But in every digit from binary the raised power will subtract by 1.
+
+__2nd step__
+
+Map it.
+
+*Table of truth*
+
+> Start at first digit of binary
+
+| Binary Digits | Raised Power |
+| :---: | :---: |
+| 0 | 3 |
+| 1 | 2 |
+| 0 | 1 |
+| 1 | 0 |
+
+__3rd step__
+
+Raise the base number into specific power from table above.
+
+> Base number is equal to 2.
+> Binary is also known as base 2.
+
+***Calculate***
+
+> n2<sup>x</sup>. Where n is a binary digit and x is its raised power.
+
+*Table of truth*
+| Calculation | Answer | Total Sum |
+| :---: | :---: | :---: |
+| 0 * 2 ^ 3 | 0 | 0 |
+| 1 * 2 ^ 2 | 4 | 4 |
+| 0 * 2 ^ 1 | 0 | 0 |
+| 1 * 2 ^ 0 | 1 | ***5*** |
+
+__4th step__
+
+Get the last ***Total Sum*** and that is our output. 
+
+#### "Decimal: 5"
+
+
+----
+# Decimal to Binary
+***To be continue...***
+
+#### Develop by Jovan De Guia
+
+## Socials
+
+- [Github](https://github.com/jxmked)
+- [Facebook](https://www.facebook.com/deguia25)
+
+### License under MIT License
