@@ -23,10 +23,11 @@ int inInt();
 int inStr(char *str[128]);
 void array_print(int arr[512], int len);
 
-/** If '#include <conio.h>' and/or 'clrscr()' is undefined please remove the header **/
+/** If '#include <conio.h>' and/or 'clrscr()' is undefined 
+ * please remove the header <conio.h> and uncomment the provided function below.
+ **/
  
 /** Subtitute Function **/
-
 /*
 void clrscr(){
     system("clear");
