@@ -22,15 +22,16 @@
 
 Our binary is `0101`.
 
-Computation will start at first digit of binary '0'
+Computation will start at first digit of binary. '0'
 
 __1st step:__
 
 Get the length of binary and subtract it into 1 and that is our raised number.
 
-> But in every digit from binary the raised power will subtract by 1.
+> But in every digit from binary the raised power will be subtracted by 1.
 
-__2nd step__
+----
+__2nd step:__
 
 Map it.
 
@@ -45,7 +46,8 @@ Map it.
 | 0 | 1 |
 | 1 | 0 |
 
-__3rd step__
+----
+__3rd step:__
 
 Raise the base number into specific power from table above.
 
@@ -57,19 +59,21 @@ Raise the base number into specific power from table above.
 > n2<sup>x</sup>. Where n is a binary digit and x is its raised power.
 
 *Table of truth*
-| Calculation | Answer | Total Sum |
+| Calculate | Answer | Total Sum |
 | :---: | :---: | :---: |
 | 0 * 2 ^ 3 | 0 | 0 |
 | 1 * 2 ^ 2 | 4 | 4 |
 | 0 * 2 ^ 1 | 0 | 0 |
 | 1 * 2 ^ 0 | 1 | ***5*** |
 
-__4th step__
+----
+__4th step:__
 
 Get the last ***Total Sum*** and that is our output. 
 
 #### "Decimal: 5"
 
+*** And where done ***
 
 ----
 # Decimal to Binary
