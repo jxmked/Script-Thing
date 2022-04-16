@@ -66,7 +66,7 @@ Raise the base number into specific power from table above.
 | 0 * 2 ^ 1 | 0 | 0 |
 | 1 * 2 ^ 0 | 1 | ***5*** |
 
-> Note: If binary is a has decimal value like "0101.11",
+> Note: If binary has decimal value like "0101.11",
 > just continue decreasing the raised power in negative state like
 
 | Calculate | Answer | Total Sum |
@@ -75,7 +75,7 @@ Raise the base number into specific power from table above.
 | 1 * 2 ^ 2 | 4 | 4 |
 | 0 * 2 ^ 1 | 0 | 0 |
 | 1 * 2 ^ 0 | 1 | 5 |
-| <td colspan=3>Dot/Period Here |
+<td colspan=4>Dot/Period Here 
 | 1 * 2 ^ -1 | 0.5 | 5.5 |
 | 1 * 2 ^ -2 | 0.25 | 5.75 |
 
