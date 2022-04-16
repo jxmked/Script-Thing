@@ -4,34 +4,44 @@ class Binary2Decimal:
     #Formula: dn-1 ... d3 d2 d1
     
     base = 2 #Base Number. Default: 2
+    validChar = ["0", "1", "."] #Input must contain only
     
     # System Variables
     binary = "" #User input
     result = 0 #Output result
     binLen = 0 #Binary Length
+    hasDecimal = False
     
     def __init__(self):
         """
         
         """
-        print("Binary with decimal value like '01100001.11' is not supported.")
+        print("Binary with decimal value like '01100001.11' is now supported.")
         
     
     def getUserInput(self, x):
         print("") #Just for a new line
         
         if x == "":
-            
             quit("Exit.") # Quit on Empty Value
             
+        # Check if containes 1s, 0s & . only
+        try:
+            decimalIndex = x.index(".")
+            
+            #Having extra dot is not valid
+            if not decimalIndex == x.rfind("."):
+                print("Decimal places has been doubled.")
+                return False
+            self.hasDecimal = True
+            self.binLen = decimalIndex
+        except:
+            #No Decimal Places
+            self.binLen = len(x)
         
-        self.binLen = len(x)
-        
-        # Check if containes 1s & 0s only 
-        
-        for i in range(0, self.binLen - 1):
-            if not (x[i] == "0" or x[i] == "1"):
-                print("Input must be contain only 1s & 0s.\n")
+        for i in x:
+            if not i in self.validChar:
+                print("Input must contain only {}.\n".format(self.validChar))
                 return False
             
         
@@ -39,8 +49,9 @@ class Binary2Decimal:
         return True
     
     def calculate(self):
-        
         for i in self.binary:
+            if i == ".":
+                continue
             
             self.binLen -= 1
             
@@ -48,17 +59,30 @@ class Binary2Decimal:
             
             self.result += ans
             
-            self.display(i, ans)
+            self.display(i, self.finalize(ans))
             
         
     
     def display(self, digit, ans):
+        
         print("{} * {} ^ {} = {}".format(digit, self.base, self.binLen, ans))
         
     
     def output(self):
-        print("Decimal Result: {}\n".format(self.result))
         
+        print("\nDecimal Result: {}\n".format(self.finalize(self.result)))
+    
+    def finalize(self, val):
+        if self.hasDecimal:
+            return val
+        return int(val)
+    
+    
+    def reset(self):
+        self.result = 0
+        self.binLen = 0
+        self.binary = ""
+        self.hasDecimal = False
     
 
 # End Class Object
@@ -75,4 +99,5 @@ while(1):
     obj.calculate()
     
     obj.output()
-
+    
+    obj.reset()

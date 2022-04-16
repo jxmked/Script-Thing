@@ -13,7 +13,7 @@
 
  Convert base-2 Binary digits into Decimal value
 
-> Note: Binary with decimal places like "01100001.11" is not supported.
+> Note: Binary with decimal places like "01100001.11" is now supported.
 
 > Formula: dn-1 ... d3 d2 d1
 
@@ -65,6 +65,19 @@ Raise the base number into specific power from table above.
 | 1 * 2 ^ 2 | 4 | 4 |
 | 0 * 2 ^ 1 | 0 | 0 |
 | 1 * 2 ^ 0 | 1 | ***5*** |
+
+> Note: If binary is a has decimal value like "0101.11",
+> just continue decreasing the raised power in negative state like
+
+| Calculate | Answer | Total Sum |
+| :---: | :---: | :---: |
+| 0 * 2 ^ 3 | 0 | 0 |
+| 1 * 2 ^ 2 | 4 | 4 |
+| 0 * 2 ^ 1 | 0 | 0 |
+| 1 * 2 ^ 0 | 1 | 5 |
+| <td colspan=3>Dot/Period Here |
+| 1 * 2 ^ -1 | 0.5 | 5.5 |
+| 1 * 2 ^ -2 | 0.25 | 5.75 |
 
 ----
 __4th step:__
