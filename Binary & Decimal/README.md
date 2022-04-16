@@ -11,7 +11,7 @@
 
 # Binary to Decimal
 
- Convert Binary digits into Decimal value
+ Convert base-2 Binary digits into Decimal value
 
 > Note: Binary with decimal places like "01100001.11" is not supported.
 
@@ -77,7 +77,17 @@ Get the last ***Total Sum*** and that is our output.
 
 ----
 # Decimal to Binary
-***To be continue...***
+ Convert Decimal into base-2 Binary using subtraction method.
+ 
+> Note: Decimal value with decimal places like 97.75 is not supported
+
+### Explain
+
+__1st step:__
+
+Watch this tutorial video: `https://youtu.be/rsxT4FfRBaM`
+
+> I will try to explain this thing later when I think my explaination is clear. =)
 
 #### Develop by Jovan De Guia
 

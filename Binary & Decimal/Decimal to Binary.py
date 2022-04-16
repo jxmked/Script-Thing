@@ -7,11 +7,20 @@ class Decimal2Binary:
     table = []
     binary = ""
     
+    tLen = 0 #Table length
     def __init__(self):
         """
         This code is just to reverse engineer 
         the decimal number by using a table
+        
+        Link below is a tutorial to convert decimal to binary
+        using subtraction method.
+        
+        Reference Video: https://youtu.be/rsxT4FfRBaM
         """
+        
+        print("Decimal value with decimal places like '97.75' is not supported.\n")
+        
         pass
     
     
@@ -33,6 +42,7 @@ class Decimal2Binary:
         while True:
             #Length of binary must be even
             if bit > self.decimal and len(self.table) % 2 == 0:
+                self.tLen = len(self.table)
                 break
             
             self.table.append({
@@ -72,7 +82,7 @@ class Decimal2Binary:
     def display(self):
         sumInt = 0
         
-        print("Bits | Decimal | Total Sum")
+        print(" Bits | Decimal | Total Sum")
         
         for obj in self.table:
             flag = "Reject"
@@ -81,7 +91,7 @@ class Decimal2Binary:
                 sumInt += obj["decimal"]
                 flag = str(sumInt)
             
-            print("  {}  | {} | {}".format(obj["binary"], obj["decimal"], flag))
+            print("  {}   | {} | {}".format(obj["binary"], obj["decimal"], flag))
             
         
         print("\nDecimal: {}".format(sumInt))
@@ -94,9 +104,9 @@ class Decimal2Binary:
     # Helpers
     def getCloseLess(self):
         if self.decimal == 1:
-            return { "decimal" : 1, "index" : (len(self.table) - 1) }
+            return { "decimal" : 1, "index" : (self.tLen - 1) }
         
-        for i in range(0, len(self.table) - 1):
+        for i in range(0, self.tLen - 1):
             if self.decimal >= self.table[i]["decimal"]:
                 return { "decimal" : self.table[i]["decimal"], "index" : i }
             
