@@ -11,7 +11,9 @@ class Binary2Decimal:
     binLen = 0 #Binary Length
     
     def __init__(self):
+        """
         
+        """
         print("Binary with decimal value like '01100001.11' is not supported.")
         
     
