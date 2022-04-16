@@ -75,7 +75,7 @@ Raise the base number into specific power from table above.
 | 1 * 2 ^ 2 | 4 | 4 |
 | 0 * 2 ^ 1 | 0 | 0 |
 | 1 * 2 ^ 0 | 1 | 5 |
-<td colspan=4>Dot/Period Here 
+| <td colspan=2>Dot/Period Here |
 | 1 * 2 ^ -1 | 0.5 | 5.5 |
 | 1 * 2 ^ -2 | 0.25 | 5.75 |
 
