@@ -73,7 +73,7 @@ Get the last ***Total Sum*** and that is our output.
 
 #### "Decimal: 5"
 
-*** And where done ***
+***And where done***
 
 ----
 # Decimal to Binary

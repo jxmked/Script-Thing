@@ -7,7 +7,7 @@ class Binary2Decimal:
     
     # System Variables
     binary = "" #User input
-    result = 0 # += (binary digit * (base ^ power[binary length - 1]))
+    result = 0 #Output result
     binLen = 0 #Binary Length
     
     def __init__(self):
@@ -15,8 +15,7 @@ class Binary2Decimal:
         print("Binary with decimal value like '01100001.11' is not supported.")
         
     
-    def getUserInput(self):
-        x = str(input("Binary Digits: "))
+    def getUserInput(self, x):
         print("") #Just for a new line
         
         if x == "":
@@ -31,11 +30,11 @@ class Binary2Decimal:
         for i in range(0, self.binLen - 1):
             if not (x[i] == "0" or x[i] == "1"):
                 print("Input must be contain only 1s & 0s.\n")
-                return True
+                return False
             
         
         self.binary = x
-        
+        return True
     
     def calculate(self):
         
@@ -43,13 +42,7 @@ class Binary2Decimal:
             
             self.binLen -= 1
             
-            """
-            Compute: 0101
-            start at first digit '0'
-            
-            n = x ( base ^ (binary length - 1) )
-            """
-            ans = int(int(i) * pow(self.base, self.binLen))
+            ans = int(i) * pow(self.base, self.binLen)
             
             self.result += ans
             
@@ -72,8 +65,9 @@ class Binary2Decimal:
 obj = Binary2Decimal()
 
 while(1):
+    x = input("Binary Digits: ")
     
-    if obj.getUserInput():
+    if not obj.getUserInput(x):
         continue
     
     obj.calculate()
