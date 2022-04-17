@@ -14,7 +14,7 @@ class Binary2Decimal:
     
     def __init__(self):
         """
-        
+         
         """
         print("Binary with decimal value like '01100001.11' is now supported.")
         
