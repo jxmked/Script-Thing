@@ -49,6 +49,7 @@ class Binary2Decimal:
         return True
     
     def calculate(self):
+        print(" n = b ( x^(y) ) \n")
         for i in self.binary:
             if i == ".":
                 continue
@@ -65,7 +66,7 @@ class Binary2Decimal:
     
     def display(self, digit, ans):
         
-        print("{} * {} ^ {} = {}".format(digit, self.base, self.binLen, ans))
+        print(" {}( {}^({}) ) = {}".format(digit, self.base, self.binLen, ans))
         
     
     def output(self):
