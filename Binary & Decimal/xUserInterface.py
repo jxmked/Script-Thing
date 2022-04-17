@@ -1,6 +1,6 @@
 """
 This object is to manage User Interface easily
-and customly created for a program that inheret it. =)
+and customly created for a program that inherit it. =)
 
 """
 
