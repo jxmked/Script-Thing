@@ -1,13 +1,17 @@
-class Decimal2Binary:
+from sys import path
+from math import pow
+
+path.append(".")
+
+from xUserInterface import xUserInterface as xui
+
+class Decimal2Binary(xui):
     
     base = 2 #Base Number
     
     #System Variables
-    decimal = 0
-    table = []
-    binary = ""
+    isFloat = False
     
-    tLen = 0 #Table length
     def __init__(self):
         """
         This code is just to reverse engineer 
@@ -19,127 +23,149 @@ class Decimal2Binary:
         Reference Video: https://youtu.be/rsxT4FfRBaM
         """
         
-        print("Decimal value with decimal places like '97.75' is not supported.\n")
-        
+        """
+        I recreate this thing just to add support to a decimal
+        with decimal places like: 245.75, 4983.82.
+        """
         pass
     
-    
-    def getUserInput(self, x):
+    def start(self):
+        if self.isFloat:
+            print("""
+            To avoid the decimal separator, multiply 
+            the decimal number with  the base raised 
+            to the power of decimals
+            in result: """, end="")
+            
+            sDec = str(self.decimal)
+            toCalc = int(sDec[0:sDec.index("."):]) #Remove Decimal Places
+            
+            raised = self.getRaised() #decimal, power
+            
+            primary = xui.getBinary(self.createTable(toCalc))
+            
+            res = self.calculate(int(raised["decimal"])) #Table
+            
+            print("{} x {} ^({}) = {}".format(self.decimal, self.base, raised["power"], raised["decimal"]))
+            print(" " * 35, "\"RapidTables.com\"")
+            
+            xui.output(res)
+            
+            res = xui.getBinary(res)
+            
+            primary = res[0:len(primary)]
+            secondary = res[len(primary):]
+            print("\n = {} / {}^({})".format(res, self.base, raised["power"]))
+            print(" = Binary: {}.{}\n - Decimal: {}\n".format(primary, secondary, self.decimal))
+            
+            """
+            Even though I figured it out (probably) how RapidTables does it, 
+            it’s still a bit hard for me to explain about it. Hahaha
+            """
+            
+            return True
+        
+        # *-*-*-*-*-*-*-*-*-*-*-*-*-*
+        
         print("")
         
-        if x == "":
-            quit("Exit.") # Quit on Empty Value
-            
-        if not self.isInt(x):
-            print("Input must be a decimal number.")
-            return False
+        res = self.calculate(self.decimal)
+        xui.output(res)
+        
+        binary = xui.getBinary(res)
+        decimal = xui.getDecimal(res)
+        
+        print("\n = Binary: {}\n - Decimal: {}\n".format(binary, decimal))
         
         return True
     
-    def createTable(self):
-        bit = 1
+    def calculate(self, decimal):
+        table = self.createTable(decimal)
+        
+        sub = decimal #Subtracted Value
         
         while True:
-            #Length of binary must be even
-            if bit > self.decimal and len(self.table) % 2 == 0:
-                self.tLen = len(self.table)
+            try:
+                res = self.getCloseLess(sub, table) #Decimal, Index
+                table[res["index"]]["binary"] = "1"
+                sub -= res["decimal"]
+            except Exception:
                 break
             
-            self.table.append({
+        return table
+    
+    def createTable(self, decimal):
+        table = []
+        power = 1
+        while True:
+            #Output must be even numbers
+            if power > decimal and len(table) % 2 == 0:
+                break
+            
+            table.append({
                 "binary" : "0",
-                "decimal" : bit
+                "decimal" : power
             })
             
-            bit *= self.base
-            
+            power *= 2
         
-        self.table.reverse()
+        table.reverse()
+        return table
+    
+    def getRaised(self):
+        for i in range(1, 9):
+            res = self.decimal * pow(self.base, i)
+            if xui.isInt(res) or i == 8:
+                return { 
+                    "decimal" : round(res),
+                    "power" : i 
+                }
+    
+    def getCloseLess(self, decimal, table):
+        tlen = len(table)
+        
+        if decimal == 1:
+            return { "decimal" : 1, "index" : tlen - 1 }
+        
+        for i in range(0, tlen - 1):
+            if decimal >= table[i]["decimal"]:
+                return {
+                    "decimal" : table[i]["decimal"],
+                    "index" : i
+                }
+                
+        raise Exception("Decimal value is out of range!")
+    
+    def getUserInput(self, x=False):
+        #Strictly Equal - StackOverflow
+        if x == False and type(x) == type(False):
+            x = super().getInput("Decimal: ", self.validator, "Decimal sabe!")
+        else:
+            print("Decimal: {}".format(x))
+        self.isFloat = xui.isFloat(x)
+        
+        if self.isFloat:
+            self.decimal = float(x)
+        else:
+            self.decimal = int(x)
+            
+        self.start()
         
     
-    def process(self):
-        
-        while True:
-            
-            cl = self.getCloseLess()
-            
-            self.table[cl["index"]]["binary"] = '1'
-            
-            self.decimal -= cl["decimal"]
-            
-            if self.decimal <= 0:
-                break
-            
-        #After this, Everything is ready to print out
-    
-    def output(self):
-        for obj in self.table:
-            self.binary += obj["binary"]
-            
-        
-        print("Binary: {}\n\n".format(self.binary))
-        
-    
-    def display(self):
-        sumInt = 0
-        
-        print(" Bits | Decimal | Total Sum")
-        
-        for obj in self.table:
-            flag = "Reject"
-            
-            if obj["binary"] == "1":
-                sumInt += obj["decimal"]
-                flag = str(sumInt)
-            
-            print("  {}   | {} | {}".format(obj["binary"], obj["decimal"], flag))
-            
-        
-        print("\nDecimal: {}".format(sumInt))
-        
-    def reset(self):
-        del self.table[:] #Supported by lower version of python
-        self.binary = ""
-        
-    
-    # Helpers
-    def getCloseLess(self):
-        if self.decimal == 1:
-            return { "decimal" : 1, "index" : (self.tLen - 1) }
-        
-        for i in range(0, self.tLen - 1):
-            if self.decimal >= self.table[i]["decimal"]:
-                return { "decimal" : self.table[i]["decimal"], "index" : i }
-            
-        
-    
-    def isInt(self, arg):
+    def validator(self, param):
+        #Accepts int and float numbers
         try:
-            self.decimal = int(arg)
-            return True
+            if xui.isFloat(param) or xui.isInt(int(param)):
+                return True
+            
         except ValueError:
             pass
         
         return False
     
 
-
-
 obj = Decimal2Binary()
 
 while True:
-    x = input("Decimal: ")
-            
-    if not obj.getUserInput(x):
-        continue
-    
-    obj.createTable()
-    
-    obj.process()
-    
-    #Print Decimal and its table
-    obj.display()
-    
-    #Print Binary
-    obj.output()
-    
-    obj.reset()
+    obj.getUserInput()
+    print("")
