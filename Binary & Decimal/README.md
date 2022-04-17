@@ -92,7 +92,7 @@ Get the last ***Total Sum*** and that is our output.
 # Decimal to Binary
  Convert Decimal into base-2 Binary using subtraction method.
  
-> Note: Decimal value with decimal places like 97.75 is not supported
+> Note: Decimal value with decimal places like 97.75 is now supported
 
 ### Explain
 
@@ -102,6 +102,10 @@ Watch this tutorial video: `https://youtu.be/rsxT4FfRBaM`
 
 > I will try to explain this thing later when I think my explaination is clear. =)
 
+> Decimal with decimal places like 97.75 is from [RapidTables.com](https://www.rapidtables.com/convert/number/decimal-to-binary.html)
+> and I think I figured it out how those things work so I try to implement it and try to run the code if its meet your expectation.
+
+****Enjoy****
 #### Develop by Jovan De Guia
 
 ## Socials
