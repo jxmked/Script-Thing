@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 """
 This object is to manage User Interface easily
 and customly created for a program that inherit it. =)

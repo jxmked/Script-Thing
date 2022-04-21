@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from sys import path
 from math import pow
 
@@ -44,10 +46,10 @@ class Decimal2Binary(xui):
             
             primary = xui.getBinary(self.createTable(toCalc))
             
-            res = self.calculate(int(raised["decimal"])) #Table
+            res = self.calculate(raised["decimal"]) #Table
             
-            print("{} x {} ^({}) = {}".format(self.decimal, self.base, raised["power"], raised["decimal"]))
-            print(" " * 35, "\"RapidTables.com\"")
+            print("{} x {}^({}) = {}".format(self.decimal, self.base, raised["power"], raised["decimal"]))
+            print(" " * 35, "\'-RapidTables.com\'")
             
             xui.output(res)
             
@@ -55,6 +57,7 @@ class Decimal2Binary(xui):
             
             primary = res[0:len(primary)]
             secondary = res[len(primary):]
+            
             print("\n = {} / {}^({})".format(res, self.base, raised["power"]))
             print(" = Binary: {}.{}\n - Decimal: {}\n".format(primary, secondary, self.decimal))
             
@@ -107,7 +110,7 @@ class Decimal2Binary(xui):
                 "decimal" : power
             })
             
-            power *= 2
+            power *= self.base
         
         table.reverse()
         return table
@@ -133,7 +136,8 @@ class Decimal2Binary(xui):
                     "decimal" : table[i]["decimal"],
                     "index" : i
                 }
-                
+            
+        
         raise Exception("Decimal value is out of range!")
     
     def getUserInput(self, x=False):

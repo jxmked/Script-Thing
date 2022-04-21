@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from math import pow
 
 class Binary2Decimal:
