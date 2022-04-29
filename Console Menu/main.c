@@ -3,14 +3,14 @@
 #include <stdlib.h>
 
 /*Global Variables*/
-const int static SIZE = 3;
-int static USED = 0;
+static const int SIZE = 3;
+static int USED = 0;
 
 /** 
  * It should be
  * int static ARR[SIZE] = {};
  * */
-int static ARR[512] = {0};
+static int ARR[512] = {0};
 
 /*Declare Functions*/
 int mainMenu(void);
@@ -20,15 +20,20 @@ int Recursion(void); /**/
 int Strings(void);
 
 /*Helpers*/
-int Message(char str[512]);
-int displayMenu(char arr[512][128], int len);
-int Confirm(char str[64]);
-int inInt(void);
-int inStr(char *str[128]);
-void array_print(int arr[512], int len);
+static int Message(char str[512]);
+static int displayMenu(char arr[512][128], int len);
+static int Confirm(char str[64]);
+static int inInt(void);
+static int inStr(char *str[128]);
+static void array_print(int arr[512], int len);
+
+/**
+ * Found on StackOverflow but modify slightly
+ * */
+#define CLEAR(x) memset(x,'\0',sizeof(x))
 
 /** Subtitute Function **/
-void static clrscr(){
+static void clrscr(){
     system("clear");
 } 
 
@@ -83,7 +88,7 @@ int mainMenu(void) {
     return 1;
 }
 
-void static getTwoInputs(int *x, int *y) {
+static void getTwoInputs(int *x, int *y) {
     printf("Enter first number: ");
     *x = inInt();
     
@@ -167,13 +172,13 @@ int Arithmetic(void) {
 }
 
 /* Array Part*/
-void array_print(int arr[512], int len) {
+static void array_print(int arr[512], int len) {
     for (int i = 0; i < len; i++) {
         printf("\n%d -> %d", i + 1, arr[i]);
     }
 }
 
-int static array_push(int num) {
+static int array_push(int num) {
     if (USED > SIZE)
         return 0;
         
@@ -183,7 +188,7 @@ int static array_push(int num) {
     return 1;
 }
 
-void static array_sort(int arr[], int len) {
+static void array_sort(int arr[], int len) {
     //Bubble sort
     int i = 0, j = 0, tmp;
     for (i = 0; i < len; i++) {
@@ -197,7 +202,7 @@ void static array_sort(int arr[], int len) {
     }
 }
 
-void static array_reverse(int arr[], int len) {
+static void array_reverse(int arr[], int len) {
     int num, i;
     for (i = 0; i <= (len / 2) - 1; i++) {
         num = arr[i];
@@ -206,7 +211,7 @@ void static array_reverse(int arr[], int len) {
     }
 }
 
-int static Arrays_One() {   //Array Add
+static int Arrays_One() {   //Array Add
     
     int i, newLen, tmpArr[256] = {0}, err = 0;
     char strRes[4096], str[4096], tmpStr[4096];
@@ -282,7 +287,7 @@ int static Arrays_One() {   //Array Add
     return 1;
 }
 
-int static Arrays_Two() { //Edit Array
+static int Arrays_Two() { //Edit Array
     
     int num, newVal, tmp;
     char str[512];
@@ -330,7 +335,7 @@ int static Arrays_Two() { //Edit Array
     
     sprintf(str, "Are you sure to replace %d with %d from index?", tmp, newVal);
     
-    if (!Confirm(str)) {
+    if ( ! Confirm(str)) {
         Message("\nTransaction declined!\n");
         return 1;
     }
@@ -339,7 +344,7 @@ int static Arrays_Two() { //Edit Array
     
     ARR[num - 1] = newVal;
     
-    sprintf(str, 0); //Clear and reuse.
+    CLEAR(str);
     
     sprintf(str, "%s\n%d has been replaced with %d from index %d \n",str, tmp, newVal, num);
     sprintf(str, "%sArray database has been change.\n", str);
@@ -351,7 +356,7 @@ int static Arrays_Two() { //Edit Array
     return 1;
 }
 
-int static Arrays_Three() { //Delete Value from Array
+static int Arrays_Three() { //Delete Value from Array
     int num, targetNum, i;
     char str[128];
     
@@ -413,7 +418,7 @@ int static Arrays_Three() { //Delete Value from Array
     return 1;
 }
 
-int static Arrays_Four() {
+static int Arrays_Four() {
     
     int tmp[512], i, action;
     char menu[512][128] = {"Print in Reverse", "Sort and Print", "Save changes to database", "Back"};
@@ -502,14 +507,14 @@ int Arrays(void) {
 
 /*End Array Part*/
 /*Recursion Part*/
-long int static Recursion_Factor(int num) {
+static long int Recursion_Factor(int num) {
     if (num <= 1)
         return num;
     
     return num * Recursion_Factor(num - 1);
 }
 
-long int static Recursion_Fibonacci(int num) {
+static long int Recursion_Fibonacci(int num) {
     if (num <= 1)
         return num;
         
@@ -647,7 +652,7 @@ int Strings(void) {
 }
 
 /*Helper Functions*/
-int Message(char str[512]) {
+static int Message(char str[512]) {
     static char MESS[2048];
     static int num = 0;
     
@@ -669,7 +674,7 @@ int Message(char str[512]) {
     return 0;
 }
 
-int displayMenu(char menus[512][128], int len) {
+static int displayMenu(char menus[512][128], int len) {
     char border[64] = "******************************";
     int num;
     char *err;
@@ -699,7 +704,7 @@ int displayMenu(char menus[512][128], int len) {
     return num;
 }
 
-int inInt() {
+static int inInt() {
     int num;
     char str[8];
     char *err;
@@ -712,7 +717,7 @@ int inInt() {
     return num;
 }
 
-int inStr(char *str[128]) {
+static int inStr(char *str[128]) {
     char tmp[128];
     
     //Terminal Skipping some input 
@@ -723,7 +728,7 @@ int inStr(char *str[128]) {
     return 1;
 }
 
-int Confirm(char str[64]) {
+static int Confirm(char str[64]) {
     char ans;
     
     printf("\n%s [Y/N]: ", str);
