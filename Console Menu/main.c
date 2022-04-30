@@ -98,7 +98,14 @@ static void getTwoInputs(int *x, int *y) {
 
 int Arithmetic(void) {
     int x, y;
-    char menu[512][128] = {"Add two Numbers", "Subtract two Numbers", "Multiply two Numbers", "Divide two Numbers", "Get the Area of Rectangle", "Back"};
+    char menu[512][128] = {
+        "Add two Numbers", 
+        "Subtract two Numbers", 
+        "Multiply two Numbers", 
+        "Divide two Numbers", 
+        "Get the Area of Rectangle", 
+        "Back"
+    };
     
     clrscr();
     
@@ -227,7 +234,8 @@ static int Arrays_One() {   //Array Add
     
     Message("");
     
-    printf("\nEnter the length of new value you wish to add.\nEnter 0 to cancel. Max number is %d.\n", SIZE - USED);
+    printf("\nEnter the length of new value you wish to add.");
+    printf("Enter 0 to cancel. Max number is %d.\n", SIZE - USED);
     
     printf("Number: ");
     
@@ -274,7 +282,8 @@ static int Arrays_One() {   //Array Add
     sprintf(strRes, "%s", "");
     
     if (SIZE - USED < 1) {
-        sprintf(tmpStr, "\n%s\nYou used %d out of %d capacity.\nDelete or Edit some data\n", str, USED, SIZE);
+        sprintf(tmpStr, "\n%s\nYou used %d out of %d capacity.", str, USED, SIZE);
+        sprintf(tmpStr, "%s", "Delete or Edit some data\n");
         Message(tmpStr);
         
         return 0;
@@ -342,14 +351,13 @@ static int Arrays_Two() { //Edit Array
     
     clrscr();
     
+    // Transaction
     ARR[num - 1] = newVal;
     
     CLEAR(str);
     
     sprintf(str, "%s\n%d has been replaced with %d from index %d \n",str, tmp, newVal, num);
     sprintf(str, "%sArray database has been change.\n", str);
-    
-    array_print(ARR, USED);
     
     Message(str);
     
@@ -418,10 +426,14 @@ static int Arrays_Three() { //Delete Value from Array
     return 1;
 }
 
-static int Arrays_Four() {
-    
+static int Arrays_Four() { // Array Print
     int tmp[512], i, action;
-    char menu[512][128] = {"Print in Reverse", "Sort and Print", "Save changes to database", "Back"};
+    char menu[512][128] = {
+        "Print in Reverse",
+        "Sort and Print",
+        "Save changes to database",
+        "Back"
+    };
     
     clrscr();
     
@@ -473,7 +485,13 @@ static int Arrays_Four() {
 
 int Arrays(void) {
     int action;
-    char menu[512][128] = {"Add", "Edit", "Delete", "Print", "Back"};
+    char menu[512][128] = {
+        "Add",
+        "Edit",
+        "Delete",
+        "Print",
+        "Back"
+    };
     
     while (1) {
         clrscr();
@@ -523,7 +541,11 @@ static long int Recursion_Fibonacci(int num) {
 
 int Recursion(void) {
     int num;
-    char menu[512][128] = {"Find Factors of a Number", "Find the nth term of Fibonacci", "Back"};
+    char menu[512][128] = {
+        "Find Factors of a Number",
+        "Find the nth term of Fibonacci",
+        "Back"
+    };
     
     clrscr();
     
@@ -578,14 +600,20 @@ int Strings(void) {
     int action, itmp;
     char strA[128], strB[128], boolStr[8];
     char *tmp;
-    char menu[512][128] = {"Re-enter first string", "Compare with another string", "Back"};
-
+    
+    char menu[512][128] = {
+        "Re-enter first string",
+        "Compare with another string",
+        "Back"
+    };
+    
     //Some compiler trigger an error when printing strlen with size_t type of value.
     while (1) {
         clrscr();
         
         printf("Welcome to String World!\n");
-        printf("Enter a string that would not exceeded to 128 characters. Enter 0 to cancel.\nString: ");
+        printf("Enter a string that would not exceeded to 128 characters. Enter 0 to cancel.");
+        printf("String: ");
         
         inStr(&tmp);
         
@@ -601,6 +629,7 @@ int Strings(void) {
         
         while (1) {
             action = displayMenu(menu, 3);
+            
             if (action == 1)
                 break;
             
@@ -651,7 +680,7 @@ int Strings(void) {
     }
 }
 
-/*Helper Functions*/
+/** Helpers **/
 static int Message(char str[512]) {
     static char MESS[2048];
     static int num = 0;
@@ -675,15 +704,15 @@ static int Message(char str[512]) {
 }
 
 static int displayMenu(char menus[512][128], int len) {
-    char border[64] = "******************************";
-    int num;
+    char border[64] = "*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*";
+    int num, i;
     char *err;
     char str[4];
     
     printf("%s\n", border);
     
-    for (int i = 0; i < len; i++) {
-        printf("%d:\t%s\n", i + 1, menus[i]);
+    for (i = 0; i < len; i++) {
+        printf("%d: %s\n", i + 1, menus[i]);
     }
     
     printf("%s\n", border);
@@ -692,9 +721,9 @@ static int displayMenu(char menus[512][128], int len) {
     // If not, re-enter
     do {
         if (strcmp(str, ""))
-            printf("Select a number from given list:\t");
+            printf("Select a number from given list: ");
         else
-            printf("Which program you wish to run:\t");
+            printf("Which program you wish to run: ");
         
         scanf(" %3s", str);
         num = (int) strtol(str, &err, 10);
@@ -720,7 +749,6 @@ static int inInt() {
 static int inStr(char *str[128]) {
     char tmp[128];
     
-    //Terminal Skipping some input 
     scanf(" %[^\n]%*c", tmp);
     
     *str = tmp;
