@@ -8,7 +8,7 @@ static int USED = 0;
 
 /** 
  * It should be
- * int static ARR[SIZE] = {};
+ * static int ARR[SIZE] = {};
  * */
 static int ARR[512] = {0};
 
@@ -59,7 +59,13 @@ int main() {
 }
 
 int mainMenu(void) {
-    char menu[512][128] = {"Arithmetic", "Array", "Recursion", "String", "End the program"};
+    char menu[512][128] = {
+        "Arithmetic",
+        "Array",
+        "Recursion",
+        "String",
+        "End the program"
+    };
     int action;
     
     clrscr();
@@ -74,7 +80,7 @@ int mainMenu(void) {
         while (Arithmetic());
         
     if (action == 2)
-        Arrays();
+        while (Arrays());
         
     if (action == 3)
         while (Recursion());
@@ -314,7 +320,7 @@ static int Arrays_Two() { //Edit Array
     
     array_print(ARR, USED);
     
-    printf("\nWhich index value you wish to edit?.\nEnter 0 to cancel.\nNumber: ");
+    printf("\nWhich index you wish to edit?.\nEnter 0 to cancel.\nNumber: ");
     
     num = inInt();
     tmp = ARR[num - 1];
@@ -493,34 +499,35 @@ int Arrays(void) {
         "Back"
     };
     
-    while (1) {
-        clrscr();
+    
+    clrscr();
+    
+    printf("Welcome to Array World\n");
+    
+    if (Message(""))
+        printf("\n");
         
-        printf("Welcome to Array World\n");
-            
-        if (Message(""))
-            printf("\n");
+    printf("%d out of %d capacity has been used!\n", USED, SIZE);
         
-        printf("%d out of %d capacity has been used!\n", USED, SIZE);
+    action = displayMenu(menu, 5);
         
-        action = displayMenu(menu, 5);
+    // This is better than switch
+    if (action == 1)
+        while (Arrays_One()); //Add
         
-        // This is better than switch
-        if (action == 1)
-            while (Arrays_One()); //Add
+    if (action == 2)
+        while (Arrays_Two()); //Edit
+        
+    if (action == 3)
+        while (Arrays_Three()); //Delete
             
-        if (action == 2)
-            while (Arrays_Two()); //Edit
+    if (action == 4)
+        while (Arrays_Four()); //Print
             
-        if (action == 3)
-            while (Arrays_Three()); //Delete
-            
-        if (action == 4)
-            while (Arrays_Four()); //Print
-            
-        if (action == 5)
-            return 0; //To Main menu
-    }
+    if (action == 5)
+        return 0; //To Main menu
+    
+    return 1;
 }
 
 /*End Array Part*/
@@ -686,7 +693,7 @@ static int Message(char str[512]) {
     static int num = 0;
     
     if (!strcmp(str, "+clear")) {
-        sprintf(MESS, "%s", "");
+        CLEAE(MESS)
         num = 0;
         return 1;
     }
