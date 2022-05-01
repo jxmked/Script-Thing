@@ -3,14 +3,14 @@
 #include <stdlib.h>
 
 /*Global Variables*/
-static const int SIZE = 3;
-static int USED = 0;
+static const int SIZE = 5; //Min:1, Max: 511
+static int USED = 0; //System Variable
 
 /** 
  * It should be
  * static int ARR[SIZE] = {};
  * */
-static int ARR[512] = {0};
+static int ARR[512] = {0}; //System Database
 
 /*Declare Functions*/
 int mainMenu(void);
@@ -42,6 +42,7 @@ int main() {
     
     printf("Welcome User!\n");
     
+    printf("\nThe current max size of Database Array is %d\n", SIZE);
     /*Some Notes or Messages here */
     
     if (!Confirm("Do You Want to Continue?")) {
@@ -362,8 +363,8 @@ static int Arrays_Two() { //Edit Array
     
     CLEAR(str);
     
-    sprintf(str, "%s\n%d has been replaced with %d from index %d \n",str, tmp, newVal, num);
-    sprintf(str, "%sArray database has been change.\n", str);
+    sprintf(str, "%s\n%d has been replaced with %d from index %d",str, tmp, newVal, num);
+    sprintf(str, "\n%sArray database has been change.\n", str);
     
     Message(str);
     
@@ -405,7 +406,6 @@ static int Arrays_Three() { //Delete Value from Array
     targetNum = ARR[num - 1];
     
     sprintf(str, "Are you sure to delete index %d and its value %d?", num, targetNum);
-    
     if (!Confirm(str)) {
         Message("\nTransaction cancelled!\n");
         return 1;
@@ -582,7 +582,8 @@ int Recursion(void) {
             printf("Find the nth term of Fibonacci\n");
             
             do {
-                printf("Enter a number to find its sequence in Fibonacci.\nEnter 0 to back: ");
+                printf("Enter a number to find its sequence in Fibonacci.");
+                printf("\nEnter 0 to back: ");
                 
                 num = inInt();
                 
@@ -619,7 +620,8 @@ int Strings(void) {
         clrscr();
         
         printf("Welcome to String World!\n");
-        printf("Enter a string that would not exceeded to 128 characters. Enter 0 to cancel.");
+        printf("Enter a string that would not exceeded to 128 characters.");
+        printf("\nEnter 0 to cancel.");
         printf("String: ");
         
         inStr(&tmp);
@@ -646,7 +648,8 @@ int Strings(void) {
                 itmp = (int) strlen(strA);
                 
                 printf("Welcome to String World!\n");
-                printf("Enter a string that would not exceeded to 128 characters.\nString: ");
+                printf("Enter a string that would not exceeded to 128 characters.");
+                printf("\nString: ");
                 printf("%s\nString A length: %d\n\n", strA, itmp);
                 
                 printf("Enter second string to compare with.\nString: ");
@@ -678,7 +681,8 @@ int Strings(void) {
                 itmp = (int) strlen(strA);
                 
                 printf("Welcome to String World!\n");
-                printf("Enter a string that would not exceeded to 128 characters.\nString: ");
+                printf("Enter a string that would not exceeded to 128 characters.");
+                printf("\nString: ");
                 printf("%s\nString A length: %d\n\n", strA, itmp);
                 
                 continue;
@@ -693,7 +697,7 @@ static int Message(char str[512]) {
     static int num = 0;
     
     if (!strcmp(str, "+clear")) {
-        CLEAE(MESS)
+        CLEAR(MESS);
         num = 0;
         return 1;
     }
