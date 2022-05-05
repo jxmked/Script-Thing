@@ -10,9 +10,9 @@ n = 5
 # Method 1
 print("Method 1")
 
-for a in range(n): 
+for a in range(n - 1): 
     
-    for b in range(a + 1, n):
+    for b in range(a, n):
         print("   ", end="")
     
     for c in range(a):
@@ -44,13 +44,13 @@ print("\n*~*~*~*~*~*~*~*~*~*~*~*\n")
 # Method 2
 print("Method 2")
 
-for a in range(n):
+for a in range(n - 1):
     
-    print("   " * (n - a - 1), end="")
+    print("   " * (n - a), end="")
     
-    print(" * " * (a + 1), end="")
+    print(" * " * a, end="")
     
-    print(" * " * a)
+    print(" * " * (a + 1))
 
 
 for b in range(n):
