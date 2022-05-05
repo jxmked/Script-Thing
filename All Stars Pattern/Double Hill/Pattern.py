@@ -3,10 +3,29 @@
 """
 Double Hill Pattern
 """
+
+num = 5
+
+try:
+    try:
+        from sys import argv
+        
+        tmp = int(argv[1])
+        
+        if tmp % 2 == 0 or tmp <= 3:
+            raise Error("")
+            
+        num = tmp
+    except IndexError:
+        pass
+except:
+    print("Must be an Odd Integer\n")
+    
 print("")
 
+#### Begin ####
 
-n = 5
+n = num
 
 # Method 1
 print("Method 1")
