@@ -1,8 +1,8 @@
-# All Stars Pattern
+# Stars Pattern
 
 ***Written in Python***
 
-> I will rewrite those code in C language, soon.
+> I will rewrite this codes in C language, soon.
 
 Can be use as a demo and/or learning purposes only.
 
@@ -12,7 +12,7 @@ Also for personal use. 😁
 
 ***Figure:***
 
-> ```python
+> ```
 > *
 > *  *
 > *  *  *
@@ -26,7 +26,7 @@ Also for personal use. 😁
 
 ***Figure:***
 
-> ```python
+> ```
 > *  *  *  *  *
 > *  *  *  *
 > *  *  *
@@ -40,12 +40,26 @@ Also for personal use. 😁
 
 ***Figure:***
 
-> ```python
+> ```
 >                *
 >             *  *
 >          *  *  *
 >       *  *  *  *
 >    *  *  *  *  *
+> ```
+
+----
+
+### Right Sided Decreasing Triangle Pattern
+
+***Figure:***
+
+> ```
+>    *  *  *  *  *
+>       *  *  *  *
+>          *  *  *
+>             *  *
+>                *
 > ```
 
 ---- 
@@ -54,7 +68,7 @@ Also for personal use. 😁
 
 ***Figure:***
 
-> ```python
+> ```
 >                *
 >             *  *  *
 >          *  *  *  *  *
@@ -68,7 +82,7 @@ Also for personal use. 😁
 
 ***Figure:***
 
-> ```python
+> ```
 > *  *  *  *  *  *  *  *  *
 >    *  *  *  *  *  *  *
 >       *  *  *  *  *
@@ -82,7 +96,7 @@ Also for personal use. 😁
 
 ***Figure:***
 
-> ```python
+> ```
 >                *
 >             *  *  *
 >          *  *  *  *  *
@@ -92,6 +106,84 @@ Also for personal use. 😁
 >          *  *  *  *  *
 >             *  *  *
 >                *
+> ```
+
+---- 
+
+### Double Hill Pattern
+
+***Figure:***
+
+> ```
+>                *                             *
+>             *  *  *                       *  *  *
+>          *  *  *  *  *                 *  *  *  *  *
+>       *  *  *  *  *  *  *           *  *  *  *  *  *  *
+>    *  *  *  *  *  *  *  *  *     *  *  *  *  *  *  *  *  *
+> ```
+
+---- 
+
+### Butterfly Pattern
+
+***Figure:***
+
+> ```
+> *                       *
+> *  *                 *  *
+> *  *  *           *  *  *
+> *  *  *  *     *  *  *  *
+> *  *  *  *  *  *  *  *  *
+> *  *  *  *     *  *  *  *
+> *  *  *           *  *  *
+> *  *                 *  *
+> *                       *
+> ```
+
+---- 
+
+### Sand Glass Pattern
+
+***Figure:***
+
+> ```
+> null
+> ```
+
+---- 
+
+### Left Pascal's Triangle Pattern
+
+***Figure:***
+
+> ```
+> *
+> *  *
+> *  *  *
+> *  *  *  *
+> *  *  *  *  *
+> *  *  *  *
+> *  *  *
+> *  *
+> *
+> ```
+
+---- 
+
+### Right Pascal's Triangle Pattern
+
+***Figure:***
+
+> ```
+>             *
+>          *  *
+>       *  *  *
+>    *  *  *  *
+> *  *  *  *  *
+>    *  *  *  *
+>       *  *  *
+>          *  *
+>             *
 > ```
 
 ---- 

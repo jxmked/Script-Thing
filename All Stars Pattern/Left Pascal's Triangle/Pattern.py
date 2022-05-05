@@ -1,6 +1,7 @@
+#!/usr/bin/env python3
 
 """
-Increasing Triangle Pattern
+Left Pascal's Triangle Pattern
 """
 print("")
 
@@ -17,6 +18,15 @@ for x in range(n):
     
     print("")
 
+for x in range(n): 
+    
+    for y in range(x + 1, n):
+        print(" * ", end="")
+    
+    print("")
+
+
+
 
 print("\n*~*~*~*~*~*~*~*~*~*~*~*\n")
 
@@ -28,7 +38,8 @@ for x in range(n):
     
     print(" * " * (x + 1))
 
-
+for x in range(n):
+    print(" * " * (n - x - 1))
 
 
 print("")

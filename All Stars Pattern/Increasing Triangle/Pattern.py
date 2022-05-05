@@ -1,6 +1,7 @@
+#!/usr/bin/env python3
 
 """
-Decreasing Triangle Pattern
+Increasing Triangle Pattern
 """
 print("")
 
@@ -12,7 +13,7 @@ print("Method 1")
 
 for x in range(n): 
     
-    for y in range(x, n):
+    for y in range(x + 1):
         print(" * ", end="")
     
     print("")
@@ -26,13 +27,12 @@ print("Method 2")
 
 for x in range(n):
     
-    print(" * " * (n - x)))
+    print(" * " * (x + 1))
 
 
 
 
 print("")
-
 """
 Author: Jovan De Guia
 Github Username: jxmked
