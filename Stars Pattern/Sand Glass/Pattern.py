@@ -14,7 +14,7 @@ try:
         tmp = int(argv[1])
         
         if tmp % 2 == 0 or tmp <= 3:
-            raise Error("")
+            raise Exception("")
             
         num = tmp
     except IndexError:
