@@ -63,7 +63,20 @@ print("\n*~*~*~*~*~*~*~*~*~*~*~*\n")
 # Method 2
 
 print("Method 2")
-print("I tried and get tired 😢")
+
+for x in range(1, n):
+    
+    print(" * " * x, end="")
+    print("   " * ((n * 2) - (x * 2) - 1), end="")
+    print(" * " * x)
+
+print(" * " * ((n * 2) - 1))
+
+for x in range(n - 1, -1, - 1):
+    
+    print(" * " * x, end="")
+    print("   " * ((n * 2) - (x * 2) - 1), end="")
+    print(" * " * x)
 
 
 print("")
