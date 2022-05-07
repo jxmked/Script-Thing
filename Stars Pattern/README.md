@@ -8,6 +8,8 @@ Can be use as a demo and/or learning purposes only.
 
 Also for personal use. 😁
 
+```n = 5``` by default
+
 ### Increasing Triangle Pattern
 
 ***Figure:***

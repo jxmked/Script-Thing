@@ -4,56 +4,51 @@
 Butterfly Pattern
 """
 
-num = 5
+from sys import path
 
-try:
-    try:
-        from sys import argv
-        
-        tmp = int(argv[1])
-        
-        if tmp % 2 == 0 or tmp <= 3:
-            raise Exception("")
-            
-        num = tmp
-    except IndexError:
-        pass
-except:
-    print("Must be an Odd Integer\n")
-    
-print("")
+path.append("../.")
+
+
+from ConsoleNumInput import inInt
+
 
 #### Begin ####
 
-n = num
+n = inInt().getInput(5)
 
 # Method 1
 print("Method 1")
 
-for x in range(n): 
-    for y in range(x + 1):
-        if not (x == (n - 1) and y == (n - 1)):
-            print(" * ", end="")
+# Upper Part 
+for x in range(1, n): 
+    for y in range(x):
+        print(" * ", end="")
             
-    for y in range((x * 2) + 3, n * 2):
+    for y in range(((n * 2) - (x * 2)) - 1):
         print("   ", end="")
     
-    for y in range(x + 1):
+    for y in range(x):
         print(" * ", end="")
     
     print("")
 
-for x in range(n - 1): 
-    for y in range(x + 1, n):
+# Middle Part
+for x in range((n * 2) - 1):
+    print(" * ", end="")
+
+print("")
+
+# Lower Part. Printed in Reverse
+for x in range(n - 1, -1, -1): 
+    for y in range(x):
         print(" * ", end="")
-    
-    for y in range((x * 2) + 1):
+            
+    for y in range(((n * 2) - (x * 2)) - 1):
         print("   ", end="")
     
-    for y in range(x, n):
-        if not (y == n - 2):
-            print(" * ", end="")
-        
+    for y in range(x):
+        print(" * ", end="")
+    
     print("")
 
 
