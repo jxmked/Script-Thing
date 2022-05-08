@@ -5,7 +5,7 @@
 #include "../ConsoleNumInput.c"
 
 /**
- * Decreasing Triangle Pattern
+ * Reverse Hill Pattern
  * */
 
 static int loop(int n);
@@ -34,8 +34,16 @@ int main(void){
  int loop(int n){
     int i, j;
     
-    for(i = n; i > 0; i--){
-        for(j = 0; j < i; j++){
+   // printf(" * \n");
+    
+    for(i = 0; i < n; i++){
+        
+        
+        for(j = 0; j <= i; j++){
+            printf("   ");
+        }
+        
+        for(j = 1; j < (n - i) * 2; j++){
             printf(" * ");
         }
         

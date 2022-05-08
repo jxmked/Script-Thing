@@ -5,7 +5,7 @@
 #include "../ConsoleNumInput.c"
 
 /**
- * Decreasing Triangle Pattern
+ * Left Pascal's Triangle Pattern
  * */
 
 static int loop(int n);
@@ -32,10 +32,21 @@ int main(void){
 }
 
  int loop(int n){
-    int i, j;
+    int i, j, r;
     
-    for(i = n; i > 0; i--){
-        for(j = 0; j < i; j++){
+    /**
+     * I just want to make the block of code smaller
+     * 
+     * */
+    for(i = 0; i <= (n * 2); i++){
+        
+        r = i;
+        
+        if(i > n){
+            r = ((n * 2) - i);
+        }
+        
+        for(j = 0; j <= r; j++){
             printf(" * ");
         }
         
