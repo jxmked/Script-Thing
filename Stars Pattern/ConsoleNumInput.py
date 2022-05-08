@@ -19,14 +19,29 @@ class inInt:
         MustBe = [even, odd, none]
         Index of parameter
         """
+        
+        # Check if variable 'e' has valid parameter
+        if not e in (["none", "odd", "even"]):
+            raise Exception("Third parameter must be one of 'none', 'even', 'odd'")
+        
+        # Check if min is greater than or equal to max
+        if n >= x:
+            raise Exception("First and second parameter must be min & max, and not equal")
+        
         self.min = n
         self.max = x
         self.mustBe = e
         
         self.index = i
         
+        
     
     def getInput(self, de, pos=-1):
+        """
+        let to raise the error without handling it.
+        Just to stop the execution.
+        """
+        
         try:
             index = self.index
             
