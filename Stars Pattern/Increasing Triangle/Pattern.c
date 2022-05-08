@@ -5,7 +5,7 @@
 #include "../ConsoleNumInput.c"
 
 /**
- * Butterfly Pattern
+ * Increasing Triangle Pattern
  * */
 
 static int loop(int n);
@@ -35,36 +35,6 @@ int main(void){
     int i, j;
     
     for(i = 0; i < n; i++){
-        for(j = 0; j < (i + 1); j++){
-            printf(" * ");
-        }
-        
-        for(j = (i * 2); j < ((n * 2) - 1); j++){
-            printf("   ");
-        }
-        
-        for(j = 0; j < (i + 1); j++){
-            printf(" * ");
-        }
-        
-        printf("\n");
-    }
-    
-    for(i = 0; i < ((n * 2) + 1); i++){
-        printf(" * ");
-    }
-    
-    printf("\n");
-    
-    for(i = n - 1; i >= 0; i--){
-        for(j = 0; j < (i + 1); j++){
-            printf(" * ");
-        }
-        
-        for(j = (i * 2); j < ((n * 2) - 1); j++){
-            printf("   ");
-        }
-        
         for(j = 0; j < (i + 1); j++){
             printf(" * ");
         }
