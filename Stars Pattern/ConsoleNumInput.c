@@ -32,7 +32,8 @@ static int inInt(void) {
     printf("\n\n\n");
     
     
-    printf("Enter a number to resize the output or enter [0, exit, quit] to exit");
+    printf("Enter a number to resize the output or\n");
+    printf("enter [0, exit, quit] or use CTRL + C to exit");
     
     do {
         printf("\nNumber: ");
