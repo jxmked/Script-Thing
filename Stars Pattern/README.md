@@ -1,8 +1,7 @@
 # Stars Pattern
 
 ***Written in Python***
-
-> I will rewrite this codes in C language, soon.
+***Written in C***
 
 Can be use as a demo and/or learning purposes only.
 
