@@ -198,6 +198,9 @@ Also for personal use. 😁
 
 ---- 
 
+> With Python in Console, you can try with different size like
+> ```python3 pattern.py 7```
+
 ___Making coffee...___
 
 
