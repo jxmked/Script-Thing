@@ -5,7 +5,8 @@
 #ifndef ININT_H
 #define ININT_H
 
-static int inInt(void);
+int inInt(void);
+void clrscr(void);
 
 #endif
 
@@ -14,23 +15,23 @@ static int inInt(void);
 static int exitMode(char *str);
 
 /**
- * This is design for specific feature
+ * This is design for specific program
  * 
  * Feature:
  * - Check if the input is string or integer
- * - exit when the input value is "Exit" or "Quit"
+ * - Exit when the input value is "Exit" or "Quit"
+ * - Validate input integer value from min to max
  * 
  * */
  
-static int inInt(void) {
+int inInt(void) {
     int num;
     char str[8];
     char *err;
     
     int min = 3, max = 99;
     
-    printf("\n\n\n");
-    
+    printf("\n\n");
     
     printf("Enter a number to resize the output or\n");
     printf("enter [0, exit, quit] or use CTRL + C to exit");
@@ -68,7 +69,7 @@ static int exitMode(char *str){
     return 0;
 }
 
-static void clrscr(void){
+void clrscr(void){
     system("clear");
 }
 /**
