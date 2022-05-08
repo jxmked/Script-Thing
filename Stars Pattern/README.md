@@ -1,6 +1,7 @@
 # Stars Pattern
 
 ***Written in Python***
+
 ***Written in C***
 
 Can be use as a demo and/or learning purposes only.
