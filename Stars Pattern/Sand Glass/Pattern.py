@@ -24,38 +24,33 @@ I tried a lot of things but the solution that I found
 is about spacing 🤦‍♂️
 
 """
-for x in range(0, n):
-    for p in range(0, x):
-        print(" ", end="")
-    
-    for y in range(x, n):
-        print("* ", end="")
-    
-    print()
 
-for x in range(n - 2, -1, -1):
-    for y in range(0, x):
-        print(" ", end="")
-    
-    for y in range(x, n):
-        print("* ", end="")
+for x in range(0, (n * 2) + 1):
+    r = x
+    if x > n:
+        r = (n - (x - n))
         
-    print()
+    for y in range(0, r):
+        print("   ", end="")
+    
+    for y in range(0, ((n - r) * 2) + 1):
+        print(" * ", end="")
+    
+    print("")
+    
 
 print("\n*~*~*~*~*~*~*~*~*~*~*~*\n")
-
 
 # Method 2
 print("Method 2")
 
-for x in range(0, n):
-    print(" " * x, end="")
-    print("* " * (n - x))
+for x in range(0, (n * 2) + 1):
+    r = x
+    if x > n:
+        r = (n - (x - n))
     
-
-for x in range(n - 2, -1, -1):
-    print(" " * x, end="")
-    print("* " * (n - x))
+    print("   " * r, end="")
+    print(" * " * (((n - r) * 2) + 1))
     
 
 print("")
