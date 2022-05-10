@@ -23,28 +23,26 @@ function exitMode(){
 }
 
 function getInput(){
+    echo ""
     
     while [ 1 ]; do
+        
         echo "Enter a number to resize the output or"
         echo "enter [0, exit, quit] or use CTRL + C to exit"
         
-        read -p "Input: " val
+        read -p "Input: " ARG
         
-        exitMode $val
+        exitMode $ARG
         
-        val=$($val + 1)
-        if [[ $val -gt $($MIN + 1) && $($MAX + 1) -gt $val ]]; then
-            
-            echo "Done"
-            break
+        val=$((val + 1))
+        
+        if [[ "$ARG" -ge "$MIN" && "$MAX" -ge "$ARG" ]]; then
+            return $ARG
         fi
+        
         echo
         echo "Input must be greater and less than or equal to ${MIN} and ${MAX}"
         
     done
     
-    echo "Done"
 }
-
-
-getInput 0

@@ -14,7 +14,7 @@ from ConsoleNumInput import inInt
 
 #### Begin ####
 
-n = inInt().getInput(5)
+n = inInt().getInput(5) - 3
 
 # Method 1
 print("Method 1")

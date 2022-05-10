@@ -2,20 +2,19 @@
 
 # Butterfly Pattern
 
-. play.sh
+. ConsoleNumInput.sh
 
-read -p "username : " user_var
-
-
-function loop(){
-    echo 
-}
-
-
-
+N=5
 
 while [ 1 ]; do
-    fuck
+    I=0
+    
+    while [[ "$I" -lt "$N" ]]; do
+        
+        
+        ((I++))
+    done
+    
+    getInput 0
     N=$?
-    echo $N
 done
