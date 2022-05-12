@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Right Sided Decreasing Triangle Pattern
+# Left Pascal's Triangle Pattern
 
 . ../ConsoleNumInput.sh
 
@@ -11,16 +11,13 @@ while [ 1 ]; do
     
     clear
     
-    while [[ "$I" -le "$N" ]]; do
+    while [[ "$I" -le "$((N * 2))" ]]; do
         
-        J=$((N - I)) # Max to min
+        J=$I
         
-        X=$((N - J))
-        
-        while [[ "$X" -gt 0 ]]; do
-            printf "   "
-            ((X--))
-        done
+        if [[ "$I" -ge "$N" ]]; then
+            J=$((((N * 2) - I))) # Max to min
+        fi
         
         while [[ "$J" -ge "0" ]]; do
             printf  " * "

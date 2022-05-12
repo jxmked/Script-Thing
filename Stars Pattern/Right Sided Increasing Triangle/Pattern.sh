@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Right Sided Decreasing Triangle Pattern
+# Right Sided Increasing Triangle Pattern
 
 . ../ConsoleNumInput.sh
 
@@ -13,7 +13,7 @@ while [ 1 ]; do
     
     while [[ "$I" -le "$N" ]]; do
         
-        J=$((N - I)) # Max to min
+        J=$I
         
         X=$((N - J))
         
