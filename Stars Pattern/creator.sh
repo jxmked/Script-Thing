@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Right Sided Decreasing Triangle Pattern
+# Hill Pattern
 
 . ../ConsoleNumInput.sh
 
@@ -11,28 +11,41 @@ while [ 1 ]; do
     
     clear
     
-    while [[ "$I" -le "$N" ]]; do
+    M=$((N * 2))
+    
+    while [[ "$I" -le "$M" ]]; do
         
         J=$((N - I)) # Max to min
         
-        X=$((N - J))
+        if [[ "$N" -lt "$I" ]]; then
+            J=$((I - N))
+        fi
         
-        while [[ "$X" -gt 0 ]]; do
-            printf "   "
-            ((X--))
+        S=$((N - J))
+        while [[ "$S" -ge "0" ]]; do
+            printf  " * "
+            ((S--))
         done
         
-        while [[ "$J" -ge "0" ]]; do
+        
+        while [[ "$J" -gt "$N" ]]; do
+            printf "   "
+            ((J++))
+        done        
+        
+        S=$((N - J))
+        while [[ "$S" -gt "0" ]]; do
             printf  " * "
-            ((J--))
+            ((S--))
         done
         
         ((I++))
         echo ""
     done
     
-    getInput 0
-    N=$?
+   # getInput 0
+   # N=$?
+   exit 0
 done
 
 # # # # # # # # # # # # # # #
