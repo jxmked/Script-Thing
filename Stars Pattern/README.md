@@ -4,6 +4,8 @@
 
 ***Written in C***
 
+***Written in Shell***
+
 Can be use as a demo and/or learning purposes only.
 
 Also for personal use. 😁
