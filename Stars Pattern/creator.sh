@@ -22,19 +22,22 @@ while [ 1 ]; do
         fi
         
         S=$((N - J))
+        
+       # echo "$S | $J"
         while [[ "$S" -ge "0" ]]; do
             printf  " * "
             ((S--))
         done
         
+        X=$(((J * 2)))
         
-        while [[ "$J" -gt "$N" ]]; do
-            printf "   "
-            ((J++))
+        while [[ "$X" -gt "0" ]]; do
+            printf " - "
+            ((X--))
         done        
         
-        S=$((N - J))
-        while [[ "$S" -gt "0" ]]; do
+        S=$(((N - J) - 1))
+        while [[ "$S" -ge "0" ]]; do
             printf  " * "
             ((S--))
         done

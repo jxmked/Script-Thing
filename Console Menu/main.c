@@ -16,7 +16,7 @@ static int ARR[512] = {0}; //System Database
 int mainMenu(void);
 int Arithmetic(void);
 int Arrays(void);
-int Recursion(void); /**/
+int Recursion(void);
 int Strings(void);
 
 /*Helpers*/
@@ -24,7 +24,7 @@ static int Message(char str[512]);
 static int displayMenu(char arr[512][128], int len);
 static int Confirm(char str[64]);
 static int inInt(void);
-static int inStr(char *str[128]);
+// static int inStr(char str[128]);
 static void array_print(int arr[512], int len);
 
 /**
@@ -44,6 +44,9 @@ int main() {
     
     printf("\nThe current max size of Database Array is %d\n", SIZE);
     /*Some Notes or Messages here */
+    
+    printf("\nConsole Menu written by Jovan De Guia.");
+    printf("\nGithub Username: jxmked\n");
     
     if (!Confirm("Do You Want to Continue?")) {
         printf("Goodbye!\n");
@@ -607,7 +610,7 @@ int Recursion(void) {
 int Strings(void) {
     int action, itmp;
     char strA[128], strB[128], boolStr[8];
-    char *tmp;
+    char tmp[128];
     
     char menu[512][128] = {
         "Re-enter first string",
@@ -615,22 +618,23 @@ int Strings(void) {
         "Back"
     };
     
-    //Some compiler trigger an error when printing strlen with size_t type of value.
     while (1) {
         clrscr();
         
         printf("Welcome to String World!\n");
-        printf("Enter a string that would not exceeded to 128 characters.");
+        printf("Enter a string that would not exceeded to 127 characters.");
         printf("\nEnter 0 to cancel.");
-        printf("String: ");
+        printf("\nString: ");
         
-        inStr(&tmp);
+        scanf(" %[^\n]%*c", tmp);
         
         sprintf(strA, "%s", tmp);
         
-        if(!strcmp(strA, "0")) {
+        
+        if(strcmp(strA, "0") == 0) {
             return 0;
         }
+        
         
         itmp = (int) strlen(strA);
         
@@ -654,7 +658,9 @@ int Strings(void) {
                 
                 printf("Enter second string to compare with.\nString: ");
                 
-                inStr(&tmp);
+                scanf(" %[^\n]%*c", tmp);
+        
+               // inStr(&tmp);
                 
                 sprintf(strB, "%s", tmp);
                 
@@ -684,8 +690,6 @@ int Strings(void) {
                 printf("Enter a string that would not exceeded to 128 characters.");
                 printf("\nString: ");
                 printf("%s\nString A length: %d\n\n", strA, itmp);
-                
-                continue;
             } 
         }
     }
@@ -757,16 +761,21 @@ static int inInt() {
     return num;
 }
 
-static int inStr(char *str[128]) {
+/** 
+ * Having an issue while returning the string
+static int inStr(char str[128]) {
     char tmp[128];
     
     scanf(" %[^\n]%*c", tmp);
     
-    *str = tmp;
+    
+    puts(tmp);
+    *str = tmp; 
+    
     
     return 1;
 }
-
+*/
 static int Confirm(char str[64]) {
     char ans;
     
