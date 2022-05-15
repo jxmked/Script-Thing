@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Butterfly Pattern
+# Reverse Hill Pattern
 
 . ../ConsoleNumInput.sh
 
@@ -12,63 +12,21 @@ while [ 1 ]; do
     A=1
     while [[ "$A" -lt "$N" ]]; do
         
-        B=0
+        B=1
         while [[ "$B" -lt "$A" ]]; do
-            printf " * "
+            printf "   "
             ((B++))
         done
         
         B=0
         C=$((((N - A) * 2) - 1))
         while [[ "$B" -lt "$C" ]]; do
-            printf "   "
-            ((B++))
-        done
-        
-        B=0
-        while [[ "$B" -lt "$A" ]]; do
             printf " * "
             ((B++))
         done
         
         echo ""
-        
         ((A++))
-    done
-    
-    A=0
-    while [[ "$A" -lt "$((N * 2 - 1))" ]]; do
-        printf " * "
-        ((A++))
-    done
-    
-    echo ""
-    
-    A=$((N - 1))
-    while [[ "$A" -gt "0" ]]; do
-        
-        B=0
-        while [[ "$B" -lt "$A" ]]; do
-            printf " * "
-            ((B++))
-        done
-        
-        B=0
-        C=$((((N - A) * 2) - 1))
-        while [[ "$B" -lt "$C" ]]; do
-            printf "   "
-            ((B++))
-        done
-        
-        B=0
-        while [[ "$B" -lt "$A" ]]; do
-            printf " * "
-            ((B++))
-        done
-        
-        echo ""
-        
-        ((A--))
     done
     
     getInput 0
