@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Hill Pattern
+# Sand Glass Pattern
 
 . ../ConsoleNumInput.sh
 
@@ -11,11 +11,15 @@ while [ 1 ]; do
     
     clear
     
-    while [[ "$I" -le "$N" ]]; do
+    while [[ "$I" -le "$((N * 2))" ]]; do
         
-        X=$((N - I)) # Max to min
+        X=$I
+        J=$(((N - I) * 2))
         
-        J=$((I * 2))
+        if [[ "$I" -gt "$N" ]]; then
+            X=$((N - (I - N))) # Max to min
+            J=$(((I - N) * 2))
+        fi
         
         while [[ "$X" -gt "0" ]]; do
             printf "   "

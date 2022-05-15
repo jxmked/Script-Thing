@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Hill Pattern
+# Double Hill Pattern
 
 . ../ConsoleNumInput.sh
 
@@ -27,6 +27,18 @@ while [ 1 ]; do
             ((J--))
         done
         
+        X=$(((N - I) * 2)) # Max to min
+        
+        while [[ "$X" -gt "0" ]]; do
+            printf "   "
+            ((X--))
+        done
+        
+        J=$((I * 2))
+        while [[ "$J" -ge "0" ]]; do
+            printf  " * "
+            ((J--))
+        done
         ((I++))
         echo ""
     done
