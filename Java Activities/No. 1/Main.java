@@ -15,13 +15,27 @@ public class Main {
             System.out.println("Ended");
             System.exit(0);
         }
+        
         while(true){
-            
             switch(Menu()){
                 case 1:
                     // Display Multiplication Table
-                    while(DisplayMultTbl());
+                    int n = 10;
+                    
+                    do {
+                        clrscr();
+                        System.out.println("Multiplication Table (1-10)");
+                        System.out.println("Printing...\n");
+                        
+                        for(int i = 1; i <= n; i++){
+                            for(int j = 1; j <= 10;j++){
+                                System.out.println(String.format("%d * %d = %d", i, j, i * j));
+                           }
+                           System.out.println("*-*~*-*~*-*~*-*~*-*~*-*~*-*~*-*\n");
+                        }
+                    } while(Confirm("\nGo back to main menu?") == false);
                     break;
+                
                 case 2:
                     // Check if number is Even or Odd
                     int num;
@@ -57,18 +71,21 @@ public class Main {
                         clrscr();
                         System.out.println("Pyramid with 10 layers of asterisk\n");
                         
-                        for(int i = 0; i < 10; i++){
-                            for(int j = 0; j < (10 - i + 1); j++){
-                                System.out.print("   ");
+                        for(int i = 1; i <= 10; i++){
+                            for(int j = 0; j < (10 - i); j++){
+                                System.out.print(" ");
                             }
                             
                             for(int k = 0; k < i; k++){
-                                System.out.print(" * ");
+                                System.out.print("* ");
                             }
+                            
+                            System.out.println("");
                         }
                         
                     } while(Confirm("\nGo back to main menu?") == false);
                     break;
+                
                 case 4:
                     if(Confirm("\nDo you want to exit?")){
                         System.out.println("Ended");
@@ -78,21 +95,7 @@ public class Main {
             }  
         } 
     }
-    public static boolean DisplayMultTbl(){
-        int num = 10;
-        clrscr();
-        System.out.println("Multiplication Table (1-10)");
-        System.out.println("Printing...\n");
-        
-        for(int i = 1; i <= num; i++){
-            for(int j = 1; j <= 10;j++){
-                System.out.println(String.format("%d * %d = %d", i, j, i * j));
-           }
-           System.out.println("*-*~*-*~*-*~*-*~*-*~*-*~*-*~*-*\n");
-        }
-        
-        return Confirm("\nGo back to main menu?") == false;
-    }
+    
     public static int Menu(){
         /** Menu **/
         clrscr();
@@ -120,8 +123,6 @@ public class Main {
             }
         } while(true);
     }
-    
-    
     
     public static boolean Confirm(String str) {
         System.out.print(str);
