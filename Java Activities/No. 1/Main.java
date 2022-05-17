@@ -46,20 +46,16 @@ public class Main {
                         
                         System.out.println("Check if the number is even or odd");
                         
-                        System.out.println("Enter a number: ");
+                        System.out.print("Enter a number: ");
                         num = inInt();
                         
                         if(num <= 0){
                             continue;
                         }
                         
-                        if(num % 2 == 0){
-                            res = "Even";
-                        }else{
-                            res = "Odd";
-                        }
+                        res = (num % 2 == 0) ? "Even" : "Odd";
                         
-                        System.out.println(String.format("Number %d is %s", num, res));
+                        System.out.println(String.format("\nNumber %d is %s", num, res));
                             
                     } while(Confirm("\nGo back to main menu?") == false);
                     break;
@@ -108,40 +104,40 @@ public class Main {
         System.out.println("D. Exit the program");
         System.out.println("*~*~*~*~*~*~*~*~*~*~*~*~*~*\n");
         
-        
         char[] letters = { 'a', 'b', 'c', 'd' };
-        
-        do {
+        char nl;
+        while(true){
             System.out.print("Letter: ");
             
-            char nl = Character.toLowerCase(inChar());
+            nl = Character.toLowerCase(inChar());
                 
             for(int i = 0; i < letters.length; i++){
                 if(nl == letters[i]){
                     return i + 1;
                 }
             }
-        } while(true);
+        }
     }
     
     public static boolean Confirm(String str) {
         System.out.print(str);
         
-        do {
+        while(true) {
             try{
                 System.out.print("\n[Y/n]: ");
                 switch(inChar()){
                     case 'y':
                     case 'Y':
                         return true;
-                        
+                    
                     case 'n':
                     case 'N':
                         return false;
                 }
             } catch(Exception err) {}
-        } while(true);
+        }
     }
+    
     public static void clrscr() {
         /**
          * From Stackoverflow and has been modified
@@ -166,37 +162,45 @@ public class Main {
     public static int inInt(){
         while(true){
             try {
-                String str; 
-                // For outside of an IDE
-                str = String.valueOf(System.console().readLine());
-                
-                /** For others
-                // str = String.valueOf(new BufferedReader(new InputStreamReader(System.in)).readLine());
-                
-                Scanner sc = new Scanner(System.in, "UTF-8");
-                str = String.valueOf(sc.readLine());
-                sc.close();
-                * */ 
-                
-                return Integer.parseInt(str);
+                return Integer.parseInt(inStr());
             } catch(Exception e){
                 // e.printStackTrace();
             }
         }
     }
+    
     public static char inChar(){
-        
-        // For outside of an IDE
-        return System.console().readLine().charAt(0);
-        
-        /** For others
-        // return new BufferedReader(new InputStreamReader(System.in)).readLine().charAt(0);
-        
-        Scanner sc = new Scanner(System.in, "UTF-8");
-        char res = sc.readLine().charAt(0);
-        sc.close();
-        return res; */
-        
+        return inStr().charAt(0);
+    }
+    
+    public static String inStr(){
+        String str = null;
+        try {
+            /**
+             * If one of the input doesn't work, you can select
+             * another methods.
+             * 
+             * Note: Uncomment the library/package first.
+             * */
+            // For outside of an IDE.
+            // A
+            str = String.valueOf(System.console().readLine());
+            
+            /** For others
+            // B
+            str = String.valueOf(new BufferedReader(new InputStreamReader(System.in)).readLine());
+            
+            // C
+            Scanner sc = new Scanner(System.in, "UTF-8");
+            str = String valueOf(sc.readLine());
+            sc.close();
+            */
+        } catch(Exception e){
+            e.printStackTrace();
+            System.out.println("Something went wrong.");
+            System.exit(0);
+        }
+        return str;
     }
 }
 
