@@ -152,6 +152,7 @@ public class Main {
                 Runtime.getRuntime().exec("cls");
             } else {
                 Runtime.getRuntime().exec("clear");
+                // Works on my terminal
                 System.out.print("\033\143"); //For Linux
             }
         } catch (final Exception e) {
