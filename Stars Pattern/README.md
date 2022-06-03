@@ -205,8 +205,8 @@ Also for personal use. 😁
 > With Python in Console, you can try with different size like
 > ```python3 pattern.py 7```
 
-___Making coffee...___
 
+----
 
 ****Enjoy****
 #### Written by Jovan De Guia
@@ -215,5 +215,6 @@ ___Making coffee...___
 
 - [Github](https://github.com/jxmked)
 - [Facebook](https://www.facebook.com/deguia25)
+- [Buy me a Coffee](https://www.buymeacoffee.com/jxmked)
 
 ### License under MIT License

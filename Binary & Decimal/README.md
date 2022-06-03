@@ -105,12 +105,15 @@ Watch this tutorial video: `https://youtu.be/rsxT4FfRBaM`
 > Decimal with decimal places like 97.75 is from [RapidTables.com](https://www.rapidtables.com/convert/number/decimal-to-binary.html)
 > and I think I figured it out how those things work so I try to implement it and try to run the code if its meet your expectation.
 
+----
+
 ****Enjoy****
-#### Develop by Jovan De Guia
+#### Written by Jovan De Guia
 
 ## Socials
 
 - [Github](https://github.com/jxmked)
 - [Facebook](https://www.facebook.com/deguia25)
+- [Buy me some Coffee](https://www.buymeacoffee.com/jxmked)
 
 ### License under MIT License

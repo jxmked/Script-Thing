@@ -15,6 +15,8 @@ Create a program that will display a selection menu of...
 > ___This idea is from a question from Facebook post.___
 
 
+----
+
 ****Enjoy****
 #### Written by Jovan De Guia
 
@@ -22,5 +24,6 @@ Create a program that will display a selection menu of...
 
 - [Github](https://github.com/jxmked)
 - [Facebook](https://www.facebook.com/deguia25)
+- [Buy me some Coffee](https://www.buymeacoffee.com/jxmked)
 
 ### License under MIT License
