@@ -34,7 +34,7 @@ class ConsoleInput:
         self.max = self.inInt(self.min + 2, 10000)
         
         if self.len >= self.max - self.min:
-            print("\nWith Length of {} and Selection Range of {} is automatically generate duplicated integer".format(self.len, self.max - self.min))
+            print("\nIf the length is Greater than Selection Range it will automatically generate duplicated integer")
             self.isUnique = False
             
             try:

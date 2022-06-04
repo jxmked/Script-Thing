@@ -5,14 +5,14 @@ import time
 class Timer:
     
     def start(self):
-        self.s = round(time.time() * 1000)
+        self.s = time.time() * 1000
     
     def end(self):
-        self.e = round(time.time() * 1000)
+        self.e = time.time() * 1000
         
     
     def printLapse(self, m):
-        print("{}: {}ms".format(m, self.e - self.s))
+        print("{}: {:.2f}s".format(m, self.e - self.s))
     
 
 
