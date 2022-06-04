@@ -26,10 +26,9 @@ def SortingAlgo(arr):
                 tmp = b
             
         
-        print(arr,end="\n\n")
-        
         # Swap
         arr[a], arr[tmp] = arr[tmp], arr[a]
+        print(arr,end="\n\n")
         
 # End Sorting Algorithm
 

@@ -33,9 +33,19 @@ class ConsoleInput:
         
         self.max = self.inInt(self.min + 2, 10000)
         
-        # Get If Unique
-        print("\nInteger Must Be Unique?")
-        self.isUnique = self.Confirm("Is Unqiue?")
+        if self.len >= self.max - self.min:
+            print("\nWith Length of {} and Selection Range of {} is automatically generate duplicated integer".format(self.len, self.max - self.min))
+            self.isUnique = False
+            
+            try:
+                input("\nPress enter to continue.")
+            except KeyboardInterrupt:
+                print("\nProgram Terminated")
+                exit(0)
+        else:
+            # Get If Unique
+            print("\nInteger Must Be Unique?")
+            self.isUnique = self.Confirm("Is Unqiue?")
         
     
     def Generate(self):
@@ -63,19 +73,24 @@ class ConsoleInput:
                 if val >= n and val <= x:
                     return val
             except ValueError:
-                # We Can Terminate the Program With ctrl + c
                 pass
+            except KeyboardInterrupt:
+                print("\nProgram Terminated")
+                exit(0)
         
     def Confirm(self, m):
         while True:
-            x = input("{} [Y/n]: ".format(m))
-            
-            if x == "y" or x == "Y":
-                return True
-            
-            if x == "n" or x == "N":
-                return False
-    
+            try:
+                x = input("{} [Y/n]: ".format(m))
+                
+                if x == "y" or x == "Y":
+                    return True
+                
+                if x == "n" or x == "N":
+                    return False
+            except KeyboardInterrupt:
+                print("\nProgram Terminated")
+                exit(0)
 
 """
 Author: Jovan De Guia

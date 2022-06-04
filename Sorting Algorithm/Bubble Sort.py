@@ -20,12 +20,12 @@ def printArr(arr):
 def SortingAlgo(arr):
     for a in range(len(arr)):
         
-        print(arr,end="\n\n")
         
         for b in range(0, len(arr) - a - 1):
             if arr[b] > arr[b + 1]:
                 # Swap
                 arr[b], arr[b + 1] = arr[b + 1], arr[b]
+                print(arr,end="\n\n")
         
 # End Sorting Algorithm
 
