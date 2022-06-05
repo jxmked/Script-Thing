@@ -12,7 +12,7 @@ class Timer:
         
     
     def printLapse(self, m):
-        print("{}: {:.2f}s".format(m, self.e - self.s))
+        print("{}: {:.2f}ms".format(m, self.e - self.s))
     
 
 

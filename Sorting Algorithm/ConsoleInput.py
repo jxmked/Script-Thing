@@ -53,10 +53,10 @@ class ConsoleInput:
         
         # Selection Array
         numArr = []
-        for x in range(self.min, self.max):
+        for x in range(self.min, self.max + 1):
             numArr.append(x)
             
-        for i in range(self.len - 1):
+        for i in range(self.len):
             index = randint(0, len(numArr) - 1)
             arr.append(numArr[index])
             
