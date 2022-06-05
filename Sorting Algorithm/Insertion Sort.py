@@ -4,8 +4,8 @@ from sys import path
 
 path.append(".")
 
-from ConsoleInput import ConsoleInput
-from Timer import Timer
+from __ConsoleInput import ConsoleInput
+from __Timer import Timer
 
 # Insertion Sort
 

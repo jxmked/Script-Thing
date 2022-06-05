@@ -4,8 +4,8 @@ from sys import path
 
 path.append(".")
 
-from ConsoleInput import ConsoleInput
-from Timer import Timer
+from __ConsoleInput import ConsoleInput
+from __Timer import Timer
 
 # Merge Sort
 
@@ -21,13 +21,14 @@ def SortingAlgo(arr):
     if len(arr) == 1:
         return
     
-    mid = len(arr) // 2
+    mid = int(len(arr) / 2)
     
     r = arr[mid:]
     l = arr[:mid]
     
     SortingAlgo(r)
     SortingAlgo(l)
+    
     a = 0
     b = 0
     c = 0
