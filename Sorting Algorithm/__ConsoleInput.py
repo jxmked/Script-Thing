@@ -20,8 +20,14 @@ class ConsoleInput:
         
         # Get the Length of an Array
         print("Length of an Array. Min 1 & Max 1,000")
+        print("Type 'rerun' to rerun the last inputs")
         
-        self.len = self.inInt(1, 1000)
+        res = self.isRerun(1, 1000)
+        
+        if res == True:
+            return
+        
+        self.len = res
         
         # Get the Minimum Integer
         print("\nMinimum Integer. Min 0 & Max 10,000")
@@ -33,7 +39,7 @@ class ConsoleInput:
         
         self.max = self.inInt(self.min + 2, 10000)
         
-        if self.len >= self.max - self.min:
+        if self.len > (self.max - self.min) - 1:
             print("\nIf the length is Greater than Selection Range it will automatically generate duplicated integer")
             self.isUnique = False
             
@@ -47,6 +53,23 @@ class ConsoleInput:
             print("\nInteger Must Be Unique?")
             self.isUnique = self.Confirm("Is Unqiue?")
         
+    def isRerun(self, n, x):
+        while True:
+            try:
+                val = input("Number | Keyword: ")
+                
+                if val.lower() == 'rerun':
+                    return True
+                 
+                val = int(val)
+                if val >= n and val <= x:
+                    return val
+            except ValueError:
+                pass
+            except KeyboardInterrupt:
+                print("\nProgram Terminated")
+                exit(0)
+        
     
     def Generate(self):
         arr = []
@@ -58,10 +81,11 @@ class ConsoleInput:
             
         for i in range(self.len):
             index = randint(0, len(numArr) - 1)
-            arr.append(numArr[index])
             
             if self.isUnique:
-                numArr.pop(index)
+                arr.append(numArr.pop(index))
+            else:
+                arr.append(numArr[index])
         
         return arr
     
