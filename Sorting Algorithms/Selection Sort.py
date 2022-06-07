@@ -32,7 +32,7 @@ def SortingAlgo(arr):
         
 # End Sorting Algorithm
 
-obj = CI({
+obj = ConsoleInput({
     "length" : 10,
     "min" : 1,
     "max" : 10,

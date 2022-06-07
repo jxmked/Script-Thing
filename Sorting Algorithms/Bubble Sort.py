@@ -20,16 +20,15 @@ def printArr(arr):
 def SortingAlgo(arr):
     for a in range(len(arr)):
         
-        
         for b in range(0, len(arr) - a - 1):
             if arr[b] > arr[b + 1]:
-                # Swap
+                
                 arr[b], arr[b + 1] = arr[b + 1], arr[b]
                 print(arr,end="\n\n")
         
 # End Sorting Algorithm
 
-obj = CI({
+obj = ConsoleInput({
     "length" : 10,
     "min" : 1,
     "max" : 10,
