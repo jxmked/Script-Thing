@@ -1,4 +1,4 @@
-# Sorting Algorithm
+# Sorting Algorithms
 
 ***Written in Python***
 
