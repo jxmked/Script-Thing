@@ -43,11 +43,8 @@ class ConsoleInput:
             print("\nIf the length is Greater than Selection Range it will automatically generate duplicated integer")
             self.isUnique = False
             
-            try:
-                input("\nPress enter to continue.")
-            except KeyboardInterrupt:
-                print("\nProgram Terminated")
-                exit(0)
+            self.inStr("\nPress enter to continue.")
+            
         else:
             # Get If Unique
             print("\nInteger Must Be Unique?")
@@ -56,8 +53,7 @@ class ConsoleInput:
     def isRerun(self, n, x):
         while True:
             try:
-                val = input("Number | Keyword: ")
-                
+                val = self.inStr("Number | Keyword: ")
                 if val.lower() == 'r':
                     return True
                  
@@ -66,9 +62,6 @@ class ConsoleInput:
                     return val
             except ValueError:
                 pass
-            except KeyboardInterrupt:
-                print("\nProgram Terminated")
-                exit(0)
         
     
     def Generate(self):
@@ -89,32 +82,33 @@ class ConsoleInput:
         
         return arr
     
+    def inStr(self, m):
+        try:
+            return input(m)
+        except KeyboardInterrupt:
+            print("\nProgram Terminated")
+            exit(0)
+        
     def inInt(self, n, x):
         while True:
             try:
-                val = int(input("Number: "))
+                val = int(self.inStr("Number: "))
                 
                 if val >= n and val <= x:
                     return val
             except ValueError:
                 pass
-            except KeyboardInterrupt:
-                print("\nProgram Terminated")
-                exit(0)
         
     def Confirm(self, m):
         while True:
-            try:
-                x = input("{} [Y/n]: ".format(m))
-                
-                if x == "y" or x == "Y":
-                    return True
-                
-                if x == "n" or x == "N":
-                    return False
-            except KeyboardInterrupt:
-                print("\nProgram Terminated")
-                exit(0)
+            x = self.inStr("{} [Y/n]: ".format(m))
+            
+            if x == "y" or x == "Y":
+                return True
+            
+            if x == "n" or x == "N":
+                return False
+            
 
 """
 Author: Jovan De Guia

@@ -2,7 +2,7 @@
 
 ***Written in Python***
 
-# Sorting Algorithms
+### Includes
 
 - Bubble Sort
 - Cocktail Sort
@@ -17,7 +17,7 @@
 - Shell Sort
 - Strand Sort
 
-# Referrence
+### Referrence
  ___[Geeks for Geeks - Sorting Algorithm](https://www.geeksforgeeks.org/sorting-algorithms/)___
 
 ----
