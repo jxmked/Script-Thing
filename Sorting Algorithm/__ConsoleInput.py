@@ -20,7 +20,7 @@ class ConsoleInput:
         
         # Get the Length of an Array
         print("Length of an Array. Min 1 & Max 1,000")
-        print("Type 'rerun' to rerun the last inputs")
+        print("Type 'r' to rerun the last inputs")
         
         res = self.isRerun(1, 1000)
         
@@ -58,7 +58,7 @@ class ConsoleInput:
             try:
                 val = input("Number | Keyword: ")
                 
-                if val.lower() == 'rerun':
+                if val.lower() == 'r':
                     return True
                  
                 val = int(val)

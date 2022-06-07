@@ -57,11 +57,7 @@ t = Timer()
 
 while True:
     
-    arr = obj.Generate() # Auto Bug. Hahaha
-    
-    # Perfectly fine. 
-    # From https://www.geeksforgeeks.org/radix-sort/
-    #arr = [170, 45, 75, 90, 802, 24, 2, 66]
+    arr = obj.Generate()
     
     print("Array to Sort")
     

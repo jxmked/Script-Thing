@@ -2,20 +2,29 @@
 
 ***Written in Python***
 
-> I will try to visualize the current sorted value
+# Sorting Algorithms
 
-***The Program will require a...***
-- Range of integer (0-100 by default)
-- Must be Unique (true by default)
-  - if false (It will generate random numbers from given range)
-- print the current sorted value (true by default)
-  - if true (May slow the program)
-  - 
+- Bubble Sort
+- Cocktail Sort
+- Cycle Sort
+- Heap Sort
+- Insertion Sort
+- Merge Sort
+- Pigeonhole Sort
+- Quick Sort
+- Radix Sort
+- Selection Sort
+- Shell Sort
+- Strand Sort
+
+# Referrence
+ ___[Geeks for Geeks - Sorting Algorithm](https://www.geeksforgeeks.org/sorting-algorithms/)___
 
 ----
 
 ****Enjoy****
-#### Written by Jovan De Guia
+
+#### Rewrite by Jovan De Guia
 
 ## Socials
 

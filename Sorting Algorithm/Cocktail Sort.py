@@ -7,7 +7,7 @@ path.append(".")
 from __ConsoleInput import ConsoleInput
 from __Timer import Timer
 
-# Pigeonhole Sort
+# Cocktail Sort
 
 arr = []
 
@@ -19,23 +19,36 @@ def printArr(arr):
 
 # Sorting Algorithm
 def SortingAlgo(arr):
-    a = min(arr)
-    b = max(arr)
-    
-    c = (b - a) + 1
-    
-    d = [0] * c
-    for e in arr:
-        d[e - a] = d[e - a] + 1
-    
-    f = 0
-    for g in range(c):
-        while d[g] > 0:
-            d[g] = d[g] - 1
-            arr[f] = g + a
-            f = f + 1
+    a = 0
+    b = len(arr) - 1
+    c = True
+    while c:
+        c = False
         
-        print(arr, end="\n\n")
+        for d in range(a, b):
+            if (arr[d] > arr[d + 1]):
+                arr[d], arr[d + 1] = arr[d + 1], arr[d]
+                
+                print(arr, end="\n\n")
+                
+                c = True
+                
+        if not c:
+            break
+        
+        c = False
+        
+        b = b - 1
+        
+        for e in range(b - 1, a - 1, -1):
+            if (arr[e] > arr[e + 1]):
+                arr[e], arr[e + 1] = arr[e + 1], arr[e]
+                
+                print(arr, end=" - \n\n")
+                
+                c = True
+        
+        a = a + 1
     
 # End Sorting Algorithm
 

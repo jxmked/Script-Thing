@@ -7,7 +7,7 @@ path.append(".")
 from __ConsoleInput import ConsoleInput
 from __Timer import Timer
 
-# Pigeonhole Sort
+# Cycle Sort
 
 arr = []
 
@@ -19,24 +19,38 @@ def printArr(arr):
 
 # Sorting Algorithm
 def SortingAlgo(arr):
-    a = min(arr)
-    b = max(arr)
+    a = len(arr)
     
-    c = (b - a) + 1
-    
-    d = [0] * c
-    for e in arr:
-        d[e - a] = d[e - a] + 1
-    
-    f = 0
-    for g in range(c):
-        while d[g] > 0:
-            d[g] = d[g] - 1
-            arr[f] = g + a
-            f = f + 1
+    for b in range(0, a - 1):
+        c = arr[b]
         
-        print(arr, end="\n\n")
-    
+        d = b
+        for e in range(b + 1, a):
+            if arr[e] < c:
+                d = d + 1
+        
+        if d == b:
+            continue
+        
+        while c == arr[d]:
+            d = d + 1
+        
+        arr[d], c = c, arr[d]
+        
+        while d != b:
+            
+            d = b
+            for f in range(b + 1, a):
+                if arr[f] < c:
+                    d = d + 1
+            
+            while c == arr[d]:
+                d = d + 1
+                
+            arr[d], c = c, arr[d]
+            
+            print(arr, end="\n\n")
+        
 # End Sorting Algorithm
 
 obj = ConsoleInput({

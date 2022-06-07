@@ -7,7 +7,7 @@ path.append(".")
 from __ConsoleInput import ConsoleInput
 from __Timer import Timer
 
-# Pigeonhole Sort
+# Strand Sort
 
 arr = []
 
@@ -19,23 +19,41 @@ def printArr(arr):
 
 # Sorting Algorithm
 def SortingAlgo(arr):
-    a = min(arr)
-    b = max(arr)
+    a = 0
+    b = [arr.pop(0)]
     
-    c = (b - a) + 1
-    
-    d = [0] * c
-    for e in arr:
-        d[e - a] = d[e - a] + 1
-    
-    f = 0
-    for g in range(c):
-        while d[g] > 0:
-            d[g] = d[g] - 1
-            arr[f] = g + a
-            f = f + 1
+    while a < len(arr):
+        if arr[a] > b[-1]:
+            b.append(arr.pop(a))
+        else:
+            a = a + 1
         
-        print(arr, end="\n\n")
+    
+    while len(arr):
+        c = 0
+        d = [arr.pop(0)]
+        
+        while c < len(arr):
+            if arr[c] > d[-1]:
+                d.append(arr.pop(c))
+            else:
+                c = c + 1
+        
+        e = []
+        
+        while len(b) and len(d):
+            if b[0] < d[0]:
+                e.append(b.pop(0))
+            else:
+                e.append(d.pop(0))
+        
+        e = e + b # Concat
+        c = e + d # Concat
+        
+        b = e
+        print(b, end="\n\n")
+    
+    arr += b # Append to Original Array
     
 # End Sorting Algorithm
 
