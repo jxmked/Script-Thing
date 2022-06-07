@@ -10,7 +10,7 @@ from __Timer import Timer
 # Radix Sort
 
 """
-There is a bug (I think) where max integer at
+There was a bug (I think) where max integer at
 the beginning of an array
 """
 
