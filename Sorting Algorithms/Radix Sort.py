@@ -30,10 +30,10 @@ def SortingAlgo(arr):
     
     c = 1
     
-    d = [0] * b
-    e = [0] * 10
-    
     while a / c > 1:
+        d = [0] * (b)
+        e = [0] * (10)
+        
         for f in range(0, b):
             e[(arr[f] // c) % 10] = e[(arr[f] // c) % 10] + 1
         
@@ -58,6 +58,7 @@ def SortingAlgo(arr):
     if (arr[0] >= arr[b - 1]):
         arr.append(arr.pop(0))
     
+
 # End Sorting Algorithm
 
 obj = ConsoleInput({
