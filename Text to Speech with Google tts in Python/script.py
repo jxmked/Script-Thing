@@ -41,7 +41,8 @@ lang = 'en'
 
 for val in arr:
     myobj = gTTS(text=val, lang=lang, slow=False)
-  
+    
+    # This Line will Actually save MP3 file in your directory.
     myobj.save("audio_{}.mp3".format(val))
     
     # pkg install sox -y
