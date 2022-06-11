@@ -1,7 +1,6 @@
 from gtts import gTTS
 import os
 
-
 # Some Mobile Legends Heroes
 arr = [
     "Aldous",
@@ -83,7 +82,6 @@ arr = [
     "Kimmy",
     "Thamuz",
     "Harith"
-    
 ]
 
 # Language in which you want to convert
@@ -91,10 +89,17 @@ lang = 'en'
 
 
 for val in arr:
+    
+    fname = "audio_%s.mp3" % val
+    
     myobj = gTTS(text=val, lang=lang, slow=False)
     
     # This Line will Actually save MP3 file in your directory.
-    myobj.save("audio_{}.mp3".format(val))
+    myobj.save(fname)
     
     # pkg install sox -y
-    os.system("play audio_{}.mp3".format(val))
+    os.system("play %s" % fname)
+    
+    # Uncomment if you want to 
+    # remove the Audio File after playing.
+    #os.remove(fname)
