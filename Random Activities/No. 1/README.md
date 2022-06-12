@@ -1,5 +1,7 @@
 # Activity Number 1
 
+***Write In Java***
+
 Create a program that will display a selection menu of...
 
 - A. Display Multiplication Table (1-10) Created Using Nested Looping
@@ -18,6 +20,7 @@ Create a program that will display a selection menu of...
 ----
 
 ****Enjoy****
+
 #### Written by Jovan De Guia
 
 ## Socials
