@@ -1,7 +1,7 @@
-# Java Activities
+# Random Activities
 
-> Here is some Java Activites that I found on the internet
-> and interesting to do.
+> Here is some Activites Written in random Languages that I 
+> found on the internet and interesting to do.
 
 ___I don't like including my school activities___
 
