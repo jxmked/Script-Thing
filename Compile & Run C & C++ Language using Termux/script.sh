@@ -1,11 +1,13 @@
 #!/bin/bash
 
+# Execute C and C++ 
+
 EXECUTABLE_DIR="/data/data/com.termux/files/usr"
 
-BNAME=$(basename -- "${1}")
-EXT="${BNAME##*.}"
-EXT="${EXT,,}" # Lower Case
-FNAME="${BNAME%.*}"
+BNAME=$(basename -- "${1}") # Basename (main.cpP)
+EXT="${BNAME##*.}" # Extension (cpP)
+EXT="${EXT,,}" # Lower Case (cpp)
+FNAME="${BNAME%.*}" # Filename (main)
 
 
 # Compiled filename
@@ -64,6 +66,7 @@ function Execute(){
     exit 0
 }
 
+# If we have a.out file. Just run it.
 if [[ "$1" == '-r' ]]; then
     Execute 1
 fi
@@ -74,7 +77,8 @@ echo "Compiling..."
 echo " "
 
 if [[ $EXT == 'cpp' ]]; then
-    g++ "${BNAME[@]}" || { onError 1; }
+    # Run in C++11
+    g++ -std=c++11 "${BNAME[@]}" || { onError 1; }
 else
     if [[ $2 == '-e' ]]; then
         clang "${BNAME[@]}" || { onError 1; }
@@ -91,3 +95,8 @@ if [[ $2 == '-c' ]]; then
 fi
 
 Execute 1
+
+# # # # # # # # # # # # # # #
+#  Written by Jovan De Guia #
+#  Github Username: jxmked  #
+# # # # # # # # # # # # # # #

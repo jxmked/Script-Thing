@@ -23,10 +23,16 @@ void addUnit(char unit[50], float measure) {
 
 
 int main() {
-    // Base 
+    // From Google
     addUnit((char*)"Foot", 3.28084);
     addUnit((char*)"Inches", 39.3701);
     addUnit((char*)"Centimeter", 100);
+    addUnit((char*)"Kilometer", 0.0001);
+    addUnit((char*)"Millimeter", 1000);
+    addUnit((char*)"Mile", 0.000621371);
+    addUnit((char*)"Yard", 1.09361);
+    addUnit((char*)"Nautical Mile", 0.000539957);
+    
     
     int base = 1, i;
     struct Units obj;

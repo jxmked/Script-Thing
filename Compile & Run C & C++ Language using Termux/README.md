@@ -1,14 +1,14 @@
-# Compile & Run C Language using Termux.
+# Compile & Run C/C++ Language using Termux.
 
 > This folder contains a script that allow Termux user to
-> compile and run a script written in C language in an
+> compile and run a script written in C/C++ language in an
 > easy way (or shortcut).
 
 ### How to use?
 
 ```bash x-clang.sh %script.c% [-e[-b]]```
 
- ___Required ```clang``` package to be installed___
+ ___Required ```clang``` & ```gcc``` package to be installed___
 
 Parameters
 - %script.c% = filename of script to run, Directory to the script to run.
@@ -28,6 +28,7 @@ bash x-clang.sh -e -b filename.c
 ### Package & Funtion has been used.
 
 - clang
+- g++
 - mv
 - chmod
 - rm
