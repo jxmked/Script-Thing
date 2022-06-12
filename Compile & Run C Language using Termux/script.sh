@@ -2,7 +2,11 @@
 
 EXECUTABLE_DIR="/data/data/com.termux/files/usr"
 
-FNAME=$1
+BNAME=$(basename -- "${1}")
+EXT="${BNAME##*.}"
+EXT="${EXT,,}" # Lower Case
+FNAME="${BNAME%.*}"
+
 
 # Compiled filename
 # Default output of Compiler.
@@ -12,7 +16,7 @@ OUTPUT="a.out"
 if [[ ! $1 ]]; then
     echo "x-clang %filename% [-e[-c[-d]]]"
     echo "-d = Prevent clearing the terminal by default"
-    echo "-c = Compile only. This mode will print warnings if possible"
+    echo "-c = Compile only. This things also display warnings if possie"
     echo "-e = Compile without displaying warnings. Only errors will triggered"
     echo "-r = Execute current a.out file in current directory"
     exit 0
@@ -69,11 +73,15 @@ fi
 echo "Compiling..."
 echo " "
 
-if [[ $2 == '-e' ]]; then
-    clang "${FNAME[@]}" || { onError 1; }
+if [[ $EXT == 'cpp' ]]; then
+    g++ "${BNAME[@]}" || { onError 1; }
 else
-    # Display all errors and warning and more...
-    clang -Weverything "${FNAME[@]}" || { onError 1; }
+    if [[ $2 == '-e' ]]; then
+        clang "${BNAME[@]}" || { onError 1; }
+    else
+        # Display all errors and warning and more...
+        clang -Weverything "${BNAME[@]}" || { onError 1; }
+    fi
 fi
 
 if [[ $2 == '-c' ]]; then
@@ -83,8 +91,3 @@ if [[ $2 == '-c' ]]; then
 fi
 
 Execute 1
-
-# # # # # # # # # # # # # # #
-#  Written by Jovan De Guia #
-#  Github Username: jxmked  #
-# # # # # # # # # # # # # # #
