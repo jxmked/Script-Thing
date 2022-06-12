@@ -34,7 +34,9 @@ int main() {
     addUnit((char*)"Nautical Mile", 0.000539957);
     
     
-    int base = 1, i;
+    float base = 1;
+    int i;
+    
     struct Units obj;
     
     while (1) {
