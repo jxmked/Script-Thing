@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cstring>
 
 using namespace std;
 
@@ -23,6 +22,7 @@ void addUnit(string unit, float measure) {
 
 int main() {
     // From Google
+    // Equivalent to 1 Meter
     addUnit("Foot", 3.28084);
     addUnit("Inches", 39.3701);
     addUnit("Centimeter", 100);
