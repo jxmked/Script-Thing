@@ -4,35 +4,33 @@
 using namespace std;
 
 struct Units {
-    char unit[50];
+    string unit;
     float measure;
 };
 
 int Unit_Len = 0;
 struct Units Defined_Units[50];
 
-void addUnit(char unit[50], float measure) {
+void addUnit(string unit, float measure) {
     // Add new unit with value
     
-    strcpy(Defined_Units[Unit_Len].unit, unit);
+    Defined_Units[Unit_Len].unit = unit;
     Defined_Units[Unit_Len].measure = measure;
     
     // Increase The Length of Global Defined Struct Unit
     Unit_Len = Unit_Len + 1;
 }
 
-
 int main() {
     // From Google
-    addUnit((char*)"Foot", 3.28084);
-    addUnit((char*)"Inches", 39.3701);
-    addUnit((char*)"Centimeter", 100);
-    addUnit((char*)"Kilometer", 0.0001);
-    addUnit((char*)"Millimeter", 1000);
-    addUnit((char*)"Mile", 0.000621371);
-    addUnit((char*)"Yard", 1.09361);
-    addUnit((char*)"Nautical Mile", 0.000539957);
-    
+    addUnit("Foot", 3.28084);
+    addUnit("Inches", 39.3701);
+    addUnit("Centimeter", 100);
+    addUnit("Kilometer", 0.0001);
+    addUnit("Millimeter", 1000);
+    addUnit("Mile", 0.000621371);
+    addUnit("Yard", 1.09361);
+    addUnit("Nautical Mile", 0.000539957);
     
     float base = 1;
     int i;
