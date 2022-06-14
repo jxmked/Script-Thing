@@ -1,10 +1,10 @@
-# Random Activities
+# Transform the hard coded
 
-___I don't like including my school activities___
-
-----
+> Just transforming the hard coded code  I found to
+> the internet and into beautiful (I think) code
 
 ****Enjoy****
+
 #### Written by Jovan De Guia
 
 ## Socials
