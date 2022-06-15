@@ -11,27 +11,35 @@
  ___Required ```clang``` & ```gcc``` package to be installed___
 
 Parameters
-- %script.c% = filename of script to run, Directory to the script to run.
-- [-b] = [optional] Prevent clearing the terminal before executing the script.
-> Note: If the script you wish to run has clear method on its
-> starting line ```-b``` won't be effective.
-- [-e] = [optional] Ignore warnings cause of ```clang -Weverything```.
-- [-c] = [optional] Compile only.
+- "-d = Prevent clearing the terminal"
+- "-c = Compile only. This things also display warnings if possie"
+- "-r = Execute current a.out file or the given filename in current directory"
+- "-clear = Will clear left over binary file from temp directory"
 
-> Note: Optional cannot combine or take extra space like
 ```bash
-bash x-clang.sh -eb filename.c
-bash x-clang.sh -e -b filename.c
+$ bash script.sh myscript.c # Compile and Run C Language
+$ bash script.sh myscript.cpp # Compile and Run C++ Language
+$ bash script.sh myscript.c -c # Compile C Language Only
+$ bash script.sh myscript.cpp -c # Compile C++ Language Only
+$ bash script.sh myscript.c # Compile, clear the screen and run C Language
+$ bash script.sh myscript.cpp # Compile, clear the screen and Run C++ Language
+$ bash script.sh -r # Run the a.out binary file from current directory
+$ bash script.sh -r %binaryfile% # Run the custom named binary file
 ```
+
 > The script is written in a common way. [I actually don't know what to say =)]
 
 ### Package & Funtion has been used.
 
 - clang
 - g++
+- gcc
 - mv
 - chmod
 - rm
+- cp
+- clear
+- exit
 
 
 ----

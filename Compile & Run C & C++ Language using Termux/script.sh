@@ -88,10 +88,17 @@ function Execute(){
 if [[ "$1" == '-clear' ]]; then
     
     F="${EXECUTABLE_DIR}/${EXECUTABLE_FOLDER}"
+    
+    if [[ ! -d "${F}" ]]; then
+        echo "Nothing to clear"
+        exit 0
+    fi
+    
     echo "Clearing..."
+    
     cd $F
     A=$(ls | wc -l) # Files count
-    rm -r $F
+    rm -r $F || onError 1
     echo "${A} file(s) has been cleared."
     
     exit 0
