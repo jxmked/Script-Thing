@@ -1,4 +1,4 @@
-# Price and Weight
+# Price per Weight
 
 > Get the total price from given weight
 
