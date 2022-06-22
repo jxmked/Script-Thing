@@ -13,60 +13,66 @@ string __units[50];
 
 int _len = 0;
 __Weights units[50];
+__Weights df; //Current Default weight.
 
 float PRICE = 0; // Grams 
 float WEIGHT = 0; // Grams
 string _line_ = "-------------------------";
 
-__Weights df; //Current Default weight.
+void clrscr(void);
+void addUnit(string u, string k, float b);
+void pressToContinue(void);
+void getPriceInWeight(void);
+void setDefaultBase(void);
+float inFloat(string param);
 
-void clrscr(void) {
-    system("clear");
-}
-
-void addUnit(string u, string k, float b){
-    units[_len].unit = u;
-    units[_len].acr = k;
-    units[_len].base = b;
-    __units[_len] = k;
-    _len++;
-}
-
-void pressToContinue(void){
-    do{
-        cout << endl << "Press enter to continue..." << flush;
-    } while (cin.get() != '\n' || cin.get() != '\n');
-}
-
-float inFloat(string param){
+int main(/** int argc, char **argv **/){
+     
+    /** The multiplier are based on grams conversation **/
+    addUnit("Milligram", "mg", 0.001);
+    addUnit("Centigram",  "cg", 0.01);
+    addUnit("Decigram", "dg", 0.1);
+    addUnit("Gram", "g", 1.0);
+    addUnit("Decagram", "dag", 10.0);
+    addUnit("Hectogram", "hg", 1e2);
+    addUnit("Kilogram", "kg", 1e3);
+    addUnit("Tonne", "t", 1e6);
     
-    string str;
-    bool flag;
-    bool gotPoint;
+    getPriceInWeight();
+    cout << endl << _line_ << endl;
+    setDefaultBase();
     
-    while(true){
-        cout << param << " [Number]: " << flush;
-        cin >> str;
+    cout << endl << "Your inputs has been defined." << endl
+        << "Console will be cleared to give you a depth." << endl;
+    
+    pressToContinue();
+    
+    clrscr();
+    
+    float inp;
+    
+    cout << "Price and Weight in Grams: " << PRICE 
+        << " | " << WEIGHT << endl << endl
+        << "Enter 0 to exit" << endl << _line_ << endl;
+    
+    while (true) {
+        cout << endl;
         
-        flag = false; // Is not a number?
-        gotPoint = false; // Already reach decimal?
+        inp = inFloat("Weight (" + df.acr + ")");
         
-        for(char c : str) {
-            if ( c == '.' && ! gotPoint){
-                gotPoint = true;
-            } else if(! isdigit(c)){
-                flag = true;
-                break;
-            }
+        if(inp == 0) {
+            cout << endl << "Ended" << endl;
+            exit(0);
         }
         
-        if(! flag) {
-            return stof(str);
-        }
+        printf("Price: %.5f\n", (inp * df.base) *  (PRICE / WEIGHT));
+        
     }
+    
+    return 0;
 }
 
-void getPriceInWeight(){
+void getPriceInWeight(void){
     string unit;
     float price = inFloat("Price");
     float weight =inFloat("Weight of price");
@@ -149,54 +155,51 @@ void setDefaultBase(void) {
     } while (! flag);
 }
 
-int main(/** int argc, char **argv **/){
-    /** Formula: 
-     * Total Price = (Fixed Weight / Fixed Price) * Given Weight
-     *  
-     * - Weights must be in the same unit
-     * */
-     
-    /** The multiplier are based on grams conversation **/
-    addUnit("Milligram", "mg", 0.001);
-    addUnit("Centigram",  "cg", 0.01);
-    addUnit("Decigram", "dg", 0.1);
-    addUnit("Gram", "g", 1.0);
-    addUnit("Decagram", "dag", 10.0);
-    addUnit("Hectogram", "hg", 1e2);
-    addUnit("Kilogram", "kg", 1e3);
-    addUnit("Tonne", "t", 1e6);
-    
-    getPriceInWeight();
-    cout << endl << _line_ << endl;
-    setDefaultBase();
-    
-    cout << endl << "Your inputs has been defined." << endl
-        << "Console will be cleared to give you a depth." << endl;
-    
-    pressToContinue();
-    
-    clrscr();
-    
-    float inp;
-    
-    cout << "Price and Weight in Grams: " << PRICE 
-        << " | " << WEIGHT << endl << endl
-        << "Enter 0 to exit" << endl << _line_ << endl;
-    
-    while (true) {
-        cout << endl;
-        
-        inp = inFloat("Weight (" + df.acr + ")");
-        
-        if(inp == 0) {
-            cout << endl << "Ended" << endl;
-            exit(0);
-        }
-        
-        printf("Price: %.5f\n", (inp * df.base) *  (PRICE / WEIGHT));
-        
-    }
-    
-    return 0;
+/**
+ * Helpers
+ * */
+void clrscr(void) {
+    system("clear");
 }
 
+void addUnit(string u, string k, float b){
+    units[_len].unit = u;
+    units[_len].acr = k;
+    units[_len].base = b;
+    __units[_len] = k;
+    _len++;
+}
+
+void pressToContinue(void){
+    do{
+        cout << endl << "Press enter to continue..." << flush;
+    } while (cin.get() != '\n' || cin.get() != '\n');
+}
+
+float inFloat(string param){
+    
+    string str;
+    bool flag;
+    bool gotPoint;
+    
+    while(true){
+        cout << param << " [Number]: " << flush;
+        cin >> str;
+        
+        flag = false; // Is not a number?
+        gotPoint = false; // Already reach decimal?
+        
+        for(char c : str) {
+            if ( c == '.' && ! gotPoint){
+                gotPoint = true;
+            } else if(! isdigit(c)){
+                flag = true;
+                break;
+            }
+        }
+        
+        if(! flag) {
+            return stof(str);
+        }
+    }
+}
