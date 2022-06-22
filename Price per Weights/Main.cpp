@@ -40,7 +40,6 @@ int main(/** int argc, char **argv **/){
     
     cout << "Price per Weight" << endl << endl;
     
-    
     getPriceInWeight();
     cout << endl << _line_ << endl;
     setDefaultBase();
@@ -77,11 +76,10 @@ int main(/** int argc, char **argv **/){
 
 void getPriceInWeight(void){
     string unit;
-    float price = inFloat("Price");
-    float weight =inFloat("Weight of price");
+    float price = inFloat("Price per Weight");
+    float weight = inFloat("Weight per price");
     
     do {
-        
         cout << endl << "Unit [" << __units[0] << flush;
         for(int i = 1; i < _len; ++i){
             cout << ", " << __units[i] << flush;
@@ -111,13 +109,13 @@ void getPriceInWeight(void){
         << "Price and Weights in different Units" << endl << endl;
     
     /** Print the Weights and Price in different units **/
-    __Weights obj;
-    
     for (int i = 0; i < _len; ++i){
-        obj = units[i];
-        
-        printf("%s (%s): %.5f", obj.unit.c_str(), obj.acr.c_str(), WEIGHT / obj.base);
-        printf("\nPrice: %.5f\n\n", PRICE);
+        printf("%s (%s): %.5f\nPrice: %.5f\n\n", 
+            units[i].unit.c_str(),
+            units[i].acr.c_str(),
+            WEIGHT / units[i].base,
+            PRICE
+        );
     }
     
     pressToContinue();
