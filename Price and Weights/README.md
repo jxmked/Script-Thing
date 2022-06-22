@@ -13,6 +13,7 @@ ___Note: Weights must be in the same unit___
 - [vCalc - Price per Weight or Mass](https://www.vcalc.com/wiki/vCalc/Price+per+Weight+or+Mass)
 - [OpenTextBC - Units of Measurement](https://opentextbc.ca/basickitchenandfoodservicemanagement/chapter/units-of-measurement/)
 
+----
 
 #### Develop by Jovan De Guia
 
