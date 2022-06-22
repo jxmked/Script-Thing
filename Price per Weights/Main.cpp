@@ -46,7 +46,7 @@ int main(/** int argc, char **argv **/){
     setDefaultBase();
     
     cout << endl << "Your inputs has been defined." << endl
-        << "Console will be cleared to give you a depth." << endl;
+        << "Console will be cleared." << endl;
     
     pressToContinue();
     
