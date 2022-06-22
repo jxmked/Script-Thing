@@ -38,7 +38,7 @@ int main(/** int argc, char **argv **/){
     addUnit("Kilogram", "kg", 1e3);
     addUnit("Tonne", "t", 1e6);
     
-    cout << "Price per Weight" << endl;
+    cout << "Price per Weight" << endl << endl;
     
     
     getPriceInWeight();
