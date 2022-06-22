@@ -38,6 +38,9 @@ int main(/** int argc, char **argv **/){
     addUnit("Kilogram", "kg", 1e3);
     addUnit("Tonne", "t", 1e6);
     
+    cout << "Price per Weight" << endl;
+    
+    
     getPriceInWeight();
     cout << endl << _line_ << endl;
     setDefaultBase();
@@ -203,3 +206,12 @@ float inFloat(string param){
         }
     }
 }
+
+/**
+ * Author: Jovan De Guia
+ * Github Username: jxmked
+ * 
+ * License Under MIT License
+ * 
+ * ~ Price per Weight - Written in C++ Language ~
+ * */
