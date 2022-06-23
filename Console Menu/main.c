@@ -49,7 +49,7 @@ int main() {
     printf("\nGithub Username: jxmked\n");
     
     if (!Confirm("Do You Want to Continue?")) {
-        printf("Goodbye!\n");
+        printf("Goodbye!\n\n");
         return 0;
     }
     
@@ -57,7 +57,7 @@ int main() {
     
     clrscr();
     
-    printf("Thanks for using our program!");
+    printf("Thanks for using our program!\n\n");
     
     return 0;
 }
