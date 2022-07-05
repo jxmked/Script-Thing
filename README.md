@@ -15,7 +15,7 @@
 - [Github](https://github.com/jxmked)
 - [Facebook](https://www.facebook.com/deguia25)
 
-## Support via
+## Support
 
 - [Buy me some Coffee](https://www.buymeacoffee.com/jxmked)
 - GCash - +639673271649
