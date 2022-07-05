@@ -6,8 +6,8 @@
 > try and except and print an error message and skip to the next number.
 
 ---- 
-#### The creation Video
-- [Numbers Lists. Python in Mobile](https://youtu.be/3GPEn3rzCtE)
+#### The Creation Video
+- [Numbers List. Python in Mobile](https://youtu.be/3GPEn3rzCtE)
 
 #### Problem Source - Facebook Post
 
