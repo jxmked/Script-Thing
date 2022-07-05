@@ -52,8 +52,6 @@ class NumberList:
     
 
 obj = NumberList()
-obj.printOut()
-
 
 """
 Author: Jovan De Guia
