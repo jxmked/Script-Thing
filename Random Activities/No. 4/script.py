@@ -56,3 +56,8 @@ class ComputerGrade:
 
 # Init
 ComputerGrade()
+
+"""
+Author: Jovan De Guia
+Github Username: jxmked
+"""
