@@ -17,7 +17,9 @@ If the score is between 0.0 and 1.0, print a grade using the following table:
 > In making this program, use a function called computergrade which will automatically assign the letter grade based on the input of the user.
 
 ----
+
 #### Problem Source - Facebook Post
+
 ****Enjoy****
 
 #### Written by Jovan De Guia
