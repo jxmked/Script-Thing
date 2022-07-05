@@ -25,9 +25,11 @@ class NumberList:
                 self.nList.append(num)
             
             except ValueError:
+                # Wrong Input
                 print("\n%s is not a number.\n" % val)
             
             except KeyboardInterrupt:
+                # Use 'ctrl + c' to terminate
                 print("Program Terminated.")
                 exit(0)
             
