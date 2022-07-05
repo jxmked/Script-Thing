@@ -5,6 +5,9 @@
 > If the user enters anything other than a number, detect their mistake using
 > try and except and print an error message and skip to the next number.
 
+
+[Numbers Lists. Python in Mobile](https://youtu.be/3GPEn3rzCtE)
+
 #### Problem Source - Facebook Post
 
 ****Enjoy****
