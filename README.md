@@ -1,6 +1,10 @@
 # Script Thing
 
-A random script project, etc. that can be use as a demo, reference or something.
+> A random script project, etc. that can be
+> use as a demo, reference or something.
+
+> Some scripts has video link included so, you can watch 
+> the creation of that script.
 ----
 
 ****Enjoy****
