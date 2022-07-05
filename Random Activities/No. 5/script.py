@@ -13,7 +13,7 @@ class NumberList:
             
             try:
                 if val.lower() == "done":
-                    seld.printOut()
+                    self.printOut()
                     break
                 
                 num = int(val)
