@@ -9,9 +9,9 @@ class NumberList:
     
     def __init__(self):
         while True:
-            val = input("Number: ")
-            
             try:
+                val = input("Number: ")
+                
                 if val.lower() == "done":
                     self.printOut()
                     break
