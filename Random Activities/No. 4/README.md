@@ -24,5 +24,5 @@ If the score is between 0.0 and 1.0, print a grade using the following table:
 
 - [Github](https://github.com/jxmked)
 - [Facebook](https://www.facebook.com/deguia25)
-- 
+
 ### License under MIT License
