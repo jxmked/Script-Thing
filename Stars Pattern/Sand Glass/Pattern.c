@@ -31,7 +31,7 @@ int main(void){
     } while(1);
 }
 
- int loop(int n){
+static int loop(int n){
     int i, j, r;
     /**
      * I just recreate this and know what to do.
