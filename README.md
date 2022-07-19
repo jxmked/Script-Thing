@@ -20,4 +20,4 @@
 - [Buy Me a Coffee](https://www.buymeacoffee.com/jxmked)
 - GCash - +639673271649
 
-### License under MIT License
+### License under MIT License 
