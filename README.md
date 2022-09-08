@@ -12,7 +12,7 @@
 
 ## ♊ Similar projects
 
-- [PythonScriptPH](https://github.com/mpotane/PythonScript)
+- [PythonScriptPH](https://github.com/mpotane/PythonScriptPH)
 
 ## #️⃣ Socials
 
