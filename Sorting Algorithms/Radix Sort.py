@@ -1,11 +1,8 @@
 #!/usr/bin/env python3
 
-from sys import path
-
-path.append(".")
-
 from __ConsoleInput import ConsoleInput
 from __Timer import Timer
+from __helpers import *
 
 # Radix Sort
 
@@ -16,12 +13,6 @@ the beginning of an array
 
 
 arr = []
-
-def printArr(arr):
-    for i in arr:
-        print(i, end=" ")
-    print()
-
 
 # Sorting Algorithm
 def SortingAlgo(arr):
