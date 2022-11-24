@@ -67,6 +67,7 @@ public class Main {
     
     public static String inStr(){
         String str = null;
+        
         try {
             /**
              * If one of the input doesn't work, you can select
