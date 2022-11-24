@@ -1,7 +1,4 @@
 
-// import java.util.Scanner;
-// import java.io.BufferedReader;
-// import java.io.InputStreamReader;
 
 
 
@@ -13,46 +10,48 @@ public class Main {
         // Define variables
         int row, column, row_index, column_index;
         
-        // Get row 
+        // Get Row 
         System.out.println("Enter row length of an array: ");
         row = inInt();
         
-        // Get column
-        System.out.println("Enter column length of an array: ");
+        // Get Column
+        System.out.println("\nEnter column length of an array: ");
         column = inInt();
         
-        // Enter array elements
-        System.out.println(String.format("Enter %d elements to store in array:", row * column));
+        // Define 2d Array
+        int array[][] = new int[row][column];
         
         
-        // Define 2d array
-        int[][] array = new int[row][column];
-
-        // Fill array
+        // Get array values
+        System.out.println(String.format("\nEnter %d elements to store in array:", row * column));
+        
         // Row
-        for(row_index = 0; row_index < row; row_index++) {
-            
-            // Column
-            for(column_index = 0; column_index < column; column_index++) {
-                // Get input the store to array
+        for (row_index = 0; row_index < row; row_index++) {
+            //Column
+            for (column_index = 0; column_index < column; column_index++) {
+                // Get input
                 array[row_index][column_index] = inInt();
             }
         }
         
         
+        // Print 2d Array
+        
         System.out.println("");
         
-        // Print 2d array
-        for(row_index = 0; row_index < row; row_index++) {
-            for(column_index = 0; column_index < column; column_index++) {
+        // Row
+        for (row_index = 0; row_index < row; row_index++) {
+            //Column
+            for (column_index = 0; column_index < column; column_index++) {
+                // Print
                 System.out.println(String.format("Row[%d]: Column[%d]: %d", row_index, column_index, array[row_index][column_index]));
             }
         }
         
         System.out.println("");
         
-        
     }
+    
     
     public static int inInt(){
         while(true){
