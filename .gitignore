@@ -1,0 +1,10 @@
+ConsoleNumInput.c
+.env
+
+
+*.class
+*.vdex
+*.odex
+*.dex
+dist/
+
