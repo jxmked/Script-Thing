@@ -31,22 +31,63 @@ public class Add extends BasicInputs {
         print("Add new Car.");
         print("Please, fill up the form.");
         
-        this.get_model();
         
+        this.get_brand();
+        this.get_model();
+        this.get_type();
+        this.get_color();
+        this.get_torque();
+        this.get_engine();
+        this.get_price();
+        this.generate_id();
+        
+        print("\n");
+        print("This car with this specification will be added to your list.");
+        print("");
+        
+        print(String.format("Brand: %s", this.myCarObject.brand));
+        print(String.format("Model: %s", this.myCarObject.model));
+        print(String.format("Type: %s", this.myCarObject.type));
+        print(String.format("Color: %s", this.myCarObject.color));
+        print(String.format("Torque: %s", this.myCarObject.torque));
+        print(String.format("Engine: %s", this.myCarObject.engine));
+        print(String.format("Price: %.2f", this.myCarObject.price));
+        print(String.format("Generated car ID: %s", this.myCarObject.id));
+        
+        if(Confirm("Are you sure to add this car to your list?")) {
+            carList.push(this.myCarObject);
+            print("Car has brrn added.");
+            print("Press any key to continue...");
+            inStr();
+        }
     }
-    
-    
-    
     
     public void generate_id() {
         int len = 4; // Length of an ID
         
-        int index;
+        int index, rand;
         
-        for(index = 0; index < len; index++) {
+        String sb;
+        while(true) {
+            sb = ""; // String Builder
             
+            for(index = 0; index < len; index++) {
+                // Convert double into integer
+                rand = (int) Math.round(Math.random() * 9);
+                
+                sb = String.format("%s%d", sb, rand);
+            }
+            
+            try {
+                this.myCarObject.id = Integer.parseInt(sb);
+                break;
+            } catch(Exception e) {
+                
+            }
         }
+       
     }
+    
     /**
      * Get and validate inputs
      * */
@@ -55,6 +96,7 @@ public class Add extends BasicInputs {
         float num;
         
         do {
+            print("");
             print("Price of the car: ");
             num = inFloat();
         } while(num < 0.5);
@@ -71,7 +113,7 @@ public class Add extends BasicInputs {
     }
     
     public void get_color() {
-        this.myCarObject.color = this.get_validated_input("Color of a var: ");
+        this.myCarObject.color = this.get_validated_input("Color of a car: ");
     }
     
     public void get_type() {
@@ -89,9 +131,10 @@ public class Add extends BasicInputs {
     private String get_validated_input(String placeholder) {
         String str;
         do {
+            print("");
             print(placeholder);
-            str = inStr();
             
+            str = inStr();
             str = str.trim();
         } while(str.isEmpty());
         

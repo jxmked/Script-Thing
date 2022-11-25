@@ -55,8 +55,6 @@ public class Car extends BasicInputs {
             }
         }
         
-        
-        
     }
 }
 
