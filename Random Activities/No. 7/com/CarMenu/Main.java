@@ -17,7 +17,6 @@ public class Main extends com.global.BasicInputs {
                  */
                 scanner.close();
                 print("\n\nProgram Ended.");
-                
             }
         }));
     }

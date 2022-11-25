@@ -70,10 +70,21 @@ public class BasicInputs {
          * */
         
         try {
-            // final String os = System.getProperty("os.name");
+            final String os = System.getProperty("os.name");
             ProcessBuilder processBuilder = new ProcessBuilder();
             
-            processBuilder.command("cls||clear");
+            if (os.contains("Windows")) {
+                processBuilder.command("cls||clear");
+            } else {
+                // Works on my terminal
+                // System.out.print("\033\143"); //For Linux
+                // ---- or ----
+                // https://stackoverflow.com/questions/2979383/how-to-clear-the-console
+                // System.out.print("\033[H\033[2J");  
+                // System.out.flush(); 
+                // ---- or ----
+                processBuilder.command("clear");
+            }
             
             processBuilder.start();
         } catch (final Exception e) {

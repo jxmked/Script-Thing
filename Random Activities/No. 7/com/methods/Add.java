@@ -6,13 +6,13 @@ import com.objects.CarObject;
 import com.objects.CarList;
 import com.global.Helpers;
 
-public class Add extends BasicInputs {
+public class Add extends com.global.BasicInputs {
     
     CarObject myCarObject = new CarObject();
 
     public Add() {
         clrscr();
-        
+
         print("Add new Car.");
         print("");
         print("Please, fill up the form.");
