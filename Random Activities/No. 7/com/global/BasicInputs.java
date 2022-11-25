@@ -67,6 +67,16 @@ public class BasicInputs {
         }
     }
     
+    public static float inFloat() {
+        while(true) {
+            try {
+                return Float.parseFloat(BasicInputs.inStr());
+            } catch(Exception e) {
+                // e.printStackTrace();
+            }
+        }
+    }
+    
     public static int inInt(){
         while(true){
             try {

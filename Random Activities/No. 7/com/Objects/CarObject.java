@@ -11,7 +11,11 @@ public class CarObject {
     
     public float price;
     
-    public int id; 
+    public int id;
+    
+    public CarObject() {
+        
+    }
     
 }
 
