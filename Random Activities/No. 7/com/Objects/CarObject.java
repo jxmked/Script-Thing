@@ -1,4 +1,4 @@
-package com.Objects;
+package com.objects;
 
 public class CarObject {
     

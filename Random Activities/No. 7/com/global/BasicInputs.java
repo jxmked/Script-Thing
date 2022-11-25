@@ -1,5 +1,13 @@
-package com.tools;
 
+package com.global;
+
+
+/**
+ * Optional Impors
+ * */
+// import java.util.Scanner;
+// import java.io.BufferedReader;
+// import java.io.InputStreamReader;
 
 
 public class BasicInputs {
@@ -10,7 +18,16 @@ public class BasicInputs {
      * 
      * */
     
+    /**
+     * System.out.println Shorthand. =)
+     * */
+    public static void print(String str) {
+        System.out.println(str);
+    }
     
+    public static void print(int num) {
+        System.out.println(String.valueOf(num));
+    }
     
     public static boolean Confirm(String str) {
         System.out.print(str);
@@ -41,7 +58,7 @@ public class BasicInputs {
             } else {
                 Runtime.getRuntime().exec("clear");
                 // Works on my terminal
-                System.out.print("\033\143"); //For Linux
+                print("\033\143"); //For Linux
             }
         } catch (final Exception e) {
             try {
@@ -89,7 +106,7 @@ public class BasicInputs {
             */
         } catch(Exception e){
             e.printStackTrace();
-            System.out.println("Something went wrong.");
+            print("Something went wrong.");
             System.exit(0);
         }
         return str;
