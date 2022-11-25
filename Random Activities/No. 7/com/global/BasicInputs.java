@@ -5,7 +5,7 @@ package com.global;
 /**
  * Optional Impors
  * */
-// import java.util.Scanner;
+import java.util.Scanner;
 // import java.io.BufferedReader;
 // import java.io.InputStreamReader;
 
@@ -19,21 +19,32 @@ public class BasicInputs {
      * */
     
     /**
+     * Close this after using it.
+     */
+    public static Scanner scanner = new Scanner(System.in);
+    
+    /**
      * System.out.println Shorthand. =)
      * */
     public static void print(String str) {
         System.out.println(str);
+        System.out.flush();
     }
     
     public static void print(int num) {
-        System.out.println(String.valueOf(num));
+        System.out.println(num);
+        System.out.flush();
     }
     
+    public static void print(Boolean num) {
+        System.out.println(num);
+        System.out.flush();
+    }
     public static boolean Confirm(String str) {
-        System.out.print(str);
+        print(str);
         
         while(true) {
-            System.out.print("\n[Y/n]: ");
+            print("\n[Y/n]: ");
             switch(inChar()){
               case 'y':
               case 'Y':
@@ -50,15 +61,22 @@ public class BasicInputs {
         /**
          * From Stackoverflow and has been modified
          * */
+        
         try {
-            final String os = System.getProperty("os.name");
-                
-            if (os.contains("Windows")) {
-                Runtime.getRuntime().exec("cls");
-            } else {
-                Runtime.getRuntime().exec("clear");
-                // Works on my terminal
-                print("\033\143"); //For Linux
+            // final String os = System.getProperty("os.name");
+
+            // if (os.contains("Windows")) {
+            //    // Deprecated 
+            //     Runtime.getRuntime().exec("cls");
+            // } else {
+            //    // Deprecated
+            //     Runtime.getRuntime().exec("clear");
+            //     // Works on my terminal
+            //     print("\033\143"); //For Linux
+            // }
+            
+            for(int lines = 0; lines < 20; lines++) {
+                print("");
             }
         } catch (final Exception e) {
             try {
@@ -82,7 +100,7 @@ public class BasicInputs {
             try {
                 return Integer.parseInt(BasicInputs.inStr());
             } catch(Exception e){
-                 // e.printStackTrace();
+                //e.printStackTrace();
             }
         }
     }
@@ -103,22 +121,29 @@ public class BasicInputs {
              * */
             // For outside of an IDE.
             // A
-            str = String.valueOf(System.console().readLine());
+            // str = String.valueOf(System.console().readLine());
             
-            /** For others
+            // For others
             // B
-            str = String.valueOf(new BufferedReader(new InputStreamReader(System.in)).readLine());
+            // BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            // str = String.valueOf(br.readLine());
+
+            //str = String.valueOf(new BufferedReader(new InputStreamReader(System.in)).readLine());
             
             // C
-            Scanner sc = new Scanner(System.in, "UTF-8");
-            str = String valueOf(sc.readLine());
-            sc.close();
-            */
+        
+            
+            while(scanner.hasNextLine()) {
+                str = scanner.nextLine();
+                return str;
+            }        
+        
         } catch(Exception e){
             e.printStackTrace();
             print("Something went wrong.");
             System.exit(0);
         }
+        
         return str;
     }
     

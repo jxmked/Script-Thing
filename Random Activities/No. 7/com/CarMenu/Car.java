@@ -48,7 +48,7 @@ public class Car extends BasicInputs {
                         
                         print("\nThanks for using our program.\nExit.");
                         
-                        System.exit(0);
+                        return;
                     }
                     
                     break;

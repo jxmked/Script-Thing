@@ -4,6 +4,7 @@ package com.methods;
 import com.global.BasicInputs;
 import com.global.Storage;
 import com.objects.CarObject;
+import com.global.Helpers;
 
 public class Add extends BasicInputs {
     
@@ -55,7 +56,7 @@ public class Add extends BasicInputs {
         print(String.format("Generated car ID: %s", this.myCarObject.id));
         
         if(Confirm("Are you sure to add this car to your list?")) {
-            carList.push(this.myCarObject);
+            
             print("Car has brrn added.");
             print("Press any key to continue...");
             inStr();
@@ -121,7 +122,7 @@ public class Add extends BasicInputs {
     }
     
     public void get_brand() {
-        this.myCarObject.brand = this.get_validated_input("Brand of a car: ");
+        this.myCarObject.brand = Helpers.ucfirst(this.get_validated_input("Brand of a car: "));
     }
     
     public void get_model() {
