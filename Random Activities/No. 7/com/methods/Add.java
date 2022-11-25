@@ -2,20 +2,19 @@
 package com.methods;
 
 import com.global.BasicInputs;
-import com.global.Storage;
 import com.objects.CarObject;
+import com.objects.CarList;
 import com.global.Helpers;
 
 public class Add extends BasicInputs {
-    
-    
-    public CarObject carList[] = Storage.carList;
     
     CarObject myCarObject = new CarObject();
 
     public Add() {
         clrscr();
+        
         print("Add new Car.");
+        print("");
         print("Please, fill up the form.");
         
         this.get_brand();
@@ -30,7 +29,6 @@ public class Add extends BasicInputs {
         print("\n");
         print("This car with this specification will be added to your list.");
         print("");
-        
         print(String.format("Brand: %s", this.myCarObject.brand));
         print(String.format("Model: %s", this.myCarObject.model));
         print(String.format("Type: %s", this.myCarObject.type));
@@ -38,30 +36,29 @@ public class Add extends BasicInputs {
         print(String.format("Torque: %s", this.myCarObject.torque));
         print(String.format("Engine: %s", this.myCarObject.engine));
         print(String.format("Price: %.2f", this.myCarObject.price));
-        print(String.format("Generated car ID: %s", this.myCarObject.id));
+        print(String.format("Generated ID: %s", this.myCarObject.id));
         print("");
+
         if(Confirm("Are you sure to add this car to your list?")) {
             
+            CarList.add_item(this.myCarObject);
+
             print("Car has been added.");
             print("Press enter to continue...");
+
             inStr();
         }
 
         clrscr();
     }
-    
-    public void add_new_car(CarObject new_car) {
-        
-    }
 
     public void generate_id() {
         int len = 4; // Length of an ID
-        
         int index, rand;
-        
-        String sb;
+        String sb;  // String Builder
+
         while(true) {
-            sb = ""; // String Builder
+            sb = "";
             
             for(index = 0; index < len; index++) {
                 // Convert double into integer
@@ -73,9 +70,7 @@ public class Add extends BasicInputs {
             try {
                 this.myCarObject.id = Integer.parseInt(sb);
                 break;
-            } catch(Exception e) {
-                
-            }
+            } catch(Exception e) { }
         }
        
     }
@@ -125,11 +120,17 @@ public class Add extends BasicInputs {
     
     private String get_validated_input(String placeholder) {
         String str;
+
         do {
             print("");
             print(placeholder);
-            
+
             str = inStr();
+
+            if(str == null) {
+                System.exit(0);
+            }
+
             str = str.trim();
         } while(str.isEmpty());
         

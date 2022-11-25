@@ -1,9 +1,6 @@
-
 package com.global;
 
-//import com.global.BasicInputs;
-
-public class displayMenu extends BasicInputs {
+public class displayMenu extends com.global.BasicInputs {
     
     private int __response;
     
@@ -15,7 +12,7 @@ public class displayMenu extends BasicInputs {
         
         print(border);
         
-        // Print Menus
+        // Print Menus 
         for (int index = 0; index < menu_length; index++) {
             print(String.format("%d. %s", index + 1, menus[index]));
         }

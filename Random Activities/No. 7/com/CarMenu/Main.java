@@ -1,12 +1,11 @@
 package com.CarMenu;
 
-import com.global.BasicInputs;
+public class Main extends com.global.BasicInputs {
 
-public class Main {
-    
     public static void main(String[] args) {
         atexit();
-        new Car();
+        new com.CarMenu.Car();
+
     }
 
     public static void atexit() {
@@ -16,8 +15,9 @@ public class Main {
                 /**
                  * Close before exiting the program
                  */
-                BasicInputs.scanner.close();
-                BasicInputs.print("Program Ended.");
+                scanner.close();
+                print("\n\nProgram Ended.");
+                
             }
         }));
     }

@@ -19,7 +19,7 @@ MENUS
 > The program will only accept up to 20 cars, Add car identification code for unique
 > identification of each car added and use the code in deleting car from the list.
 > In displaying the list of cars, it should be sorted ascending according to model.
-
+  
 ***NOTE:***
 > Implement this program in Array and should have different methods implementation
 > as necessary following the concepts of OOP Do not use ArrayList built-in container
@@ -35,7 +35,7 @@ MENUS
  
 ----
 #### One liner
-  `clear||cls && javac -d ./dist com/CarMenu/Main && java -cp ./dist com.CarMenu/Main`
+  `(clear||cls) && javac -d ./dist com/CarMenu/Main.java && java -cp ./dist com.CarMenu/Main`
 
 
 #### Problem Source - Facebook Post

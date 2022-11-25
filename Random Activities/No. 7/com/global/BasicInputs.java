@@ -1,4 +1,3 @@
-
 package com.global;
 
 
@@ -40,12 +39,20 @@ public class BasicInputs {
         System.out.println(num);
         System.out.flush();
     }
+    
     public static boolean Confirm(String str) {
         print(str);
-        
+        char res;
         while(true) {
             print("\n[Y/n]: ");
-            switch(inChar()){
+            
+            res = inChar();
+            
+            if(String.valueOf(res).trim().isEmpty()) {
+                continue;
+            }
+
+            switch(res){
               case 'y':
               case 'Y':
                 return true;
@@ -64,20 +71,11 @@ public class BasicInputs {
         
         try {
             // final String os = System.getProperty("os.name");
-
-            // if (os.contains("Windows")) {
-            //    // Deprecated 
-            //     Runtime.getRuntime().exec("cls");
-            // } else {
-            //    // Deprecated
-            //     Runtime.getRuntime().exec("clear");
-            //     // Works on my terminal
-            //     print("\033\143"); //For Linux
-            // }
+            ProcessBuilder processBuilder = new ProcessBuilder();
             
-            for(int lines = 0; lines < 20; lines++) {
-                print("");
-            }
+            processBuilder.command("cls||clear");
+            
+            processBuilder.start();
         } catch (final Exception e) {
             try {
                 new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
@@ -106,7 +104,19 @@ public class BasicInputs {
     }
     
     public static char inChar(){
-        return inStr().charAt(0);
+        String str;
+
+        do {
+            str = inStr();
+
+            if(str == null)
+                System.exit(0);
+            
+            str.trim();
+        } while(str.isEmpty());
+        
+        return str.charAt(0);
+
     }
     
     public static String inStr(){

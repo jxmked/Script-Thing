@@ -8,9 +8,7 @@ public class CarObject {
     public String color;
     public String torque;
     public String engine;
-    
     public float price;
-    
     public int id;
     
     public CarObject() {
