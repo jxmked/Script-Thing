@@ -1,7 +1,6 @@
 
 package com.methods;
 
-import com.global.BasicInputs;
 import com.objects.CarObject;
 import com.objects.CarList;
 import com.global.Helpers;
