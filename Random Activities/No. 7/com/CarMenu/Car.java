@@ -4,8 +4,6 @@ package com.CarMenu;
 
 import com.global.BasicInputs;
 import com.global.displayMenu;
-import com.global.Storage;
-import com.objects.CarObject;
 
 import com.methods.Add;
 
@@ -48,7 +46,7 @@ public class Car extends BasicInputs {
                         
                         print("\nThanks for using our program.\nExit.");
                         
-                        return;
+                        return; // Exit. We should go back to 
                     }
                     
                     break;

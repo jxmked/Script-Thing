@@ -27,7 +27,6 @@ public class displayMenu extends BasicInputs {
         // Keep running until we get valid integer input
         do {
             this.__response = inInt();
-            print("hey");
         } while(this.__response < 1 || this.__response > menu_length);
     }
     
