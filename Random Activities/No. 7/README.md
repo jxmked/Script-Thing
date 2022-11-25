@@ -28,7 +28,7 @@ MENUS
 
 ### How to execute?
  1. Compile code into class Object
-   - `javac -d ./dist com/CarMenu/Main`
+   - `javac -d ./dist com/CarMenu/Main.java`
  
  2. Run/Execute
    - `java -cp ./dist com.CarMenu/Main`
