@@ -1,21 +1,12 @@
-
-
 package com.CarMenu;
 
-import com.global.BasicInputs;
 import com.global.displayMenu;
-
 import com.methods.Add;
 
-public class Car extends BasicInputs {
+public class Car extends com.global.BasicInputs {
     
     public Car() {
         /** Constructor **/
-        clrscr();
-        
-        print("Welcome to Car Selection Program");
-        print("\nPlease, select a program to proceed.\n");
-        
         String menus[] = {
             "Add Car",
             "Delete Car",
@@ -26,6 +17,11 @@ public class Car extends BasicInputs {
         displayMenu res;
         
         while(true) {
+            clrscr();
+            
+            print("Welcome to Car Selection Program");
+            print("\nPlease, select a program to proceed.\n");
+            
             res = new displayMenu(menus);
             
             switch(res.response()) {
@@ -42,11 +38,11 @@ public class Car extends BasicInputs {
                 case 4: // Exit 
                     
                     // Confirm
-                    if( BasicInputs.Confirm("\nProceed to exit?")) {
+                    if( Confirm("\nProceed to exit?")) {
                         
                         print("\nThanks for using our program.\nExit.");
                         
-                        return; // Exit. We should go back to 
+                        System.exit(0);
                     }
                     
                     break;

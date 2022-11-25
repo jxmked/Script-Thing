@@ -74,20 +74,23 @@ public class BasicInputs {
             ProcessBuilder processBuilder = new ProcessBuilder();
             
             if (os.contains("Windows")) {
-                processBuilder.command("cls||clear");
+                processBuilder.command("cls || clear");
+                processBuilder.start();
             } else {
                 // Works on my terminal
                 // System.out.print("\033\143"); //For Linux
                 // ---- or ----
                 // https://stackoverflow.com/questions/2979383/how-to-clear-the-console
-                // System.out.print("\033[H\033[2J");  
-                // System.out.flush(); 
-                // ---- or ----
-                processBuilder.command("clear");
+                System.out.print("\033[H\033[2J");  
+                System.out.flush(); 
+                // ---- or ---
+                // processBuilder.command("clear");
+                // processBuilder.start();
             }
             
-            processBuilder.start();
         } catch (final Exception e) {
+            e.printStackTrace();
+            System.exit(0);
             try {
                 new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
             } catch(Exception err){}
