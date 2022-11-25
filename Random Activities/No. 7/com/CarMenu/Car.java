@@ -5,8 +5,27 @@ package com.CarMenu;
 
 public class Car {
     
-    public void hakdog() {
-        System.out.println("Car init");
+    
+    /**
+     * Attributes***
+     * 
+     * Brand
+     * Type
+     * Model
+     * Color
+     * Torque
+     * Engine
+     * Price
+     * 
+     * id - Must be unique
+     * */
+    public void car() {
+        
+        
+        
+        
     }
+    
+    
 
 }
