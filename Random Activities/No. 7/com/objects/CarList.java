@@ -64,4 +64,17 @@ public class CarList {
         
         return counted;
     }
+
+    
+    public static boolean has(int id) {
+        for(int index = 0; index < carList.length; index++) {
+            try {
+                if((! String.valueOf(carList[index].id).isEmpty()) && carList[index].id == id) {
+                    return true;
+                }
+            }catch(Exception e) {}
+        }
+
+        return false;
+    } 
 }

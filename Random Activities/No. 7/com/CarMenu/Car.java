@@ -2,6 +2,8 @@ package com.CarMenu;
 
 import com.global.displayMenu;
 import com.methods.Add;
+import com.methods.Delete;
+import com.methods.Print;
 
 public class Car extends com.global.BasicInputs {
     
@@ -30,9 +32,11 @@ public class Car extends com.global.BasicInputs {
                     break;
                 
                 case 2: // Delete car
+                    new Delete();
                     break;
                     
                 case 3: // Display list of cars 
+                    new Print();
                     break;
                 
                 case 4: // Exit 

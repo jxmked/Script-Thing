@@ -23,7 +23,7 @@ public class Add extends com.global.BasicInputs {
         this.get_torque();
         this.get_engine();
         this.get_price();
-        this.generate_id();
+        this.myCarObject.id = this.generate_id();
         
         print("\n");
         print("This car with this specification will be added to your list.");
@@ -51,10 +51,11 @@ public class Add extends com.global.BasicInputs {
         clrscr();
     }
 
-    public void generate_id() {
+    public static int generate_id() {
         int len = 4; // Length of an ID
         int index, rand;
         String sb;  // String Builder
+        int sample_id; // Parsed ID
 
         while(true) {
             sb = "";
@@ -67,8 +68,14 @@ public class Add extends com.global.BasicInputs {
             }
             
             try {
-                this.myCarObject.id = Integer.parseInt(sb);
-                break;
+                sample_id = Integer.parseInt(sb);
+                
+                if(CarList.has(sample_id)) {
+                    // ID does exists... Regenerate
+                    continue;
+                }
+
+                return sample_id;
             } catch(Exception e) { }
         }
        
@@ -118,6 +125,10 @@ public class Add extends com.global.BasicInputs {
     }
     
     private String get_validated_input(String placeholder) {
+        /**
+         * Validate inputs 
+         */
+        
         String str;
 
         do {
