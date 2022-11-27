@@ -23,7 +23,7 @@ public class Add extends com.global.BasicInputs {
         this.get_torque();
         this.get_engine();
         this.get_price();
-        this.myCarObject.id = this.generate_id();
+        this.myCarObject.id = generate_id();
         
         print("\n");
         print("This car with this specification will be added to your list.");
