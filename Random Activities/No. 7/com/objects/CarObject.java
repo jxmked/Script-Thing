@@ -1,15 +1,15 @@
 package com.objects;
 
-public class CarObject {
+public class CarObject implements com.interfaces.CarObjectInterface {
     
-    public String brand = "";
-    public String model = "";
-    public String type = "";
-    public String color = "";
-    public String torque = "";
-    public String engine = "";
-    public float price = 0;
-    public int id = 0;
+    public String brand;
+    public String model;
+    public String type;
+    public String color;
+    public String torque;
+    public String engine;
+    public float price;
+    public int id;
     
     public CarObject() {
         
