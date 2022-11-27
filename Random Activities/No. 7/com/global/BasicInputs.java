@@ -71,11 +71,11 @@ public class BasicInputs {
         
         try {
             final String os = System.getProperty("os.name");
-            ProcessBuilder processBuilder = new ProcessBuilder();
+            ProcessBuilder processBuilder = new ProcessBuilder("");
             
             if (os.contains("Windows")) {
-                processBuilder.command("cls || clear");
-                processBuilder.start();
+                processBuilder.command("cmd", "/c", "cls");
+                processBuilder.inheritIO().start().waitFor();
             } else {
                 // Works on my terminal
                 // System.out.print("\033\143"); //For Linux
@@ -89,11 +89,8 @@ public class BasicInputs {
             }
             
         } catch (final Exception e) {
-            e.printStackTrace();
-            System.exit(0);
-            try {
-                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-            } catch(Exception err){}
+            // e.printStackTrace();
+            // System.exit(0);
         }
     }
     
