@@ -11,9 +11,23 @@ public class Add extends com.global.BasicInputs {
 
     public Add() {
         clrscr();
-
+        
         print("Add new Car.");
         print("");
+        
+        /**
+         * Check if we have available slots
+         * */
+        if(CarList.length() >= CarList.carList.length) {
+            print("No Available Slots");
+            print("Delete some records to continue");
+            
+            print("Press enter to continue...");
+            inStr();
+            
+            return;
+        }
+        
         print("Please, fill up the form.");
         
         this.get_brand();
@@ -40,14 +54,23 @@ public class Add extends com.global.BasicInputs {
 
         if(Confirm("Are you sure to add this car to your list?")) {
             
-            CarList.add_item(this.myCarObject);
-
-            print("Car has been added.");
-            print("Press enter to continue...");
-
-            inStr();
+            try {
+                CarList.add_item(this.myCarObject);
+                print("");
+                print("Car has been added.");
+                
+            }catch(Exception e) {
+                print("Failed to add");
+                print("Please, freeup some space to continue");
+                
+            } finally {
+                print("");
+                print("Press enter to continue...");
+                inStr();
+                
+            }
         }
-
+        
         clrscr();
     }
 

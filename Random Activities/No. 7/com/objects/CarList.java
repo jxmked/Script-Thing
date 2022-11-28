@@ -18,24 +18,44 @@ public class CarList {
      * int id
      * 
      */
-    // Btw. I Found it!!!!
+    
     public static CarObject[] carList = new CarObject[20];
 
     /**
      * Add method to add new car to the list
-     * 
-     * Note: 
-     *  While Inserting, sort the Array according to Model
-     *  to fullfill the `In displaying the list of cars, 
-     *  it should be sorted ascending according to model`
-     *  
      */
-    public static boolean add_item(CarObject new_car) {
-        carList[length()] = new_car;
-
-
-
-        return false;
+    public static boolean add_item(CarObject new_car) throws Exception {
+        int index = length();
+        
+        if(index >= carList.length) {
+            throw new Exception("No empty slots");
+        }
+        
+        if(index == 0) {
+            carList[index] = new_car;
+            return true;
+        }
+        
+       // Check if the CarObject array has empty slots in between
+       
+        int num = 0;
+        
+        while(true) {
+            if(num >= carList.length) throw new Exception("No available slots");
+            
+            try {
+                if(! String.valueOf(carList[num].id).isEmpty()){
+                    num++;
+                }
+            } catch(Exception e) {
+                break;
+            } 
+        }
+        
+        carList[num] = new_car;
+        
+        return true;
+        
     }
     
     /**
@@ -43,13 +63,13 @@ public class CarList {
      */
 
     
-     /**
-      * Get Length
-      */
+    /**
+     * Get Length
+     */
     public static int length() {
         // Check if ID does exists
         int counted = 0;
-
+        
         for(int index = 0; index < carList.length; index++) {
             try {
                 if(! String.valueOf(carList[index].id).isEmpty()) {
@@ -60,7 +80,50 @@ public class CarList {
         
         return counted;
     }
-
+    
+    public static void defragment() {
+        // Remove empty array in between
+        CarObject[] temp = new CarObject[carList.length];
+        
+        int new_index = 0, index;
+        
+        for(index = 0; index < carList.length; index++) {
+            try {
+                if(! String.valueOf(carList[index].id).isEmpty()) {
+                    temp[new_index] = carList[index];
+                    new_index++;
+                }
+            }catch(Exception e) {}
+        }
+        
+        // Overwrite old data
+        carList = temp;
+    }
+    
+    public static void sort() {
+        
+        defragment();
+        
+        int len, i, j;
+        
+        // Sorting
+        
+        CarObject[] sample = CarList.carList;
+        
+        len = CarList.length();
+        CarObject temp;
+        
+        // Bubble sort
+        for(i = 0; i < len - 1; i++) {
+            for (j = i + 1; j < len; j++) {
+                if(sample[i].model.toUpperCase().compareTo(sample[j].model.toUpperCase()) > 0) {
+                    temp = sample[i];  
+                    sample[i] = sample[j];  
+                    sample[j] = temp;  
+                }
+            }
+        }
+    }
     
     public static boolean has(int id) {
         for(int index = 0; index < carList.length; index++) {

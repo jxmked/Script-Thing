@@ -7,17 +7,22 @@ import com.global.Helpers;
 public class Print extends com.global.BasicInputs {
     
     public Print() {
-        int car_list_length = CarList.length();
+        clrscr();
         
+        print("List of available cars.");
+        print("");
+        
+        
+        int car_list_length = CarList.length();
         
         for(int i = 0; i < car_list_length; i++) {
             print("");
             print_car(CarList.carList[i]);
         }
         
-        //print(car_list_length);
-        
         inStr();
+        
+        CarList.sort();
     }
 
 
@@ -81,7 +86,7 @@ public class Print extends com.global.BasicInputs {
         //final decimal_value = str_price.substring(num_length, 2);
         
         if(num_length <= 3) {
-            return String.format("%s%s", num, str_price.substring(num_length));
+            return String.format("%s%s", num, str_price.substring(num_length, num_length + 3));
         }
         
         // Reverse string

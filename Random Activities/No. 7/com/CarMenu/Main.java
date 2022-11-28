@@ -13,6 +13,7 @@ public class Main extends com.global.BasicInputs {
          */
         feed_sample_data();
         
+        CarList.defragment();
         
         new com.CarMenu.Car();
 
@@ -32,15 +33,15 @@ public class Main extends com.global.BasicInputs {
         sample_data[0].price = 1035000;
         sample_data[0].torque = "140Nm";
 
-        sample_data[1] = new CarObject();
-        sample_data[1].brand = "Honda";
-        sample_data[1].model = "BR-V";
-        sample_data[1].color = "Lunar Silver Metallic";
-        sample_data[1].engine = "1.5L i-VTEC DOHC In-line 4-cylinder";
-        sample_data[1].type = "Station Wagon";
-        sample_data[1].id = com.methods.Add.generate_id();
-        sample_data[1].price = 1390000;
-        sample_data[1].torque = "145Nm";
+        sample_data[3] = new CarObject();
+        sample_data[3].brand = "Honda";
+        sample_data[3].model = "BR-V";
+        sample_data[3].color = "Lunar Silver Metallic";
+        sample_data[3].engine = "1.5L i-VTEC DOHC In-line 4-cylinder";
+        sample_data[3].type = "Station Wagon";
+        sample_data[3].id = com.methods.Add.generate_id();
+        sample_data[3].price = 1390000;
+        sample_data[3].torque = "145Nm";
 
         sample_data[2] = new CarObject();
         sample_data[2].brand = "Nissan";
@@ -65,5 +66,4 @@ public class Main extends com.global.BasicInputs {
             }
         }));
     }
-    
 }
