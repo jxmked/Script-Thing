@@ -5,19 +5,18 @@ import com.objects.CarList;
 public class Delete extends com.global.BasicInputs {
 
     public Delete() {
-        if(CarList.length() <= 0) {
-            clrscr();
-            print("No item to delete");
-            print("Press enter to back");
-            inStr();
-            return;
-        }
-
         while (print_ui()) {}
     }
 
     public static boolean print_ui() {
         clrscr();
+
+        if(CarList.length() <= 0) {
+            print("No item to delete");
+            print("Press enter to back");
+            inStr();
+            return false;
+        }
 
         print("Select an ID of a car to delete.");
 
