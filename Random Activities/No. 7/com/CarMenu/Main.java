@@ -12,17 +12,18 @@ public class Main extends com.global.BasicInputs {
          * Feed CarList with sample data
          */
         feed_sample_data();
-        print(CarList.length());
-        //new com.CarMenu.Car();
+        
+        
+        new com.CarMenu.Car();
 
     }
-
+    
     public static void feed_sample_data() {
         
         CarObject[] sample_data = CarList.carList;
 
         sample_data[0] = new CarObject();
-        sample_data[0].brand = "carObject";
+        sample_data[0].brand = "Toyota";
         sample_data[0].model = "Vios GR-S";
         sample_data[0].color = "Red";
         sample_data[0].engine = "Dual VVT-I, 4-Cylinder In-Line - DOHC 16V EFI";

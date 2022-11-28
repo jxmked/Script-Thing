@@ -17,10 +17,6 @@ public class CarList {
      * float price
      * int id
      * 
-     * without using built-in containers such as ArrayList<T>
-     * 
-     * This should be ArrayList<CarObejct>!!!!
-     * That would be easy!!!!!!!!!!!!!!!!
      */
     // Btw. I Found it!!!!
     public static CarObject[] carList = new CarObject[20];

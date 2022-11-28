@@ -11,12 +11,6 @@ import java.util.Scanner;
 
 public class BasicInputs {
     
-    
-    /**
-     * My terminal sometimes fail to use command as input.
-     * 
-     * */
-    
     /**
      * Close this after using it.
      */
@@ -51,7 +45,7 @@ public class BasicInputs {
             if(String.valueOf(res).trim().isEmpty()) {
                 continue;
             }
-
+            
             switch(res){
               case 'y':
               case 'Y':
@@ -140,20 +134,14 @@ public class BasicInputs {
              * 
              * Note: Uncomment the library/package first.
              * */
+            // -----------
             // For outside of an IDE.
-            // A
             // str = String.valueOf(System.console().readLine());
-            
+            // ---- or ----
             // For others
-            // B
             // BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             // str = String.valueOf(br.readLine());
-
-            //str = String.valueOf(new BufferedReader(new InputStreamReader(System.in)).readLine());
-            
-            // C
-        
-            
+            // ---- or ----
             while(scanner.hasNextLine()) {
                 str = scanner.nextLine();
                 return str;
