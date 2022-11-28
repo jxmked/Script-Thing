@@ -1,186 +1,209 @@
 package com.objects;
 
 /**
- * Everytime the array has been modified, 
- * We need to defragment it and sort to meet 
+ * Everytime the array has been modified,
+ * We need to defragment it and sort to meet
  * the visual expectation.
- * */
+ */
 public class CarList {
-    public CarList(){
+    public CarList() {
 
     }
 
     /**
-     * Create Array list for 
-     *    
-     * String brand
-     * String model
-     * String type
-     * String color
-     * String torque
-     * String engine
-     * float price
-     * int id
-     * 
+     * Our car list storage/database
      */
-    
     public static CarObject[] carList = new CarObject[20];
 
     /**
-     * Add method to add new car to the list
+     * Add new CarObject to the carList Array
+     * Returns true if CarObject successfully added, otherwise false
+     * 
+     * @param new_car
+     * @return boolean
+     * @throws Exception
      */
     public static boolean add_item(CarObject new_car) throws Exception {
         int index = length();
-        
-        if(index >= carList.length) {
+
+        if (index >= carList.length) {
             throw new Exception("No empty slots");
         }
-        
-        if(index == 0) {
+
+        if (index == 0) {
             carList[index] = new_car;
             return true;
         }
         
-        // Check if the CarObject array has empty slots in between
-        
+        /**
+         * Try checking for gaps the add value on it
+         * Helpful if we have lot of gaps
+         */
         /**
          * This thing can be a problem if the size of the array
-         * is too large. 
-         * */
+         * is too large.
+         */
         int num = 0;
-        
-        while(true) {
-            if(num >= carList.length) throw new Exception("No available slots");
-            
+
+        while (true) {
+            if (num >= carList.length)
+                throw new Exception("No available slots");
+
             try {
-                if(! String.valueOf(carList[num].id).isEmpty()){
+                if (!String.valueOf(carList[num].id).isEmpty()) {
                     num++;
                 }
-            } catch(Exception e) {
+            } catch (Exception e) {
                 break;
-            } 
+            }
         }
-        
+
         carList[num] = new_car;
         sort();
+
         return true;
-        
+
     }
-    
+
     /**
-     * Delete method to delete car from the list by ID
+     * Delete CarObject by ID
+     * returns boolean if deleted, otherwise false
+     * 
+     * @param id
+     * @return boolean
      */
     public static boolean delete(int id) {
-            
-         // look for id 
-        for(int index = 0; index < carList.length; index++) {
+        for (int index = 0; index < carList.length; index++) {
             try {
-                if(! String.valueOf(carList[index].id).isEmpty() && carList[index].id == id) {
+                if (carList[index].id == id) {
                     carList[index] = null;
-                    
+
                     defragment();
                     sort();
-                    
+
                     return true;
                 }
-            }catch(Exception e) {}
+            } catch (Exception e) {
+            }
         }
-        
+
         return false;
     }
-    
-    public static CarObject get_car_by_id(int id) throws Exception{
-        
-        for(int index = 0; index < carList.length; index++) {
+
+    /**
+     * Get CarObject by ID
+     * 
+     * @param id
+     * @return CarObject
+     * @throws Exception
+     */
+    public static CarObject get_car_by_id(int id) throws Exception {
+        for (int index = 0; index < carList.length; index++) {
             try {
-                if(! String.valueOf(carList[index].id).isEmpty() && carList[index].id == id) {
+                if (carList[index].id == id) {
                     return carList[index];
                 }
-            }catch(Exception e) {}
+            } catch (Exception e) {
+            }
         }
-        
+
         throw new Exception("ID not found");
     }
-    
+
     /**
-     * Get Length
+     * Get the length
+     * Count all indexes that are not empty
+     * 
+     * @return int
      */
     public static int length() {
-        
+
         int counted = 0, index;
-        
-        for(index = 0; index < carList.length; index++) {
+
+        for (index = 0; index < carList.length; index++) {
             try {
                 /**
                  * Check if ID does exists to confirm that
-                 * that index of an array is not empty
-                 * */
-                if(! String.valueOf(carList[index].id).isEmpty()) {
+                 * the index of an array is not empty before counting
+                 */
+                if (!String.valueOf(carList[index].id).isEmpty()) {
                     counted++;
                 }
-            }catch(Exception e) {}
+            } catch (Exception e) {
+            }
         }
-        
+
         return counted;
     }
-    
+
+    /**
+     * Remove gaps between array by creating new CarObject array 
+     * and add up all indexes that are not empty and overwriting 
+     * old declared static global array
+     * 
+     * @return void
+     */
     public static void defragment() {
-        /**
-         * Remove empty array in between
-         * 
-         * Moving objects close together to those gaps
-         * */
         CarObject[] temp = new CarObject[carList.length];
-        
         int new_index = 0, index;
-        
-        for(index = 0; index < carList.length; index++) {
+
+        for (index = 0; index < carList.length; index++) {
             try {
-                if(! String.valueOf(carList[index].id).isEmpty()) {
+                if (!String.valueOf(carList[index].id).isEmpty()) {
                     temp[new_index] = carList[index];
                     new_index++;
                 }
-            }catch(Exception e) {}
+            } catch (Exception e) {
+            }
         }
-        
-        // Overwrite old data
+
+        // Overwrite
         carList = temp;
     }
-    
+
+    /**
+     * Sort CarObject array by model using bubble sort
+     * 
+     * @return void
+     */
     public static void sort() {
-        
+
         defragment();
-        
+
         int len, i, j;
-        
+
         CarObject[] sample = CarList.carList;
         len = CarList.length();
-        
+
         CarObject temp;
-        
+
         // Bubble sort
-        for(i = 0; i < len - 1; i++) {
+        for (i = 0; i < len - 1; i++) {
             for (j = i + 1; j < len; j++) {
-                if(sample[i].model.toUpperCase().compareTo(sample[j].model.toUpperCase()) > 0) {
-                    temp = sample[i];  
-                    sample[i] = sample[j];  
-                    sample[j] = temp;  
+                if (sample[i].model.toUpperCase().compareTo(sample[j].model.toUpperCase()) > 0) {
+                    temp = sample[i];
+                    sample[i] = sample[j];
+                    sample[j] = temp;
                 }
             }
         }
     }
-    
+
+    /**
+     * Check if ID does exists in CarObject array
+     * 
+     * @param id
+     * @return boolean
+     */
     public static boolean has(int id) {
-        /**
-         * Check if ID does exists 
-         * */
-        for(int index = 0; index < carList.length; index++) {
+        for (int index = 0; index < carList.length; index++) {
             try {
-                if((! String.valueOf(carList[index].id).isEmpty()) && carList[index].id == id) {
+                if (carList[index].id == id) {
                     return true;
                 }
-            }catch(Exception e) {}
+            } catch (Exception e) {
+            }
         }
         return false;
-    } 
+    }
 }

@@ -6,22 +6,26 @@ import com.objects.CarObject;
 public class Main extends com.global.BasicInputs {
 
     public static void main(String[] args) {
-        atexit();
+        // atexit();
 
         /**
          * Feed CarList with sample data
          */
         feed_sample_data();
-        
+
         CarList.defragment();
         CarList.sort();
-        
+
+        /**
+         * Start main menu
+         */
         new com.CarMenu.Car();
 
+        scanner.close();
     }
-    
+
     public static void feed_sample_data() {
-        
+
         CarObject[] sample_data = CarList.carList;
 
         sample_data[0] = new CarObject();
@@ -33,10 +37,10 @@ public class Main extends com.global.BasicInputs {
         sample_data[0].id = com.methods.Add.generate_id();
         sample_data[0].price = 1035000;
         sample_data[0].torque = "140Nm";
-        
+
         /**
          * To test defragmenting and sorting
-         * */
+         */
         sample_data[3] = new CarObject();
         sample_data[3].brand = "Honda";
         sample_data[3].model = "BR-V";
