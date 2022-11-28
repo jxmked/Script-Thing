@@ -34,7 +34,7 @@ public class Main extends com.global.BasicInputs {
 
         sample_data[1] = new CarObject();
         sample_data[1].brand = "Honda";
-        sample_data[1].model = "1.5 VX CVT Honda SENSING";
+        sample_data[1].model = "BR-V";
         sample_data[1].color = "Lunar Silver Metallic";
         sample_data[1].engine = "1.5L i-VTEC DOHC In-line 4-cylinder";
         sample_data[1].type = "Station Wagon";
@@ -44,15 +44,13 @@ public class Main extends com.global.BasicInputs {
 
         sample_data[2] = new CarObject();
         sample_data[2].brand = "Nissan";
-        sample_data[2].model = "3.7L Premium MT";
+        sample_data[2].model = "370Z";
         sample_data[2].color = "Red";
         sample_data[2].engine = "3.7-liter, DOHC, 24-valve V6 (VQ37)";
         sample_data[2].type = "Sports Car";
         sample_data[2].id = com.methods.Add.generate_id();
         sample_data[2].price = 2779000;
         sample_data[2].torque = "363Nm";
-
-
     }
 
     public static void atexit() {
