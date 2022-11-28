@@ -54,7 +54,7 @@ public class Main extends com.global.BasicInputs {
         sample_data[2] = new CarObject();
         sample_data[2].brand = "Nissan";
         sample_data[2].model = "370Z";
-        sample_data[2].color = "Red";
+        sample_data[2].color = "Passion Red";
         sample_data[2].engine = "3.7-liter, DOHC, 24-valve V6 (VQ37)";
         sample_data[2].type = "Sports Car";
         sample_data[2].id = com.methods.Add.generate_id();
