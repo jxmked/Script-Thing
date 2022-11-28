@@ -14,6 +14,7 @@ public class Main extends com.global.BasicInputs {
         feed_sample_data();
         
         CarList.defragment();
+        CarList.sort();
         
         new com.CarMenu.Car();
 
@@ -32,7 +33,10 @@ public class Main extends com.global.BasicInputs {
         sample_data[0].id = com.methods.Add.generate_id();
         sample_data[0].price = 1035000;
         sample_data[0].torque = "140Nm";
-
+        
+        /**
+         * To test defragmenting and sorting
+         * */
         sample_data[3] = new CarObject();
         sample_data[3].brand = "Honda";
         sample_data[3].model = "BR-V";

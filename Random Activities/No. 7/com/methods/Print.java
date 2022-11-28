@@ -8,28 +8,23 @@ public class Print extends com.global.BasicInputs {
     
     public Print() {
         clrscr();
+        int car_list_length = CarList.length();
+        int i;
         
         print("List of available cars.");
-        print("");
+        print(String.format("Displaying item %d out of %d", car_list_length, CarList.carList.length));
         
-        
-        int car_list_length = CarList.length();
-        
-        for(int i = 0; i < car_list_length; i++) {
+        for(i = 0; i < car_list_length; i++) {
             print("");
             print_car(CarList.carList[i]);
         }
         
+        print("");
+        print("Press enter to go back to menu");
+        
         inStr();
         
-        CarList.sort();
     }
-
-
-    public void car_list() {
-
-    }
-    
     
     public static void print_car(CarObject carObject) {
         
@@ -83,7 +78,6 @@ public class Print extends com.global.BasicInputs {
         // Remove decimal value 
         num = str_price.substring(0, dec_index);
         final int num_length = num.length();
-        //final decimal_value = str_price.substring(num_length, 2);
         
         if(num_length <= 3) {
             return String.format("%s%s", num, str_price.substring(num_length, num_length + 3));
