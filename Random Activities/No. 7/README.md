@@ -23,7 +23,7 @@ MENUS
 ***NOTE:***
 > Implement this program in Array and should have different methods implementation
 > as necessary following the concepts of OOP Do not use ArrayList built-in container
-> or else your program will automaticall be raded with O points.
+> or else your program will automatically be graded with O points.
 
 
 ### How to execute?
@@ -33,7 +33,6 @@ MENUS
  2. Run/Execute
    - `java -cp ./dist com.CarMenu/Main`
  
-----
 #### One liner
   `(clear||cls) && javac -d ./dist com/CarMenu/Main.java && java -cp ./dist com.CarMenu/Main`
 
