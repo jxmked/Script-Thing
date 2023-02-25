@@ -8,3 +8,4 @@ ConsoleNumInput.c
 *.dex
 dist/
 
+/**/*.out
