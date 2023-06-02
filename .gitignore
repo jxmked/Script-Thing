@@ -9,3 +9,5 @@ ConsoleNumInput.c
 dist/
 
 /**/*.out
+
+/**/*/__pycache__/*
