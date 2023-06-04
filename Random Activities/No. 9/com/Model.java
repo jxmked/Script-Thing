@@ -4,5 +4,5 @@ public enum Model {
   SEDAN,
   SUV,
   CONVERTABLE,
-  HATCHBACK
+  HATCHBACK,
 }
