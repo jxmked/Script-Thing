@@ -16,16 +16,26 @@ public class StringValidator {
     this.patterns.put("username", Pattern.compile(pattern));
   }
 
-  public boolean username(String text) throws NoAvailablePatternException {
-    if (!this.patterns.containsKey("username")) {
+  public boolean username(String text)
+    throws NoAvailablePatternException, Exception {
+    try {
+      this.is_pattern_exists("username");
+
+      final Pattern pattern = this.patterns.get("username");
+      final Matcher matcher = pattern.matcher(text);
+
+      return matcher.matches();
+    } catch (Exception err) {
+      throw err;
+    }
+  }
+
+  private void is_pattern_exists(String key)
+    throws NoAvailablePatternException {
+    if (!this.patterns.containsKey(key)) {
       throw new NoAvailablePatternException(
-        "No available pattern for username"
+        String.format("No available pattern for %s", key)
       );
     }
-
-    final Pattern pattern = this.patterns.get("username");
-    final Matcher matcher = pattern.matcher(text);
-
-    return matcher.matches();
   }
 }
