@@ -13,7 +13,7 @@ public class StringValidator {
   public StringValidator() {}
 
   /**
-   * Set patterns
+   * Belows are the "Set patterns"
    * */
   public void username_pattern(String pattern) {
     this.patterns.put("username", Pattern.compile(pattern));
@@ -24,7 +24,7 @@ public class StringValidator {
   }
 
   /**
-   * Tester
+   * Below are testers
    * */
   public boolean username(String text)
     throws NoAvailablePatternException, Exception {
