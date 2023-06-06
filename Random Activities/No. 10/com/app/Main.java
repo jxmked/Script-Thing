@@ -1,16 +1,16 @@
 package com.app;
 
 import com.ThrowableExceptions.NoAvailablePatternException;
+import com.app.BasicArrayOperations;
 import com.app.Utils;
 import com.validators.StringValidator;
 import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main extends Utils {
+public class Main {
 
   private static final StringValidator validate = new StringValidator();
-  private String client_name;
 
   public static void main(String[] args) {
     validate.username_pattern("^([a-zA-Z0-9-_]{3,20})$");
@@ -19,7 +19,7 @@ public class Main extends Utils {
     String client_name;
 
     do {
-      client_name = inStr();
+      client_name = Utils.inStr();
 
       try {
         if (validate.username(client_name)) break;
@@ -37,23 +37,6 @@ public class Main extends Utils {
       );
     } while (true);
 
-    new Main(client_name);
-  }
-
-  public Main(String client_name) {
-    this.client_name = client_name;
-
-    System.out.printf(
-      "\nWelcome %s at Array Basic Operation\n",
-      this.client_name
-    );
-    System.out.println("\nHere we are able to traverse the array of string.");
-    System.out.println(
-      "We can insert, modify, search, and delete values from existing array."
-    );
-  }
-
-  public boolean displayMenu() {
-    System.out.println("Please, select an action below:");
+    new BasicArrayOperations(client_name);
   }
 }

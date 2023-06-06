@@ -12,16 +12,47 @@ public class StringValidator {
 
   public StringValidator() {}
 
+  /**
+   * Set patterns
+   * */
   public void username_pattern(String pattern) {
     this.patterns.put("username", Pattern.compile(pattern));
   }
 
+  public void string_value_pattern(String pattern) {
+    this.patterns.put("string_value", Pattern.compile(pattern));
+  }
+
+  /**
+   * Tester
+   * */
   public boolean username(String text)
     throws NoAvailablePatternException, Exception {
+    /**
+     * Validate username
+     * */
     try {
       this.is_pattern_exists("username");
 
       final Pattern pattern = this.patterns.get("username");
+      final Matcher matcher = pattern.matcher(text);
+
+      return matcher.matches();
+    } catch (Exception err) {
+      throw err;
+    }
+  }
+
+  public boolean string_value(String text)
+    throws NoAvailablePatternException, Exception {
+    /**
+     * Validate string value.
+     * The string that will be stored in variable array
+     * */
+    try {
+      this.is_pattern_exists("string_value");
+
+      final Pattern pattern = this.patterns.get("string_value");
       final Matcher matcher = pattern.matcher(text);
 
       return matcher.matches();
