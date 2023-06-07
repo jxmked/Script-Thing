@@ -38,12 +38,14 @@ public class BasicArrayOperations extends Displays {
 
     selection.print_selections();
 
-    selection_ask(selection);
+    String ans = selection_ask(selection);
+    
+    System.out.printf("%s hakdog", ans);
 
     System.out.println("Congrats");
   }
 
-  public static int selection_ask(Selection instance) {
+  public static String selection_ask(Selection instance) {
     do {
       System.out.println("Please, select a method to perform:");
 
@@ -51,7 +53,7 @@ public class BasicArrayOperations extends Displays {
 
       try {
         if (instance.is_on_range(instance.get_answer())) {
-          return 0;
+          return instance.get_value(instance.get_answer());
         }
       } catch (InvaidArgumentTypeException err) {
         continue;
