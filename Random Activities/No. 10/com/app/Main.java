@@ -19,24 +19,51 @@ public class Main {
     String client_name;
 
     do {
-      client_name = Utils.inStr();
+      /**
+       * Get the user name before vontinueing
+       * */
+      client_name = Utils.inStr().trim();
 
       try {
+        /**
+         * Check if the user name is valid or in pattern defined
+         * above.
+         * 
+         * If valid, break the loop and instantiate the main (BasicArrayOperations) app
+         * */
         if (validate.username(client_name)) break;
       } catch (NoAvailablePatternException err) {
+        
+        
+        /**
+         * If we don't have any pattern provided to test the username,
+         * the validator will throw a NoAvailablePatternException Exception
+         * that needed to catch for error handling then exit.
+         * */
         System.out.printf("\n\n%s", err.getMessage());
         System.exit(1);
       } catch (Exception err) {
+        
+        /**
+         * Other error well be our runtime error.
+         * Exit needed since we don't have any other operation to do so.
+         * */
         System.out.println("\n\nRuntime error occured.\n\nExiting...");
         System.exit(1);
       }
-
+      
+      /**
+       * Invalid Username will reach this.
+       * */
       System.out.println("\nUsername must be a valid character");
       System.out.println(
         "Valid characters: a-zA-Z0-9-_ from 3 to 20 characters\n\n"
       );
     } while (true);
-
+    
+    /**
+     * Create instance of the main app.
+     * */
     new BasicArrayOperations(client_name);
   }
 }
