@@ -1,5 +1,6 @@
 package com.app;
 
+import com.ThrowableExceptions.InvaidArgumentTypeException;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -36,5 +37,17 @@ public class Utils {
     }
 
     return output.toString().trim();
+  }
+
+  public static int parse_int(String str) throws InvaidArgumentTypeException {
+    try {
+      return Integer.parseInt(str);
+    } catch (NumberFormatException err) {
+      throw new InvaidArgumentTypeException(
+        "Utils.parse_int expecting a string integer value."
+      );
+    } catch (Exception err) {
+      throw new RuntimeException("No error handling available at this time.");
+    }
   }
 }

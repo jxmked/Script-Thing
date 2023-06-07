@@ -2,12 +2,12 @@ package com.app;
 
 import com.ThrowableExceptions.InvaidArgumentTypeException;
 import com.app.Utils;
-import java.util.HashSet;
+import java.util.ArrayList;
 import java.util.Set;
 
 public class Selection extends Utils {
 
-  private final Set<String> selection_set = new HashSet<>();
+  private final ArrayList<String> selection_set = new ArrayList<>();
   private String answer;
 
   public Selection() {}
@@ -44,17 +44,24 @@ public class Selection extends Utils {
     return this.answer;
   }
 
+  public String get_value(String index) throws Exception {
+    try {
+      final int parsed_value = Utils.parse_int(index);
+
+      return this.selection_set.get(parsed_value - 1);
+    } catch (Exception err) {
+      throw err;
+    }
+  }
+
   public boolean is_on_range(String text)
     throws InvaidArgumentTypeException, Exception {
     try {
-      final int parsed_value = Integer.parseInt(text);
+      final int parsed_value = Utils.parse_int(text);
+
       return (this.selection_set.size() >= parsed_value && parsed_value >= 1);
     } catch (NumberFormatException err) {
-      throw new InvaidArgumentTypeException(
-        "Selection.is_on_list expecting a string integer value."
-      );
-    } catch (Exception err) {
-      throw new RuntimeException("No error handling available at this time.");
+      throw err;
     }
   }
 }

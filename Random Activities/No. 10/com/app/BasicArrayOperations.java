@@ -38,23 +38,31 @@ public class BasicArrayOperations extends Displays {
 
     selection.print_selections();
 
+    selection_ask(selection);
+
+    System.out.println("Congrats");
+  }
+
+  public static int selection_ask(Selection instance) {
     do {
       System.out.println("Please, select a method to perform:");
 
-      selection.ask();
+      instance.ask();
 
       try {
-        if (selection.is_on_range(selection.get_answer())) {
-          break;
+        if (instance.is_on_range(instance.get_answer())) {
+          return 0;
         }
       } catch (InvaidArgumentTypeException err) {
         continue;
       } catch (Exception err) {
-        System.out.println("\n\nUnhandled error has been caught.\nExiting...");
+        System.out.println(
+          "\n\nUnhandled error has been caught.\n\nExiting..."
+        );
         System.exit(1);
       }
-    } while (true);
 
-    System.out.println("Congrats");
+      System.out.println("That is out of selection.\n");
+    } while (true);
   }
 }
