@@ -1,6 +1,8 @@
 package com.app;
 
+import com.ThrowableExceptions.InvaidArgumentTypeException;
 import com.app.Displays;
+import com.app.Selection;
 import com.app.Utils;
 import com.validators.StringValidator;
 
@@ -20,5 +22,39 @@ public class BasicArrayOperations extends Displays {
     validate.string_value_pattern("^(?!^\s+$)[a-z\s]{1,32}$");
 
     super.intro_banner();
+    System.out.println("\n\n");
+    this.main_option();
+  }
+
+  public void main_option() {
+    final Selection selection = new Selection();
+
+    selection.add_option("Insert");
+    selection.add_option("Modify");
+    selection.add_option("Search");
+    selection.add_option("Delete");
+    selection.add_option("View");
+    selection.add_option("Exit");
+
+    selection.print_selections();
+
+    do {
+      System.out.println("Please, select a method to perform:");
+
+      selection.ask();
+
+      try {
+        if (selection.is_on_range(selection.get_answer())) {
+          break;
+        }
+      } catch (InvaidArgumentTypeException err) {
+        continue;
+      } catch (Exception err) {
+        System.out.println("\n\nUnhandled error has been caught.\nExiting...");
+        System.exit(1);
+      }
+    } while (true);
+
+    System.out.println("Congrats");
   }
 }
