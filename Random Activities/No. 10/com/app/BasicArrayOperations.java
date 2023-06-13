@@ -27,6 +27,9 @@ public class BasicArrayOperations extends Displays {
   }
 
   public void main_option() {
+    /**
+     * Ask an action to perform
+     * */
     final Selection selection = new Selection();
 
     selection.add_option("Insert");
@@ -40,12 +43,15 @@ public class BasicArrayOperations extends Displays {
 
     String ans = selection_ask(selection);
     
-    System.out.printf("%s hakdog", ans);
 
-    System.out.println("Congrats");
   }
 
   public static String selection_ask(Selection instance) {
+    /**
+     * This function will continuesly ask for a valid input.
+     * 
+     * And may return the selected value instead of an index.
+     * */
     do {
       System.out.println("Please, select a method to perform:");
 

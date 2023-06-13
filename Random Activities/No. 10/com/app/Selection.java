@@ -5,7 +5,7 @@ import com.app.Utils;
 import java.util.ArrayList;
 import java.util.Set;
 
-public class Selection extends Utils {
+public class Selection {
 
   private final ArrayList<String> selection_set = new ArrayList<>();
   private String answer;
@@ -31,7 +31,7 @@ public class Selection extends Utils {
   public void ask(boolean can_be_null) {
     String answer;
     do {
-      answer = inStr().trim();
+      answer = Utils.inStr().trim();
 
       if (answer != null || !answer.isEmpty()) {
         this.answer = answer;
