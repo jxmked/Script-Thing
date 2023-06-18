@@ -43,7 +43,7 @@ public class BasicArrayOperations extends Displays {
 
     String ans = selection_ask(selection);
     
-
+    
   }
 
   public static String selection_ask(Selection instance) {
