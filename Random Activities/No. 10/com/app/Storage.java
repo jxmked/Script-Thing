@@ -7,14 +7,14 @@ import com.ThrowableExceptions.SearchFailure;
 import com.ThrowableExceptions.UpdateFailure;
 import java.util.Arrays;
 
-public abstract class Storage {
+protected abstract class Storage {
 
   /**
    * We're going to store all user input in this variable
    * */
   private static String[] stored_data = {};
   
-  private static void delete(int index)
+  protected static void delete(int index)
     throws ItemNotFoundException, DeletionFailure {
     try {
       if (stored_data[index] == null) {
@@ -50,7 +50,7 @@ public abstract class Storage {
   /**
    * Insert new string into variable array
    * */
-  public static void insert(String str) throws InsertionFailure {
+  protected static void insert(String str) throws InsertionFailure {
     try {
       /**
        * This would clone the stored_data variable,
