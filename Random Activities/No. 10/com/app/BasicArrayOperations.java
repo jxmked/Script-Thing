@@ -5,6 +5,8 @@ import com.app.Displays;
 import com.app.Selection;
 import com.app.Utils;
 import com.validators.StringValidator;
+import com.app.methods.Insert;
+import com.app.Storage;
 
 public class BasicArrayOperations extends Displays {
 
@@ -72,5 +74,13 @@ public class BasicArrayOperations extends Displays {
 
       System.out.println("That is out of selection.\n");
     } while (true);
+  }
+  
+  /**
+   * Our methods like insert, view, edit, delete, and search
+   * */
+   
+  public void insert(String str) {
+    
   }
 }

@@ -7,7 +7,7 @@ import com.ThrowableExceptions.SearchFailure;
 import com.ThrowableExceptions.UpdateFailure;
 import java.util.Arrays;
 
-protected abstract class Storage {
+protected class Storage {
 
   /**
    * We're going to store all user input in this variable
@@ -74,14 +74,14 @@ protected abstract class Storage {
     throw new InsertionFailure("Failed to insert new element");
   }
 
-  private static <T> T[] pushToArray(T[] arr, T new_value) {
+  private static String[] pushToArray(String[] arr, String new_value) {
     /**
      * We need to copy the old array into new array
      * with larger size. This is because Java has a fixed
      * size of array.
      * */
     int lengthOfArray = arr.length;
-    T[] new_array = Arrays.copyOf(arr, lengthOfArray + 1);
+    String[] new_array = Arrays.copyOf(arr, lengthOfArray + 1);
 
     // Then add new element
     new_array[lengthOfArray] = new_value;
