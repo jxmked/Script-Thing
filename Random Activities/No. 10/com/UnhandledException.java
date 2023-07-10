@@ -1,14 +1,17 @@
 package com;
 
-public class UnhandledException {
+import java.lang.Exception;
+
+public class UnhandledException extends Exception {
+
   public UnhandledException() {
-    System.out.println("\nUnhandled Exception has been caught\n\nExiting...");
+    super("\nUnhandled Exception has been caught\n\nExiting...");
     this.exit();
   }
   
   public UnhandledException(String msg) {
     System.out.println("\n");
-    System.out.print(msg);
+    super(msg);
     System.out.println("Exiting...");
     this.exit();
   }
