@@ -11,7 +11,8 @@ import com.app.Storage;
 public class BasicArrayOperations extends Displays {
 
   private static final StringValidator validate = new StringValidator();
-
+  private static final Set<String> = new HashSet<String>();
+  
   public BasicArrayOperations(String client_name) {
     this.client_name = Utils.toTitleCase(client_name);
 
@@ -25,6 +26,7 @@ public class BasicArrayOperations extends Displays {
 
     super.intro_banner();
     System.out.println("\n\n");
+    
     this.main_option();
   }
 
