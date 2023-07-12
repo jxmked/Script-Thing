@@ -12,6 +12,8 @@ public class BasicArrayOperations extends Displays {
 
   private static final StringValidator validate = new StringValidator();
   private static final Set<String> = new HashSet<String>();
+  private final Storage db = new Storage();
+  
   
   public BasicArrayOperations(String client_name) {
     this.client_name = Utils.toTitleCase(client_name);
@@ -48,6 +50,16 @@ public class BasicArrayOperations extends Displays {
     String ans = selection_ask(selection);
     
     
+  }
+  
+  public void handleRquest(String ans) {
+    switch(ans.toLowerCase()) {
+      case 'insert':
+        
+        break;
+        
+        
+    }
   }
 
   public static String selection_ask(Selection instance) {
