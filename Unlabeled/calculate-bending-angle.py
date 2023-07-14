@@ -1,29 +1,28 @@
 import math
 import sys
 
+
+
 def calculate_bending_angle(top_diameter, bottom_diameter, height):
-    # Convert diameters to radii
-    R_top = top_diameter / 2
-    R_bottom = bottom_diameter / 2
 
-    # Calculate the difference in diameter
-    delta_diameter = top_diameter - bottom_diameter
+  # Convert diameters to radii
+  R_top = top_diameter / 2
+  R_bottom = bottom_diameter / 2
 
-    # Calculate the slant height
-    slant_height = math.sqrt((R_top - R_bottom) ** 2 + height ** 2)
+  # Calculate the difference in diameter
+  delta_diameter = top_diameter - bottom_diameter
 
-    # Calculate the bending angle
-    bending_angle = math.atan(delta_diameter / (2 * math.pi * slant_height))
+  # Calculate the slant height
+  slant_height = math.sqrt((R_top - R_bottom) ** 2 + height ** 2)
 
-    # Convert the angle from radians to degrees
-    bending_angle_degrees = math.degrees(bending_angle)
+  # Calculate the bending angle
+  bending_angle = math.atan(delta_diameter / (2 * math.pi * slant_height))
 
-    return bending_angle_degrees
+  # Convert the angle from radians to degrees
+  bending_angle_degrees = math.degrees(bending_angle)
 
+  return bending_angle_degrees
 
-
-
-# Check if all three arguments are provided
 
 # top_diameter = float(sys.argv[1])
 # bottom_diameter = float(sys.argv[2])
@@ -33,9 +32,9 @@ def calculate_bending_angle(top_diameter, bottom_diameter, height):
 ## Unit: Centimeter
 ##
 
-top_diameter = 50
-bottom_diameter = 40
-height = 10
+top_diameter = 80
+bottom_diameter = 60
+height = 155
 
 angle = calculate_bending_angle(top_diameter, bottom_diameter, height)
 
