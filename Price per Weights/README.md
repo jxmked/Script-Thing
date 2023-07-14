@@ -2,18 +2,18 @@
 
 > Get the total price from given weight
 
-___Formula:___
+**_Formula:_**
 
-> ***Total Price = Given Weight * (Fixed Weight / Fixed Price)***
+> **_Total Price = Given Weight _ (Fixed Weight / Fixed Price)\***
 
-___Note: Weights must be in the same unit___
+**_Note: Weights must be in the same unit_**
 
 ### Reference:
 
 - [vCalc - Price per Weight or Mass](https://www.vcalc.com/wiki/vCalc/Price+per+Weight+or+Mass)
 - [OpenTextBC - Units of Measurement](https://opentextbc.ca/basickitchenandfoodservicemanagement/chapter/units-of-measurement/)
 
-----
+---
 
 #### Develop by Jovan De Guia
 

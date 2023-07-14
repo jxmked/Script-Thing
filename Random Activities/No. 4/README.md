@@ -1,12 +1,12 @@
 # Grading Scale
 
-___Emphasis of this task is to create your own function___
+**_Emphasis of this task is to create your own function_**
 
-> Write a program to prompt for a score between 0.0 and 1.0. 
-If the score is out of range, print an error. 
-If the score is between 0.0 and 1.0, print a grade using the following table:
+> Write a program to prompt for a score between 0.0 and 1.0.
+> If the score is out of range, print an error.
+> If the score is between 0.0 and 1.0, print a grade using the following table:
 
-> ***Score Grade***
+> **_Score Grade_**
 
 > - \>= 0.9 A
 > - \>= 0.8 B
@@ -17,11 +17,11 @@ If the score is between 0.0 and 1.0, print a grade using the following table:
 > If the user enters a value out of range, print a suitable error message and exit. For the test, enter a score of 0.85.
 > In making this program, use a function called computergrade which will automatically assign the letter grade based on the input of the user.
 
-----
+---
 
 #### Problem Source - Facebook Post
 
-****Enjoy****
+\***\*Enjoy\*\***
 
 #### Written by Jovan De Guia
 

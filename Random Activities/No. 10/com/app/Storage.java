@@ -7,13 +7,13 @@ import com.ThrowableExceptions.SearchFailure;
 import com.ThrowableExceptions.UpdateFailure;
 import java.util.Arrays;
 
-protected class Storage {
+public class Storage {
 
   /**
    * We're going to store all user input in this variable
    * */
   private static String[] stored_data = {};
-  
+
   protected static void delete(int index)
     throws ItemNotFoundException, DeletionFailure {
     try {

@@ -1,6 +1,6 @@
 # Activity Number 1
 
-***Write In Java***
+**_Write In Java_**
 
 Create a program that will display a selection menu of...
 
@@ -13,13 +13,11 @@ Create a program that will display a selection menu of...
 > wants to go back to the menu or not. The looping won't
 > stop until the user chose not to go back to the menu.
 
+> **_This idea is from a question from Facebook post._**
 
-> ___This idea is from a question from Facebook post.___
+---
 
-
-----
-
-****Enjoy****
+\***\*Enjoy\*\***
 
 #### Written by Jovan De Guia
 

@@ -2,9 +2,10 @@
 
 > Create Multiplication Table that will start at given number and end in given number.
 
-----
+---
 
-****Enjoy****
+\***\*Enjoy\*\***
+
 #### Written by Jovan De Guia
 
 ## Socials

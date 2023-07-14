@@ -2,9 +2,9 @@ Doing Arithmetic with binaries
 
 Sum, Divide, Subtract, Multiply two binary numbers
 
-----
+---
 
-****Enjoy****
+\***\*Enjoy\*\***
 
 #### Rewrite by Jovan De Guia
 

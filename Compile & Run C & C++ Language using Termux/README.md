@@ -6,11 +6,12 @@
 
 ### How to use?
 
-```bash x-clang.sh %script.c% [-e[-b]]```
+`bash x-clang.sh %script.c% [-e[-b]]`
 
- ___Required ```clang``` & ```gcc``` package to be installed___
+**_Required `clang` & `gcc` package to be installed_**
 
 Parameters
+
 - "-d = Prevent clearing the terminal"
 - "-c = Compile only. This things also display warnings if possie"
 - "-r = Execute current a.out file or the given filename in current directory"
@@ -41,10 +42,10 @@ $ bash script.sh -r %binaryfile% # Run the custom named binary file
 - clear
 - exit
 
+---
 
-----
+\***\*Enjoy\*\***
 
-****Enjoy****
 #### Written by Jovan De Guia
 
 ## Socials

@@ -1,14 +1,14 @@
 # 2 dimensional array
 
-***Written in Java***
+**_Written in Java_**
 
 > Write a program that will ask a user to enter his desired row
 > and column length of the array, then ask the user to enter the
 > array elements and the program will display the 2 dimensional
 > array.
 
+### Expected output
 
-### Expected output 
 ```
 $ Enter row length of an array: 2
 $ Enter column length of an array: 3
@@ -32,7 +32,7 @@ Row[1]: Column[2]: 6
 
 ```
 
----- 
+---
 
 ### Montage video
 
@@ -40,7 +40,7 @@ Row[1]: Column[2]: 6
 
 #### Problem Source - Facebook Post
 
-****Enjoy****
+\***\*Enjoy\*\***
 
 #### Written by Jovan De Guia
 

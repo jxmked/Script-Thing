@@ -1,6 +1,6 @@
 # Activity Number 2
 
-***Write In C++***
+**_Write In C++_**
 
 > Using Struct in C++
 
@@ -11,11 +11,11 @@
 - Meter - Centimeter
 - Meter - .etc
 
-> ___This idea is from a question from Facebook post.___
+> **_This idea is from a question from Facebook post._**
 
-----
+---
 
-****Enjoy****
+\***\*Enjoy\*\***
 
 #### Written by Jovan De Guia
 

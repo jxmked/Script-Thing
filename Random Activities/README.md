@@ -1,10 +1,11 @@
 # Random Activities
 
-___I don't like including my school activities___
+**_I don't like including my school activities_**
 
-----
+---
 
-****Enjoy****
+\***\*Enjoy\*\***
+
 #### Written by Jovan De Guia
 
 ## Socials

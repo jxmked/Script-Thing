@@ -1,20 +1,19 @@
 package com.app;
 
 import com.ThrowableExceptions.InvaidArgumentTypeException;
+import com.UnhandledException;
 import com.app.Displays;
 import com.app.Selection;
-import com.app.Utils;
-import com.validators.StringValidator;
-import com.app.methods.Insert;
 import com.app.Storage;
+import com.app.Utils;
+import com.app.methods.Insert;
+import com.validators.StringValidator;
 
 public class BasicArrayOperations extends Displays {
 
   private static final StringValidator validate = new StringValidator();
-  private static final Set<String> = new HashSet<String>();
   private final Storage db = new Storage();
-  
-  
+
   public BasicArrayOperations(String client_name) {
     this.client_name = Utils.toTitleCase(client_name);
 
@@ -28,7 +27,7 @@ public class BasicArrayOperations extends Displays {
 
     super.intro_banner();
     System.out.println("\n\n");
-    
+
     this.main_option();
   }
 
@@ -48,24 +47,27 @@ public class BasicArrayOperations extends Displays {
     selection.print_selections();
 
     String ans = selection_ask(selection);
-    
-    
-  }
-  
-  public void handleRquest(String ans) {
-    switch(ans.toLowerCase()) {
-      case 'insert':
-        
+
+    switch (ans.toLowerCase()) {
+      case "insert":
         break;
-        
-        
+      case "modify":
+        break;
+      case "search":
+        break;
+      case "delete":
+        break;
+      case "view":
+        break;
+      case "exit":
+        break;
     }
   }
 
   public static String selection_ask(Selection instance) {
     /**
      * This function will continuesly ask for a valid input.
-     * 
+     *
      * And may return the selected value instead of an index.
      * */
     do {
@@ -89,12 +91,10 @@ public class BasicArrayOperations extends Displays {
       System.out.println("That is out of selection.\n");
     } while (true);
   }
-  
+
   /**
    * Our methods like insert, view, edit, delete, and search
    * */
-   
-  public void insert(String str) {
-    
-  }
+
+  public void insert(String str) {}
 }

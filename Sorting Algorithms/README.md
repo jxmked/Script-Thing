@@ -1,6 +1,6 @@
 # Sorting Algorithms
 
-***Written in Python***
+**_Written in Python_**
 
 ### Includes
 
@@ -18,11 +18,12 @@
 - Strand Sort
 
 ### Referrence
- ___[Geeks for Geeks - Sorting Algorithm](https://www.geeksforgeeks.org/sorting-algorithms/)___
 
-----
+**_[Geeks for Geeks - Sorting Algorithm](https://www.geeksforgeeks.org/sorting-algorithms/)_**
 
-****Enjoy****
+---
+
+\***\*Enjoy\*\***
 
 #### Rewrite by Jovan De Guia
 

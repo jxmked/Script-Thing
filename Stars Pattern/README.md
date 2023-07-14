@@ -1,20 +1,20 @@
 # Stars Pattern
 
-***Written in Python***
+**_Written in Python_**
 
-***Written in C***
+**_Written in C_**
 
-***Written in Shell***
+**_Written in Shell_**
 
 Can be use as a demo and/or learning purposes only.
 
 Also for personal use. 😁
 
-```n = 5``` by default
+`n = 5` by default
 
 ### Increasing Triangle Pattern
 
-***Figure:***
+**_Figure:_**
 
 > ```
 > *
@@ -24,11 +24,11 @@ Also for personal use. 😁
 > *  *  *  *  *
 > ```
 
-----
+---
 
 ### Decreasing Triangle Pattern
 
-***Figure:***
+**_Figure:_**
 
 > ```
 > *  *  *  *  *
@@ -38,11 +38,11 @@ Also for personal use. 😁
 > *
 > ```
 
-----
+---
 
 ### Right Sided Increasing Triangle Pattern
 
-***Figure:***
+**_Figure:_**
 
 > ```
 >                *
@@ -52,11 +52,11 @@ Also for personal use. 😁
 >    *  *  *  *  *
 > ```
 
-----
+---
 
 ### Right Sided Decreasing Triangle Pattern
 
-***Figure:***
+**_Figure:_**
 
 > ```
 >    *  *  *  *  *
@@ -66,11 +66,11 @@ Also for personal use. 😁
 >                *
 > ```
 
----- 
+---
 
 ### Hill Pattern
 
-***Figure:***
+**_Figure:_**
 
 > ```
 >                *
@@ -80,11 +80,11 @@ Also for personal use. 😁
 >    *  *  *  *  *  *  *  *  *
 > ```
 
----- 
+---
 
 ### Upside Down Hill Pattern
 
-***Figure:***
+**_Figure:_**
 
 > ```
 > *  *  *  *  *  *  *  *  *
@@ -94,11 +94,11 @@ Also for personal use. 😁
 >             *
 > ```
 
----- 
+---
 
 ### Diamond Pattern
 
-***Figure:***
+**_Figure:_**
 
 > ```
 >                *
@@ -112,11 +112,11 @@ Also for personal use. 😁
 >                *
 > ```
 
----- 
+---
 
 ### Double Hill Pattern
 
-***Figure:***
+**_Figure:_**
 
 > ```
 >                *                             *
@@ -126,11 +126,11 @@ Also for personal use. 😁
 >    *  *  *  *  *  *  *  *  *     *  *  *  *  *  *  *  *  *
 > ```
 
----- 
+---
 
 ### Butterfly Pattern
 
-***Figure:***
+**_Figure:_**
 
 > ```
 > *                       *
@@ -144,11 +144,11 @@ Also for personal use. 😁
 > *                       *
 > ```
 
----- 
+---
 
 ### Sand Glass Pattern
 
-***Figure:***
+**_Figure:_**
 
 > ```
 > *  *  *  *  *  *  *  *  *  *  *
@@ -164,11 +164,11 @@ Also for personal use. 😁
 > *  *  *  *  *  *  *  *  *  *  *
 > ```
 
----- 
+---
 
 ### Left Pascal's Triangle Pattern
 
-***Figure:***
+**_Figure:_**
 
 > ```
 > *
@@ -182,11 +182,11 @@ Also for personal use. 😁
 > *
 > ```
 
----- 
+---
 
 ### Right Pascal's Triangle Pattern
 
-***Figure:***
+**_Figure:_**
 
 > ```
 >             *
@@ -200,15 +200,15 @@ Also for personal use. 😁
 >             *
 > ```
 
----- 
+---
 
 > With Python in Console, you can try with different size like
-> ```python3 pattern.py 7```
+> `python3 pattern.py 7`
 
+---
 
-----
+\***\*Enjoy\*\***
 
-****Enjoy****
 #### Written by Jovan De Guia
 
 ## Socials

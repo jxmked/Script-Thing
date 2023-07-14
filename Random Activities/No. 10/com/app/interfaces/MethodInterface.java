@@ -1,7 +1,3 @@
-package com.app.interfaces:
+package com.app.interfaces;
 
-
-public interface MethodInterface {
-  
-}
-
+public interface MethodInterface {}

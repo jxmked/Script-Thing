@@ -1,17 +1,19 @@
 # List of Number
 
 > Write a program which repeatedly reads numbers until the user enters “done”.
-> Once “done” is entered, print out the total, count, and the smallest and largest numbers. 
+> Once “done” is entered, print out the total, count, and the smallest and largest numbers.
 > If the user enters anything other than a number, detect their mistake using
 > try and except and print an error message and skip to the next number.
 
----- 
+---
+
 #### The Creation Video
+
 - [Numbers List. Python in Mobile](https://youtu.be/3GPEn3rzCtE)
 
 #### Problem Source - Facebook Post
 
-****Enjoy****
+\***\*Enjoy\*\***
 
 #### Written by Jovan De Guia
 

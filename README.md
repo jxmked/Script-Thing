@@ -3,10 +3,10 @@
 > A random script project, etc. that can be
 > use as a demo, reference or something.
 
-> Some scripts has video link included so, you can watch 
+> Some scripts has video link included so, you can watch
 > the creation of that script.
 
-----
+---
 
 #### Written by Jovan De Guia
 
@@ -27,4 +27,4 @@
 ### Licensed under:
 
 | [![](https://img.shields.io/static/v1?label=LICENSE&message=MIT&style=for-the-badge&color=blueviolet)](https://opensource.org/licenses/MIT) |
-|    :----:   |   
+| :-----------------------------------------------------------------------------------------------------------------------------------------: |
